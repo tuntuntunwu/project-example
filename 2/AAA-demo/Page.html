@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+.other, .current {
+    float: left;
+    margin-left: 30px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+
+    border: 1px solid orange;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold;
+}
+.current {
+    background-color: orange;
+    color: white;
+}
+        </style>
+
+</head>
+
+
+<body>
+    <div id="page"></div>
+</body>
+
+
+<script>
+function createPage(currentNumber, number) {
+    let container = document.querySelector("#page");
+    container.innerHTML = "";
+    rangeStart = Math.max(currentNumber - 2, 1);
+    rangeEnd = Math.min(currentNumber + 2, number);
+
+    container.innerHTML += `<div class='other' onclick="createPage(1, ${number})">${'<<'}</div>`
+    for (let i = 1; i < number + 1; i++) {
+        if (i === 1) {
+            container.innerHTML += `<div class='other' onclick="createPage(1, ${number})">${i}</div>`
+        }
+        else if (i === 2 || i === number -1) {
+            if (rangeStart <= i && i <= rangeEnd) {
+                container.innerHTML += `<div class='other' onclick="createPage(${i}, ${number})">${i}</div>`
+            }
+            else {
+                container.innerHTML += `<div class='other'>${'...'}</div>`
+            }
+        }
+        else if (i === number) {
+            container.innerHTML += `<div class='other' onclick="createPage(${i}, ${number})">${i}</div>`
+        }
+        else {
+            if (rangeStart <= i && i <= rangeEnd) {
+                container.innerHTML += `<div class='other' onclick="createPage(${i}, ${number})">${i}</div>`
+            }
+        }
+    }
+    container.innerHTML += `<div class='other' onclick="createPage(${number}, ${number})">${'>>'}</div>`
+
+    let current = Array.from(document.querySelectorAll("#page > div")).filter(elt => Number(elt.innerHTML) === currentNumber)[0];
+    current.classList.remove('other');
+    current.classList.add('current');
+}
+createPage(1, 10);
+</script>
+
+</html>

@@ -1,0 +1,8 @@
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\PrintCopySys\bin\Debug\PrintCopySys.exe.config
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\PrintCopySys\bin\Debug\PrintCopySys.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\PrintCopySys\bin\Debug\PrintCopySys.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\PrintCopySys\obj\x86\Debug\PrintCopySys.PrintCopyForm.resources
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\PrintCopySys\obj\x86\Debug\PrintCopySys.Properties.Resources.resources
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\PrintCopySys\obj\x86\Debug\PrintCopySys.csproj.GenerateResource.Cache
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\PrintCopySys\obj\x86\Debug\PrintCopySys.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\PrintCopySys\obj\x86\Debug\PrintCopySys.pdb

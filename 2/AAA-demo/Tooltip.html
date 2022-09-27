@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+.tooltip {
+    position: relative;
+    cursor: pointer;
+}
+.tooltipText {
+    opacity: 0;
+    transition: opacity 1s;
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+    width: 120px;
+    padding: 6px 0;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+}
+.tooltip .tooltipText::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;  /* use border to make a triangle */
+}
+.tooltip:hover .tooltipText {
+    opacity: 0.9;
+}
+        </style>
+
+</head>
+
+
+<body>
+    <span class="tooltip">展示提示
+        <span class="tooltipText">提示文本</span>
+    </span>
+</body>
+
+
+</html>

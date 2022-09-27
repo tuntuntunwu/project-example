@@ -1,0 +1,293 @@
+﻿@charset "utf-8";
+/* Copyright SHARP Corporation
+//	Copyright (c) 2010 SHARP CORPORATION. All rights reserved.
+//
+//	SHARP Simple EA Application
+//
+//	This software is protected under the Copyright Laws of the United States,
+//	Title 17 USC, by the Berne Convention, and the copyright laws of other
+//	countries.
+//
+//	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER ``AS IS'' AND ANY EXPRESS 
+//	OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+//	OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+//
+//==============================================================================
+*/
+
+/* The element will generate no box at all*/
+.viewDisplay
+{
+	display:none;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+
+td 
+{
+	white-space:nowrap;
+}
+
+
+/* Add Css for a link, based in the style.css ST*/
+
+.Table_dataFont a
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	text-decoration:none;
+	color:#5a5959;
+}
+
+.SelectedTR a
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+.TableGrid_bg a
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:none;
+}
+
+.Select_menu_bg a
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+
+/* Add Css for a link, based in the style.css ED*/
+
+/* for the scrollbar in the list */
+.ScrollbarCSS 
+{
+	width:auto;
+	min-width:34px;
+	*width:34px;
+}
+
+.td_head
+{
+
+	height:33px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:none;
+}
+
+.UnselectedTR:hover
+{
+	cursor:pointer;
+}
+
+.SelectedTR:hover
+{
+	cursor:pointer;
+}
+
+.tblDetailTDWithTop
+{
+	vertical-align:middle;
+	text-align:center;
+	white-space:normal;
+}
+
+/* for report */
+
+
+.tblDetail td
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:right;
+	color:#5a5959;
+}
+/*
+.tblDetail td
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:right;
+	color:#5a5959;
+	padding-right:4px;
+}*/
+
+
+.tblDetailTDWithLeft
+{
+	padding-left:6px;
+}
+
+
+.pointer:hover
+{
+	cursor:pointer;
+}
+
+
+.even 
+{
+	background-color:#FFFFFF;
+}
+
+.even:hover
+{
+	background-color:#feca9b;
+}
+
+.odd 
+{
+	background-color:#f0f7fb;
+}
+
+.odd:hover
+{
+	background-color:#feca9b;
+}
+
+.even TD
+{
+	height:31px;
+	vertical-align:middle;
+	text-align:right;
+	padding-left:6px;
+	padding-right:6px;
+}
+
+.odd TD
+{
+	height:31px;
+	vertical-align:middle;
+	text-align:right;
+	padding-left:6px;
+	padding-right:6px;
+}
+
+.footcolor 
+{
+	background-color:#82bfe0;
+}
+
+.footcolor:hover 
+{
+	background-color:#feca9b;
+}
+
+.footcolor TH
+{
+	height:31px;
+	padding-right:6px;
+}
+
+
+
+.edit-container 
+{
+	  position:relative;
+}
+
+.edit-container INPUT
+{
+	position:static;
+}
+
+.Unradio_box
+{
+	background-image:url('../Images/radiouncheck.gif');
+	background-repeat:no-repeat;
+	background-position:center;
+
+}
+.Radio_box
+{
+	background-image:url('../Images/radiocheck.gif');
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.Unradio_box:hover
+{
+	cursor:pointer;
+}
+
+.Radio_box:hover
+{
+	cursor:pointer;
+}
+
+.Automatic_Wrap
+{
+	white-space:normal;
+}
+
+.small_link_select {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:none;
+}
+.small_link {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+.td_head_time
+{
+	height:31px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:none;
+	min-width:100px;
+}
+	
+.td_head_Log
+{
+
+	height:28px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:none;
+}
+
+.changepass
+{
+	cursor:pointer;
+}
+

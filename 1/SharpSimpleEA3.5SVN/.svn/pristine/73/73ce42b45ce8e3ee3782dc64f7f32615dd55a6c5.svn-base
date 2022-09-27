@@ -1,0 +1,580 @@
+
+/*==============================================================================
+//	Copyright (c) 2010-2014 SHARP CORPORATION. All rights reserved.
+//
+//	Extended Sharp OSA SDK
+//
+//	This software is protected under the Copyright Laws of the United States,
+//	Title 17 USC, by the Berne Convention, and the copyright laws of other
+//	countries.
+//
+//	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER ``AS IS'' AND ANY EXPRESS 
+//	OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+//	OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+//
+//==============================================================================
+*/
+*
+{
+	font-family: Sans-Serif;
+	font-size: medium;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+body
+{
+	background-image: url(../Images/body.jpg);
+	width:790px;
+	margin-bottom:0px;
+	margin-right:0px;
+}
+
+table
+{
+	width:100%;
+}
+
+#header
+{
+	width:800px;
+	color: Black;
+	background-image: url(../Images/header.jpg);
+}
+#id_Label_Title
+{
+	line-height:45px;
+	padding-left:10px;
+}
+*.btn_header
+{
+	position: absolute;
+	left: 660px;
+	top:3px;
+	width: 120px;
+	height: 40px;
+}
+*.btn_header_cancel
+{
+	position: absolute;
+	left: 535px;
+	top:3px;
+	width: 120px;
+	height: 40px;
+}
+
+*.btn_main
+{
+	width: 150px;
+	height: 38px;
+}
+
+*.lst_toner_save_set
+{
+	margin-bottom: 0px;
+}
+
+*.lst_fold_set
+{
+	margin-bottom: 0px;
+}
+*.btn_dup_set
+{
+	width: 53px;
+	height: 40px;
+	margin-left:20%;
+	margin-bottom:7px;
+}
+
+*.btn_rotation_set
+{
+	height: 30px;
+	margin-left:10%;
+	margin-bottom:3px;
+}
+#id_div_srcset_header
+{
+	width: 100%;
+}
+#id_div_srcset_left
+{
+	width: 49%;
+	float:left;
+}
+#id_div_srcset_right
+{
+	width: 51%;
+	float:right;
+}
+#id_check_Duplex
+{
+    vertical-align: middle;
+}
+
+*.btn_srcset
+{
+	width:  180px;
+	height: 40px;
+	margin: 2px 3px;
+}
+
+*.btn_sourceSetting
+{
+	width:  145px;
+	height: 40px;
+}
+
+*.btn_outputTray
+{
+	width:  189px;
+	height: 40px;
+}
+
+*.tbl_custom_position
+{
+    width: 70%;
+    top: 20px;
+    position: relative;
+    margin-top: 5%;
+    margin-left: 30%;
+}
+
+*.tr_custom_position
+{
+    height: 60px;
+}
+
+*.txt_size_set
+{
+	width: 70px;
+	height: 32px;
+	text-align: justify;
+	background-color: White;
+	color: Black;
+	font-weight: bolder;
+	direction: rtl;
+	font-style: normal;
+	font-variant: normal;
+}
+
+#id_size_x_down, #id_size_x_up, #id_size_y_down, #id_size_y_up
+{
+	margin-right: 5px;
+	height:35px;
+	width:40px;
+}
+
+*.btn_filing_set
+{
+	width:  189px;
+	height: 40px;
+	margin: 5px;
+}
+*.file_property_set
+{
+	margin: 5px;
+}
+*.file_password_set
+{
+	margin: 5px;
+	width:450px
+}
+*.file_name_set
+{
+	margin: 5px;
+	width:450px
+}
+*.public_pdf_set
+{
+    position:relative;
+    top:-6px;
+    left:10px;
+}
+*.saddle_stitch_binding_set
+{
+	width:  189px;
+	height: 40px;
+	margin: 5px;
+}
+*.saddle_stitch_original_set
+{
+	width:  189px;
+	height: 40px;
+	margin: 5px;
+}
+*.cover_set
+{
+    margin-left:5px;
+}
+#id_div_cover
+{
+    margin-top:20px;
+    margin-left:50px;
+}
+*.cover_input_tray_set
+{
+	width:  189px;
+	height: 40px;
+	margin: 5px;
+}
+*.cover_to_copy_set
+{
+    margin-left:5px;
+}
+#id_div_exp_left
+{
+	width: 30%;
+	float:left;
+}
+#id_div_exp_right
+{
+	width: 70%;
+	float:right;
+}
+#id_div_color_left
+{
+	width: 25%;
+	float:left;
+}
+#id_div_color_right
+{
+	width: 74%;
+	float:right;
+}
+#id_div_InputTray_left
+{
+	width: 100%;
+}
+#id_div_InputTray_right
+{
+	width: 100%;
+}
+#id_div_Resolution_left
+{
+	width: 49%;
+	float:left;
+}
+#id_div_Resolution_right
+{
+	width: 51%;
+	float:right;
+}
+#id_div_filing_left
+{
+	width: 30%;
+	float:left;
+}
+#id_div_filing_right
+{
+	width: 65%;
+	float:right;
+}
+#id_div_saddle_stitch_left
+{
+	width: 30%;
+	float:left;
+	margin-top:5px;
+}
+#id_div_saddle_stitch_right
+{
+	width: 65%;
+	float:right;
+	margin-top:5px;
+}
+#id_exposure_auto,#id_exposure_manual
+{
+	width: 130px;
+	height: 40px;
+	margin-right: 10px;
+}
+#id_level_list
+{
+	width: 70px;
+}
+*.btn_expmode_set
+{
+	height: 40px;
+	width: 40px;
+	margin-left:20px;
+	margin-bottom: 15px;
+}
+*.btn_exp_set
+{
+	height: 20px;
+	width: 20px;
+	height: 10%;
+}
+*.btn_dpi_set
+{
+	width: 210px;
+	height: 40px;
+	margin: 10px;
+}
+*.chk_offset
+{
+	margin: 7px;
+	vertical-align: middle;
+}
+
+*.btn_spmode_set
+{
+	width: 230px;
+	height: 40px;
+}
+
+#id_div_multi_shot_left
+{
+	width: 30%;
+	float:left;
+}
+#id_div_multi_shot_right
+{
+	width: 70%;
+	float:right;
+}
+*.btn_multi_shot_mode
+{
+	width: 160px;
+	height: 40px;
+	margin-left: 12px;
+	margin-top: 12px;
+}
+*.btn_multi_shot_order
+{
+	width: 76px;
+	height: 63px;
+	margin-left: 24px;
+	margin-top: 12px;
+}
+
+*.btn_color_set
+{
+	width: 180px;
+	height: 40px;
+	margin: 3px;
+}
+
+*.btn_tray_set
+{
+	width: 180px;
+	height: 40px;
+	margin:3px;
+}
+
+*.btn_out_tray_set
+{
+    float:left;
+	width: 400px;
+	height: 40px;
+	margin-left:25%;
+	margin-top:15px;
+}
+
+*.btn_preview, *.btn_toner 
+{
+	vertical-align: baseline;
+}
+#id_inp_encpdfpass
+{
+	height: 10%;
+	width: 80%;
+	margin-left:20%;
+	margin-top:5px;
+}
+#id_text_Ratio
+{
+	width: 70px;
+	height: 32px;
+	text-align: justify;
+	background-color: White;
+	color: Black;
+	font-weight: bolder;
+	direction: rtl;
+	font-style: normal;
+	font-variant: normal;
+}
+#id_ratio_down, #id_ratio_up{
+	margin-right: 5px;
+	height:35px;
+	width:40px;
+}
+#id_text_Copies
+{
+	width: 90px;
+	height: 32px;
+	text-align: justify;
+	background-color: White;
+	color: Black;
+	font-weight: bolder;
+	direction: rtl;
+	font-style: normal;
+	font-variant: normal;
+}
+#id_button_copy_up, #id_button_copy_down
+{
+	margin-right: 5px;
+	height:35px;
+	width:40px;
+}
+*.id_parameter_select_value
+{
+	background-color: navy;
+	color : white;
+	padding: 5px;
+}
+#id_label_ImageExplanation
+{
+	margin-left: 20px;
+	margin-bottom: 15px;
+}
+#id_label_ImageExposure
+{
+	margin-left: 20px;
+	margin-bottom: 15px;
+	display:inline-table;
+	width:180px;
+}
+
+#id_label_spmode
+{
+	background-color: navy;
+	color : white;
+	margin-left: 20px;
+	padding: 5px;
+}
+
+*.btn_bottom
+{
+	position: absolute;
+	top:330px;
+	left:650px;
+	width: 120px;
+	height: 40px;
+}
+
+#id_imgJobStatus 
+{
+    border: groove thick silver;
+}
+input[type="button"]:focus, input[type="submit"]:focus {
+   background-color: #DDDFE9;
+}
+
+#id_div_execute
+{
+	position: absolute;
+	top: 240px;
+	left: 580px;
+	width: 220px;
+	height: 148px;
+}
+#id_div_execute_top
+{
+	width: 220px;
+	height: 68px;
+}
+#id_div_execute_bottom, #id_div_execute_bottom_p1, #id_div_execute_bottom_p1 input
+{
+    position:relative;
+	width: 220px;
+	height: 80px;
+}
+#id_div_execute_bottom_p2_left, #id_div_execute_bottom_p2_left input
+{
+    position:relative;
+    float:left;
+	width: 110px;
+	height: 80px;
+}
+#id_div_execute_bottom_p2_right, #id_div_execute_bottom_p2_right input
+{
+    position:relative;
+    float:left;
+	width: 110px;
+	height: 80px;
+}
+#id_div_start_bw_copy
+{
+	position: absolute;
+	top: 32px;
+	left: 23px;
+	width: 76px;
+}
+#id_div_start_color_copy
+{
+	position: absolute;
+	top: 32px;
+	left: 20px;
+	width: 76px;
+}
+#id_div_start
+{
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	width: 220px;
+}
+#id_div_checkbox
+{
+	position: absolute;
+	top: 0px;
+	left: 5px;
+}
+*.monochrome_button_font_specify
+{
+	font-family: Sans-Serif;
+	font-size: x-small;
+}
+*.color_button_font_specify
+{
+	font-family: Sans-Serif;
+	font-size: x-small;
+	color: #FFFFFF;
+}
+*.checkbox_css
+{
+	vertical-align: middle;
+}
+*.btn_pro_set
+{
+	width: 63px;
+	height: 49px;
+	margin:7px;
+}
+*.btn_staple_set
+{
+	width: 210px;
+	height: 40px;
+	margin: 5px;
+}
+#id_tbl_finishing
+{
+    margin-top: 10px;
+}
+#id_div_punch
+{
+    width: 340px;
+}
+*.chk_punch
+{
+    margin-top: 2px;
+    margin-left: 20px;
+}
+*.drop_punch
+{
+    width: 150px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+*.lst_fold_set
+{
+    margin-top: 10px;
+}
+#id_hr
+{    
+    margin-right:10px;
+}
+.td_padding
+{
+    padding-left:10px;
+}

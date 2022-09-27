@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AUTO_STRING" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="BTN_DOWN" xml:space="preserve">
+    <value>▼</value>
+  </data>
+  <data name="BTN_UP" xml:space="preserve">
+    <value>▲</value>
+  </data>
+  <data name="COLOR_MODE_AUTO" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="COLOR_MODE_DUALCOLOR" xml:space="preserve">
+    <value>Dual Color</value>
+  </data>
+  <data name="COLOR_MODE_FULLCOLOR" xml:space="preserve">
+    <value>Full Color</value>
+  </data>
+  <data name="COLOR_MODE_MONOCHROME" xml:space="preserve">
+    <value>Mono2</value>
+  </data>
+  <data name="COLOR_MODE_SINGLECOLOR" xml:space="preserve">
+    <value>Single Color</value>
+  </data>
+  <data name="COLOR_MODE_STRING" xml:space="preserve">
+    <value>Color Mode</value>
+  </data>
+  <data name="COLOR_REPLACE_EXCEPT_BLACK" xml:space="preserve">
+    <value>Except Black</value>
+  </data>
+  <data name="COLOR_REPLACE_RED" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="COLOR_REPLACE_STRING" xml:space="preserve">
+    <value>Color Replace</value>
+  </data>
+  <data name="COLOR_SELECT_AQUAMARINE" xml:space="preserve">
+    <value>Aquamarine</value>
+  </data>
+  <data name="COLOR_SELECT_BEIGE" xml:space="preserve">
+    <value>Beige</value>
+  </data>
+  <data name="COLOR_SELECT_BLUE" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="COLOR_SELECT_CYAN" xml:space="preserve">
+    <value>Cyan</value>
+  </data>
+  <data name="COLOR_SELECT_GREEN" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="COLOR_SELECT_LIGHTBLUE" xml:space="preserve">
+    <value>Light Blue</value>
+  </data>
+  <data name="COLOR_SELECT_LIGHTGREEN" xml:space="preserve">
+    <value>Light Green</value>
+  </data>
+  <data name="COLOR_SELECT_MAGENTA" xml:space="preserve">
+    <value>Magenta</value>
+  </data>
+  <data name="COLOR_SELECT_NAVY" xml:space="preserve">
+    <value>Navy</value>
+  </data>
+  <data name="COLOR_SELECT_ORANGE" xml:space="preserve">
+    <value>Orange</value>
+  </data>
+  <data name="COLOR_SELECT_PINK" xml:space="preserve">
+    <value>Pink</value>
+  </data>
+  <data name="COLOR_SELECT_PURPLE" xml:space="preserve">
+    <value>Purple</value>
+  </data>
+  <data name="COLOR_SELECT_RED" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="COLOR_SELECT_STRING" xml:space="preserve">
+    <value>Color Select</value>
+  </data>
+  <data name="COLOR_SELECT_YELLOW" xml:space="preserve">
+    <value>Yellow</value>
+  </data>
+  <data name="COLOR_SELECT_YELLOWGREEN" xml:space="preserve">
+    <value>Yellow Green</value>
+  </data>
+  <data name="COPIES" xml:space="preserve">
+    <value>Copies</value>
+  </data>
+  <data name="COPIES_ERROR_MESSAGE" xml:space="preserve">
+    <value>Please specify the number of copies from {0} to {1}</value>
+  </data>
+  <data name="COPY_ERROR_MESSAGE" xml:space="preserve">
+    <value>Please specify the number of magnification from {0} to {1}.</value>
+  </data>
+  <data name="MANUAL_ERROR_MESSAGE" xml:space="preserve">
+    <value>Please specify the number of {0} from {1} to {2}.</value>
+  </data>
+  <data name="COPY_RATIO" xml:space="preserve">
+    <value>Ratio : </value>
+  </data>
+  <data name="DUPLEX_BINDING_CHANGE_STRING" xml:space="preserve">
+    <value>Binding Change</value>
+  </data>
+  <data name="DUPLEX_MODE_DUPLEX_TO_DUPLEX" xml:space="preserve">
+    <value>Duplex to Duplex</value>
+  </data>
+  <data name="DUPLEX_MODE_DUPLEX_TO_SIMPLEX" xml:space="preserve">
+    <value>Duplex to Simplex</value>
+  </data>
+  <data name="DUPLEX_MODE_SIMPLEX_TO_DUPLEX" xml:space="preserve">
+    <value>Simplex to Duplex</value>
+  </data>
+  <data name="DUPLEX_MODE_SIMPLEX_TO_SIMPLEX" xml:space="preserve">
+    <value>Simplex to Simplex</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A3_A0" xml:space="preserve">
+    <value>A3 -&gt; A0</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A3_A0x2" xml:space="preserve">
+    <value>A3 -&gt; A0x2</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A3_A1" xml:space="preserve">
+    <value>A3 -&gt; A1</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A3_A2" xml:space="preserve">
+    <value>A3 -&gt; A2</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A4_A0" xml:space="preserve">
+    <value>A4 -&gt; A0</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A4_A1" xml:space="preserve">
+    <value>A4 -&gt; A1</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A4_A2" xml:space="preserve">
+    <value>A4 -&gt; A2</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A5_A1" xml:space="preserve">
+    <value>A5 -&gt; A1</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A5_A2" xml:space="preserve">
+    <value>A5 -&gt; A2</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_B4_B1" xml:space="preserve">
+    <value>B4 -&gt; B1</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_B4_B2" xml:space="preserve">
+    <value>B4 -&gt; B2</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_B4_B3" xml:space="preserve">
+    <value>B4 -&gt; B3</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_B5_B1" xml:space="preserve">
+    <value>B5 -&gt; B1</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_B5_B2" xml:space="preserve">
+    <value>B5 -&gt; B2</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_B5_B3" xml:space="preserve">
+    <value>B5 -&gt; B3</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEDGER_22x17" xml:space="preserve">
+    <value>Ledger -&gt; 22x17</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEDGER_22x34" xml:space="preserve">
+    <value>Ledger -&gt; 22x34</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEDGER_34x44" xml:space="preserve">
+    <value>Ledger -&gt; 34x44</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEDGER_44x68" xml:space="preserve">
+    <value>Ledger -&gt; 44x68</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEGAL_22x17" xml:space="preserve">
+    <value>Legal -&gt; 22x17</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEGAL_22x34" xml:space="preserve">
+    <value>Legal -&gt; 22x34</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEGAL_34x44" xml:space="preserve">
+    <value>Legal -&gt; 34x44</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LETTER_22x17" xml:space="preserve">
+    <value>Letter -&gt; 22x17</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LETTER_22x34" xml:space="preserve">
+    <value>Letter -&gt; 22x34</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LETTER_34x44" xml:space="preserve">
+    <value>Letter -&gt; 34x44</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_STRING" xml:space="preserve">
+    <value>Original -&gt; Enlargement</value>
+  </data>
+  <data name="ERASE_DUPLEX_MODE_OPPOSITE" xml:space="preserve">
+    <value>Opposite Side</value>
+  </data>
+  <data name="ERASE_DUPLEX_MODE_SAME" xml:space="preserve">
+    <value>Same Side</value>
+  </data>
+  <data name="ERASE_MODE_CENTER" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="ERASE_MODE_EDGE" xml:space="preserve">
+    <value>Edge</value>
+  </data>
+  <data name="ERASE_MODE_EDGE_CENTER" xml:space="preserve">
+    <value>Edge + Center</value>
+  </data>
+  <data name="ERASE_MODE_SIDE" xml:space="preserve">
+    <value>Side</value>
+  </data>
+  <data name="ERASE_MODE_SIDE_CENTER" xml:space="preserve">
+    <value>Side + Center</value>
+  </data>
+  <data name="ERR_ACCESS_FILE" xml:space="preserve">
+    <value>No permission to write '{0}' file.</value>
+  </data>
+  <data name="ERR_ACCESS_FOLDER" xml:space="preserve">
+    <value>No permission to write '{0}' folder.</value>
+  </data>
+  <data name="ERR_ACCESSDENIED" xml:space="preserve">
+    <value>You do not have an authority to execute the job.</value>
+  </data>
+  <data name="ERR_ACTIONNOTSUPPORTED" xml:space="preserve">
+    <value>This operation is not supported in current setting.</value>
+  </data>
+  <data name="ERR_INITIALIZATION" xml:space="preserve">
+    <value>This MFP is not compatible with this application.</value>
+  </data>
+  <data name="ERR_ADMIN_CONTACT" xml:space="preserve">
+    <value>Please contact your administrator.</value>
+  </data>
+  <data name="ERR_COPY" xml:space="preserve">
+    <value>Failed to start copying.</value>
+  </data>
+  <data name="ERR_INVALIDARGS" xml:space="preserve">
+    <value>Fatal error has occurred in the application.</value>
+  </data>
+  <data name="ERR_LICENSE" xml:space="preserve">
+    <value>To execute the application, the license file is needed. </value>
+  </data>
+  <data name="ERR_LIMITREACHED" xml:space="preserve">
+    <value>You do not have sufficient resources to execute the job.</value>
+  </data>
+  <data name="ERR_OCCURRED" xml:space="preserve">
+    <value>An error is occurred.</value>
+  </data>
+  <data name="ERR_ORIGINALNOTDETECTED" xml:space="preserve">
+    <value>Original document is not detected. Please set the document and try again.</value>
+  </data>
+  <data name="ERR_PARAMS" xml:space="preserve">
+    <value>An invalid parameter was set.</value>
+  </data>
+  <data name="ERR_REBOOT" xml:space="preserve">
+    <value>Please Reboot.</value>
+  </data>
+  <data name="ERR_RESOURCENOTFOUND" xml:space="preserve">
+    <value>Fatal error has occurred in the application.</value>
+  </data>
+  <data name="ERR_RESOURCENOTFOUND_CANCEL" xml:space="preserve">
+    <value>The job cannot be canceled.</value>
+  </data>
+  <data name="ERR_RETRY" xml:space="preserve">
+    <value>Please Retry.</value>
+  </data>
+  <data name="ERR_VKEYISNOTVALID" xml:space="preserve">
+    <value>Please deploy the valid license file and try again.</value>
+  </data>
+  <data name="ERR_AJAX" xml:space="preserve">
+    <value>Fatal error has occurred.</value>
+  </data>
+  <data name="EXPOSURE_MODE_LIGHT_ORIGINAL" xml:space="preserve">
+    <value>Light Original</value>
+  </data>
+  <data name="EXPOSURE_MODE_MAP" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="EXPOSURE_MODE_PHOTO" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="EXPOSURE_MODE_PRINT_PHOTO" xml:space="preserve">
+    <value>Printed Photo</value>
+  </data>
+  <data name="EXPOSURE_MODE_STRING" xml:space="preserve">
+    <value>Original Image Type</value>
+  </data>
+  <data name="EXPOSURE_MODE_TEXT" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="EXPOSURE_MODE_TEXT_PHOTO" xml:space="preserve">
+    <value>Text / Photo</value>
+  </data>
+  <data name="EXPOSURE_MODE_TEXT_PRINT_PHOTO" xml:space="preserve">
+    <value>Text / Prtd. Photo</value>
+  </data>
+  <data name="FEEDER_RESOLUTION_600x300" xml:space="preserve">
+    <value>600x300dpi</value>
+  </data>
+  <data name="FEEDER_RESOLUTION_600x400" xml:space="preserve">
+    <value>600x400dpi</value>
+  </data>
+  <data name="FEEDER_RESOLUTION_600x600" xml:space="preserve">
+    <value>600x600dpi</value>
+  </data>
+  <data name="FEEDER_RESOLUTION_STRING" xml:space="preserve">
+    <value>Document Feeder</value>
+  </data>
+  <data name="FEEDER_RESOLUTION_STRING_MAIN" xml:space="preserve">
+    <value>Feeder:</value>
+  </data>
+  <data name="INPUT_TRAY_AUTO" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="INPUT_TRAY_BYPASS" xml:space="preserve">
+    <value>Bypass</value>
+  </data>
+  <data name="INPUT_TRAY_LCC" xml:space="preserve">
+    <value>Tray5</value>
+  </data>
+  <data name="INPUT_TRAY_LCC2" xml:space="preserve">
+    <value>Tray6</value>
+  </data>
+  <data name="INPUT_TRAY_LCC3" xml:space="preserve">
+    <value>Tray7</value>
+  </data>
+  <data name="INPUT_TRAY_LCC4" xml:space="preserve">
+    <value>Tray8</value>
+  </data>
+  <data name="INPUT_TRAY_STRING" xml:space="preserve">
+    <value>InputTray:</value>
+  </data>
+  <data name="INPUT_TRAY_TRAY1" xml:space="preserve">
+    <value>Tray1</value>
+  </data>
+  <data name="INPUT_TRAY_TRAY2" xml:space="preserve">
+    <value>Tray2</value>
+  </data>
+  <data name="INPUT_TRAY_TRAY3" xml:space="preserve">
+    <value>Tray3</value>
+  </data>
+  <data name="INPUT_TRAY_TRAY3_R" xml:space="preserve">
+    <value>Tray4</value>
+  </data>
+  <data name="INPUT_TRAY_TRAY4" xml:space="preserve">
+    <value>Tray4</value>
+  </data>
+  <data name="INPUT_TRAY_TRAY5" xml:space="preserve">
+    <value>Tray5</value>
+  </data>
+  <data name="OUTPUT_TRAY_STRING" xml:space="preserve">
+    <value>OutputTray:</value>
+  </data>
+  <data name="OUTPUT_TRAY_AUTO" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY1" xml:space="preserve">
+    <value>Center Tray</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY2" xml:space="preserve">
+    <value>Right Tray</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY3" xml:space="preserve">
+    <value>Offset Tray</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY4" xml:space="preserve">
+    <value>Offset Tray</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY5" xml:space="preserve">
+    <value>Saddle Stitch Tray</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY6" xml:space="preserve">
+    <value>OutTray6</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY7" xml:space="preserve">
+    <value>OutTray7</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY8" xml:space="preserve">
+    <value>OutTray8</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY9" xml:space="preserve">
+    <value>OutTray9</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY10" xml:space="preserve">
+    <value>OutTray10</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY11" xml:space="preserve">
+    <value>OutTray11</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY12" xml:space="preserve">
+    <value>OutTray12</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY13" xml:space="preserve">
+    <value>OutTray13</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY14" xml:space="preserve">
+    <value>OutTray14</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY15" xml:space="preserve">
+    <value>OutTray15</value>
+  </data>
+  <data name="MAIN_BTN_CANCEL" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="MAIN_BTN_COLOR_MODE" xml:space="preserve">
+    <value>Color Mode</value>
+  </data>
+  <data name="MAIN_BTN_EXPOSURE_MODE" xml:space="preserve">
+    <value>Exposure</value>
+  </data>
+  <data name="MAIN_BTN_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MAIN_BTN_ORIGINAL" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="MAIN_BTN_RESOLUTION" xml:space="preserve">
+    <value>Resolution</value>
+  </data>
+  <data name="MAIN_BTN_PROCESSING" xml:space="preserve">
+    <value>Finishing</value>
+  </data>
+  <data name="MAIN_BTN_FILING" xml:space="preserve">
+    <value>Filing</value>
+  </data>
+  <data name="MAIN_BTN_SPECIAL" xml:space="preserve">
+    <value>Special Modes</value>
+  </data>
+  <data name="MAIN_CHK_PREVIEW" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="MAIN_LST_TONER_SAVE" xml:space="preserve">
+    <value>Toner Save</value>
+  </data>
+  <data name="MAIN_LST_FOLD" xml:space="preserve">
+    <value>Saddle Fold</value>
+  </data>
+  <data name="MANUAL_STRING" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="MULTI_SHOT_BORDER_DOTTED" xml:space="preserve">
+    <value>Dotted</value>
+  </data>
+  <data name="MULTI_SHOT_BORDER_NONE" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="MULTI_SHOT_BORDER_SOLID" xml:space="preserve">
+    <value>Solid</value>
+  </data>
+  <data name="MULTI_SHOT_BORDER_STRING" xml:space="preserve">
+    <value>Border</value>
+  </data>
+  <data name="MULTI_SHOT_MODE_2UP" xml:space="preserve">
+    <value>2-UP</value>
+  </data>
+  <data name="MULTI_SHOT_MODE_4UP" xml:space="preserve">
+    <value>4-UP</value>
+  </data>
+  <data name="MULTI_SHOT_MODE_8UP" xml:space="preserve">
+    <value>8-UP</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_2UP_REVERSE_Z" xml:space="preserve">
+    <value>Right to Left</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_2UP_Z" xml:space="preserve">
+    <value>Left to Right</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_N" xml:space="preserve">
+    <value>Down, and Left</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_REVERSE_N" xml:space="preserve">
+    <value>Down, and Right</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_REVERSE_Z" xml:space="preserve">
+    <value>Left, and Down</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_STRING" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_Z" xml:space="preserve">
+    <value>Right, and Down</value>
+  </data>
+  <data name="ORIGINAL_SIZE_16K" xml:space="preserve">
+    <value>16K</value>
+  </data>
+  <data name="ORIGINAL_SIZE_16K_R" xml:space="preserve">
+    <value>16KR</value>
+  </data>
+  <data name="ORIGINAL_SIZE_8_1_2X13_1_2" xml:space="preserve">
+    <value>8x13</value>
+  </data>
+  <data name="ORIGINAL_SIZE_8_1_2X13_2_5" xml:space="preserve">
+    <value>8x13</value>
+  </data>
+  <data name="ORIGINAL_SIZE_8K" xml:space="preserve">
+    <value>8K</value>
+  </data>
+  <data name="ORIGINAL_SIZE_A3" xml:space="preserve">
+    <value>A3</value>
+  </data>
+  <data name="ORIGINAL_SIZE_A4" xml:space="preserve">
+    <value>A4</value>
+  </data>
+  <data name="ORIGINAL_SIZE_A4_R" xml:space="preserve">
+    <value>A4R</value>
+  </data>
+  <data name="ORIGINAL_SIZE_A5" xml:space="preserve">
+    <value>A5</value>
+  </data>
+  <data name="ORIGINAL_SIZE_A5_R" xml:space="preserve">
+    <value>A5R</value>
+  </data>
+  <data name="ORIGINAL_SIZE_AUTO" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="ORIGINAL_SIZE_B4" xml:space="preserve">
+    <value>B4</value>
+  </data>
+  <data name="ORIGINAL_SIZE_B5" xml:space="preserve">
+    <value>B5</value>
+  </data>
+  <data name="ORIGINAL_SIZE_B5_R" xml:space="preserve">
+    <value>B5R</value>
+  </data>
+  <data name="ORIGINAL_SIZE_FOOLSCAP" xml:space="preserve">
+    <value>8x13</value>
+  </data>
+  <data name="ORIGINAL_SIZE_INVOICE" xml:space="preserve">
+    <value>5x8</value>
+  </data>
+  <data name="ORIGINAL_SIZE_INVOICE_R" xml:space="preserve">
+    <value>5x8R</value>
+  </data>
+  <data name="ORIGINAL_SIZE_LEDGER" xml:space="preserve">
+    <value>11x17</value>
+  </data>
+  <data name="ORIGINAL_SIZE_LEGAL" xml:space="preserve">
+    <value>8x14</value>
+  </data>
+  <data name="ORIGINAL_SIZE_LETTER" xml:space="preserve">
+    <value>8x11</value>
+  </data>
+  <data name="ORIGINAL_SIZE_LETTER_R" xml:space="preserve">
+    <value>8x11R</value>
+  </data>
+  <data name="ORIGINAL_SIZE_MANUAL" xml:space="preserve">
+    <value>Direct Entry</value>
+  </data>
+  <data name="ORIGINAL_SOURCE_AUTO" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="ORIGINAL_SOURCE_FEEDER" xml:space="preserve">
+    <value>Feeder</value>
+  </data>
+  <data name="ORIGINAL_SOURCE_PLATEN" xml:space="preserve">
+    <value>Platen</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_CARD_10" xml:space="preserve">
+    <value>A4/Letter</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_CARD_16" xml:space="preserve">
+    <value>A3/Ledger</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_CARD_8" xml:space="preserve">
+    <value>A4/Letter</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_EL_4" xml:space="preserve">
+    <value>A4/Letter</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_EL_8" xml:space="preserve">
+    <value>A3/Ledger</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_PANORAMA_2" xml:space="preserve">
+    <value>A4/Letter</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_PANORAMA_4" xml:space="preserve">
+    <value>A3/Ledger</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_PHOTO_12" xml:space="preserve">
+    <value>A4/Letter</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_PHOTO_16" xml:space="preserve">
+    <value>A3/Ledger</value>
+  </data>
+  <data name="PLATEN_RESOLUTION_600x300" xml:space="preserve">
+    <value>600x300dpi</value>
+  </data>
+  <data name="PLATEN_RESOLUTION_600x400" xml:space="preserve">
+    <value>600x400dpi</value>
+  </data>
+  <data name="PLATEN_RESOLUTION_600x600" xml:space="preserve">
+    <value>600x600dpi</value>
+  </data>
+  <data name="PLATEN_RESOLUTION_STRING" xml:space="preserve">
+    <value>Document Glass</value>
+  </data>
+  <data name="PLATEN_RESOLUTION_STRING_MAIN" xml:space="preserve">
+    <value>Glass : </value>
+  </data>
+  <data name="STAPLE_SORT_STRING" xml:space="preserve">
+    <value>Staple Sort</value>
+  </data>
+  <data name="COLLATE_AUTO" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="COLLATE_SORT" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="COLLATE_GROUP" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="STAPLE_NONE" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="STAPLE_1STAPLE_BACK" xml:space="preserve">
+    <value>1 Staple Back</value>
+  </data>
+  <data name="STAPLE_1STAPLE_FRONT" xml:space="preserve">
+    <value>1 Staple Front</value>
+  </data>
+  <data name="STAPLE_2STAPLES" xml:space="preserve">
+    <value>2 Staples</value>
+  </data>
+  <data name="STAPLE_SADDLE_STITCH" xml:space="preserve">
+    <value>Saddle Stitch</value>
+  </data>
+  <data name="OFFSET_STRING" xml:space="preserve">
+    <value>Offset</value>
+  </data>
+  <data name="PUNCH_STRING" xml:space="preserve">
+    <value>Punch</value>
+  </data>
+  <data name="FILING_STRING" xml:space="preserve">
+    <value>Filing</value>
+  </data>
+  <data name="FILING_NONE" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="FILING_MAIN" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="FILING_QUICK" xml:space="preserve">
+    <value>Quick</value>
+  </data>
+  <data name="FILING_USER" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="FILE_PROPERTY_STRING" xml:space="preserve">
+    <value>File Attribute</value>
+  </data>
+  <data name="FILE_PROPERTY_0" xml:space="preserve">
+    <value>0:sharing</value>
+  </data>
+  <data name="FILE_PROPERTY_1" xml:space="preserve">
+    <value>1:protect</value>
+  </data>
+  <data name="FILE_PROPERTY_2" xml:space="preserve">
+    <value>2:confidential</value>
+  </data>
+  <data name="FILE_PASSWORD_STRING" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="FILE_NAME_STRING" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="PUBLIC_PDF_STRING" xml:space="preserve">
+    <value>Create PDF for PC Browsing</value>
+  </data>
+  <data name="ERR_PASSWD_EMPTY" xml:space="preserve">
+    <value>Please enter password.</value>
+  </data>
+  <data name="ERR_PASSWORD" xml:space="preserve">
+    <value>Please input an alphanumeric value from {0} to {1} digits as a password.</value>
+  </data>
+  <data name="SADDLE_STITCH_BINDING_STRING" xml:space="preserve">
+    <value>Saddle Stitch Direction</value>
+  </data>
+  <data name="SADDLE_STITCH_BINDING_NONE" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="SADDLE_STITCH_BINDING_LEFT" xml:space="preserve">
+    <value>Left Binding</value>
+  </data>
+  <data name="SADDLE_STITCH_BINDING_RIGHT" xml:space="preserve">
+    <value>Right Binding</value>
+  </data>
+  <data name="SADDLE_STITCH_ORIGINAL_STRING" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="SADDLE_STITCH_ORIGINAL_1SIDED" xml:space="preserve">
+    <value>1-Sided</value>
+  </data>
+  <data name="SADDLE_STITCH_ORIGINAL_2SIDED" xml:space="preserve">
+    <value>2-Sided</value>
+  </data>
+  <data name="COVER_STRING" xml:space="preserve">
+    <value>Cover Setting</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_STRING" xml:space="preserve">
+    <value>Paper Tray</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_TRAY1" xml:space="preserve">
+    <value>Tray1</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_TRAY2" xml:space="preserve">
+    <value>Tray2</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_TRAY3" xml:space="preserve">
+    <value>Tray3</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_TRAY4" xml:space="preserve">
+    <value>Tray4</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_TRAY5" xml:space="preserve">
+    <value>Tray5</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_BYPASS" xml:space="preserve">
+    <value>Bypass</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_LCC" xml:space="preserve">
+    <value>Lcc</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_LCC2" xml:space="preserve">
+    <value>Lcc2</value>
+  </data>
+  <data name="COVER_TO_COPY_STRING" xml:space="preserve">
+    <value>Make Copy on Conver (Duplex)</value>
+  </data>
+  <data name="PREVIEW_STRING" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="SCAN_STRING" xml:space="preserve">
+    <value>Scan:</value>
+  </data>
+  <data name="SPECIAL_MODE_CARD_SHOT" xml:space="preserve">
+    <value>Card Shot</value>
+  </data>
+  <data name="SPECIAL_MODE_ERASE" xml:space="preserve">
+    <value>Erase</value>
+  </data>
+  <data name="SPECIAL_MODE_JOB_BUILD" xml:space="preserve">
+    <value>Job Build</value>
+  </data>
+  <data name="SPECIAL_MODE_JOB_BUILD_MIXED_SOURCE" xml:space="preserve">
+    <value>Job Build (Mixed source)</value>
+  </data>
+  <data name="SPECIAL_MODE_MULTI_PAGE_ENLARGEMENT" xml:space="preserve">
+    <value>Multi Page Enlargement</value>
+  </data>
+  <data name="SPECIAL_MODE_MULTI_SHOT" xml:space="preserve">
+    <value>Multi Shot</value>
+  </data>
+  <data name="SPECIAL_MODE_NONE" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="SPECIAL_MODE_PHOTO_REPEAT" xml:space="preserve">
+    <value>Photo Repeat</value>
+  </data>
+  <data name="SPECIAL_MODE_PAMPHLET_COPY" xml:space="preserve">
+    <value>Pamphlet Copy</value>
+  </data>
+  <data name="STATUS_CANCELED" xml:space="preserve">
+    <value>Copy is canceled.</value>
+  </data>
+  <data name="STATUS_FINISHED" xml:space="preserve">
+    <value>Copy is completed.</value>
+  </data>
+  <data name="STATUS_QUEUED" xml:space="preserve">
+    <value>Job Stored.</value>
+  </data>
+  <data name="STATUS_STARTED" xml:space="preserve">
+    <value>Start copying.</value>
+  </data>
+  <data name="STATUS_SUSPENDED" xml:space="preserve">
+    <value>The maximum number of pages has been reached.</value>
+  </data>
+  <data name="TITLE_LABEL_COLOR_MODE" xml:space="preserve">
+    <value>Color Mode</value>
+  </data>
+  <data name="TITLE_LABEL_EXPOSURE" xml:space="preserve">
+    <value>Exposure</value>
+  </data>
+  <data name="TITLE_LABEL_MAIN" xml:space="preserve">
+    <value>Copy 复印演示</value>
+  </data>
+  <data name="TITLE_LABEL_ORIGINAL" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="TITLE_LABEL_ORIGINAL_INPUT_TRAY" xml:space="preserve">
+    <value>Input Tray</value>
+  </data>
+  <data name="TITLE_LABEL_ORIGINAL_OUTPUT_TRAY" xml:space="preserve">
+    <value>Output Tray</value>
+  </data>
+  <data name="TITLE_LABEL_ORIGINAL_SCAN" xml:space="preserve">
+    <value>Scan</value>
+  </data>
+  <data name="TITLE_LABEL_ORIGINAL_SIZE_MANUAL" xml:space="preserve">
+    <value>Direct Entry</value>
+  </data>
+  <data name="TITLE_LABEL_RESOLUTION" xml:space="preserve">
+    <value>Resolution</value>
+  </data>
+  <data name="TITLE_LABEL_PROCESSING" xml:space="preserve">
+    <value>Finishing</value>
+  </data>
+  <data name="TITLE_LABEL_FILING" xml:space="preserve">
+    <value>Document Filing</value>
+  </data>
+  <data name="TITLE_LABEL_SADDLE_STITCH" xml:space="preserve">
+    <value>Saddle Stitch</value>
+  </data>
+  <data name="TITLE_LABEL_SPECIAL_MODE" xml:space="preserve">
+    <value>Special Modes</value>
+  </data>
+  <data name="TITLE_LABEL_SPECIAL_MODE_ERASE" xml:space="preserve">
+    <value>Erase</value>
+  </data>
+  <data name="TITLE_LABEL_SPECIAL_MODE_MULTI_PAGE_ENLARGEMENT" xml:space="preserve">
+    <value>Multi Page Enlargement</value>
+  </data>
+  <data name="TITLE_LABEL_SPECIAL_MODE_MULTI_SHOT" xml:space="preserve">
+    <value>Multi Shot</value>
+  </data>
+  <data name="TITLE_LABEL_SPECIAL_MODE_PHOTO_REPEAT" xml:space="preserve">
+    <value>Photo Repeat</value>
+  </data>
+  <data name="TITLE_LABEL_STATUS" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TONER_SAVE_NONE" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="TONER_SAVE_MODE_1" xml:space="preserve">
+    <value>Toner Save 1</value>
+  </data>
+  <data name="TONER_SAVE_MODE_2" xml:space="preserve">
+    <value>Toner Save 2</value>
+  </data>
+  <data name="TONER_SAVE_MODE_3" xml:space="preserve">
+    <value>Toner Save 3</value>
+  </data>
+  <data name="FOLD_NONE" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="FOLD_SADDLE_INSIDE" xml:space="preserve">
+    <value>Inside</value>
+  </data>
+  <data name="FOLD_SADDLE_OUTSIDE" xml:space="preserve">
+    <value>Outside</value>
+  </data>
+  <data name="FOLD_SADDLE_INSIDE_MULTIPLE" xml:space="preserve">
+    <value>Multiple(Inside)</value>
+  </data>
+  <data name="FOLD_SADDLE_OUTSIDE_MULTIPLE" xml:space="preserve">
+    <value>Multiple(Outside)</value>
+  </data>
+  <data name="MAIN_BTN_BLACK_WHITE" xml:space="preserve">
+    <value>B/W</value>
+  </data>
+  <data name="MAIN_BTN_COLOR" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="MAIN_BTN_START" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="TITLE_LABEL_RATIO" xml:space="preserve">
+    <value>Ratio</value>
+  </data>
+  <data name="TITLE_LABEL_DOULBLE" xml:space="preserve">
+    <value>Double Copy</value>
+  </data>
+  <data name="MAIN_BTN_RATIO" xml:space="preserve">
+    <value>100%</value>
+  </data>
+</root>

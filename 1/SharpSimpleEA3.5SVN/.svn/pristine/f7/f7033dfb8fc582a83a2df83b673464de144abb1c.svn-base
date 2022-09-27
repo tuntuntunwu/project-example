@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtLogInformation" targetNamespace="http://tempuri.org/dtLogInformation.xsd" xmlns:mstns="http://tempuri.org/dtLogInformation.xsd" xmlns="http://tempuri.org/dtLogInformation.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="SimpleEAConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SimpleEAConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.SimpleEAConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LogInformationTableAdapter" GeneratorDataComponentClassName="LogInformationTableAdapter" Name="LogInformation" UserDataComponentName="LogInformationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SimpleEAConnectionString (Web.config)" DbObjectName="SimpleEA.dbo.LogInformation" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ID, Time, UserID, Jobuid, SerialNumber, MFPName, MFPModel, MFPIPAddress, 
+      Duplex, JobID, FunctionID, FileName, PageID, Number, ErrorCode, Status, 
+      DspNumber, DspPapeCount, PapeCount, CopyCount, SpendMoney, 
+      PriceDetailID
+FROM LogInformation</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="SerialNumber" DataSetColumn="SerialNumber" />
+              <Mapping SourceColumn="Jobuid" DataSetColumn="Jobuid" />
+              <Mapping SourceColumn="JobID" DataSetColumn="JobID" />
+              <Mapping SourceColumn="FunctionID" DataSetColumn="FunctionID" />
+              <Mapping SourceColumn="PageID" DataSetColumn="PageID" />
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Time" DataSetColumn="Time" />
+              <Mapping SourceColumn="MFPName" DataSetColumn="MFPName" />
+              <Mapping SourceColumn="FileName" DataSetColumn="FileName" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="ErrorCode" DataSetColumn="ErrorCode" />
+              <Mapping SourceColumn="MFPModel" DataSetColumn="MFPModel" />
+              <Mapping SourceColumn="MFPIPAddress" DataSetColumn="MFPIPAddress" />
+              <Mapping SourceColumn="Duplex" DataSetColumn="Duplex" />
+              <Mapping SourceColumn="DspNumber" DataSetColumn="DspNumber" />
+              <Mapping SourceColumn="DspPapeCount" DataSetColumn="DspPapeCount" />
+              <Mapping SourceColumn="PapeCount" DataSetColumn="PapeCount" />
+              <Mapping SourceColumn="CopyCount" DataSetColumn="CopyCount" />
+              <Mapping SourceColumn="SpendMoney" DataSetColumn="SpendMoney" />
+              <Mapping SourceColumn="PriceDetailID" DataSetColumn="PriceDetailID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="SimpleEAConnectionString (Web.config)" DbObjectName="SimpleEA.dbo.LogInformation" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByID" GetMethodModifier="Public" GetMethodName="GetDataByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByID" UserSourceName="GetDataByID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT CopyCount, DspNumber, DspPapeCount, Duplex, ErrorCode, FileName, FunctionID, ID, JobID, Jobuid, MFPIPAddress, MFPModel, MFPName, Number, PageID, PapeCount, PriceDetailID, SerialNumber, SpendMoney, Status, Time, UserID FROM LogInformation WHERE (ID = @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="SimpleEA.dbo.LogInformation" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="ID" Precision="0" ProviderType="Integer" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="SimpleEAConnectionString (Web.config)" DbObjectName="SimpleEA.dbo.LogInformation" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetLatestDate" GetMethodModifier="Public" GetMethodName="GetLatestDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetLatestDate" UserSourceName="GetLatestDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT CopyCount, DspNumber, DspPapeCount, Duplex, ErrorCode, FileName, FunctionID, ID, JobID, Jobuid, MFPIPAddress, MFPModel, MFPName, Number, PageID, PapeCount, PriceDetailID, SerialNumber, SpendMoney, Status, Time, UserID FROM LogInformation WHERE (UserID = @UserID) AND (SerialNumber = @SerialNumber) AND (Jobuid = @Jobuid) ORDER BY Time</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserID" ColumnName="UserID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="UserID" Precision="0" ProviderType="Integer" Scale="0" Size="4" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="SerialNumber" ColumnName="SerialNumber" DataSourceName="" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="SerialNumber" Precision="0" ProviderType="WChar" Scale="0" Size="10" SourceColumn="SerialNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Jobuid" ColumnName="Jobuid" DataSourceName="" DataTypeServer="nvarchar(25)" DbType="String" Direction="Input" ParameterName="Jobuid" Precision="0" ProviderType="WChar" Scale="0" Size="25" SourceColumn="Jobuid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="SimpleEAConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery" Modifier="Public" Name="ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ScalarQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT COUNT(1) AS Count
+FROM LogInformation
+WHERE (UserID = @UserID) AND (SerialNumber = @SerialNumber) AND (Jobuid = @Jobuid) AND (Status = @Status)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserID" ColumnName="UserID" DataSourceName="SimpleEA.dbo.LogInformation" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="UserID" Precision="0" ProviderType="Integer" Scale="0" Size="4" SourceColumn="UserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="SerialNumber" ColumnName="SerialNumber" DataSourceName="SimpleEA.dbo.LogInformation" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="SerialNumber" Precision="0" ProviderType="WChar" Scale="0" Size="10" SourceColumn="SerialNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Jobuid" ColumnName="Jobuid" DataSourceName="SimpleEA.dbo.LogInformation" DataTypeServer="nvarchar(25)" DbType="String" Direction="Input" ParameterName="Jobuid" Precision="0" ProviderType="WChar" Scale="0" Size="25" SourceColumn="Jobuid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Status" ColumnName="Status" DataSourceName="SimpleEA.dbo.LogInformation" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="Status" Precision="0" ProviderType="Integer" Scale="0" Size="4" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtLogInformation" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dtLogInformation" msprop:Generator_UserDSName="dtLogInformation">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LogInformation" msprop:Generator_TableClassName="LogInformationDataTable" msprop:Generator_TableVarName="tableLogInformation" msprop:Generator_TablePropName="LogInformation" msprop:Generator_RowDeletingName="LogInformationRowDeleting" msprop:Generator_UserTableName="LogInformation" msprop:Generator_RowChangingName="LogInformationRowChanging" msprop:Generator_RowEvHandlerName="LogInformationRowChangeEventHandler" msprop:Generator_RowDeletedName="LogInformationRowDeleted" msprop:Generator_RowEvArgName="LogInformationRowChangeEvent" msprop:Generator_RowChangedName="LogInformationRowChanged" msprop:Generator_RowClassName="LogInformationRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="UserID" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
+              <xs:element name="SerialNumber" msprop:Generator_ColumnVarNameInTable="columnSerialNumber" msprop:Generator_ColumnPropNameInRow="SerialNumber" msprop:Generator_ColumnPropNameInTable="SerialNumberColumn" msprop:Generator_UserColumnName="SerialNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Jobuid" msprop:Generator_ColumnVarNameInTable="columnJobuid" msprop:Generator_ColumnPropNameInRow="Jobuid" msprop:Generator_ColumnPropNameInTable="JobuidColumn" msprop:Generator_UserColumnName="Jobuid">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JobID" msprop:Generator_ColumnVarNameInTable="columnJobID" msprop:Generator_ColumnPropNameInRow="JobID" msprop:Generator_ColumnPropNameInTable="JobIDColumn" msprop:Generator_UserColumnName="JobID" type="xs:int" />
+              <xs:element name="FunctionID" msprop:Generator_ColumnVarNameInTable="columnFunctionID" msprop:Generator_ColumnPropNameInRow="FunctionID" msprop:Generator_ColumnPropNameInTable="FunctionIDColumn" msprop:Generator_UserColumnName="FunctionID" type="xs:int" minOccurs="0" />
+              <xs:element name="PageID" msprop:Generator_ColumnVarNameInTable="columnPageID" msprop:Generator_ColumnPropNameInRow="PageID" msprop:Generator_ColumnPropNameInTable="PageIDColumn" msprop:Generator_UserColumnName="PageID" type="xs:int" minOccurs="0" />
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:int" minOccurs="0" />
+              <xs:element name="Time" msprop:Generator_ColumnVarNameInTable="columnTime" msprop:Generator_ColumnPropNameInRow="Time" msprop:Generator_ColumnPropNameInTable="TimeColumn" msprop:Generator_UserColumnName="Time" type="xs:dateTime" />
+              <xs:element name="MFPName" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="MFPName" msprop:Generator_ColumnVarNameInTable="columnMFPName" msprop:Generator_ColumnPropNameInTable="MFPNameColumn" msprop:Generator_UserColumnName="MFPName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FileName" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="FileName" msprop:Generator_ColumnVarNameInTable="columnFileName" msprop:Generator_ColumnPropNameInTable="FileNameColumn" msprop:Generator_UserColumnName="FileName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:int" />
+              <xs:element name="ErrorCode" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ErrorCode" msprop:Generator_ColumnVarNameInTable="columnErrorCode" msprop:Generator_ColumnPropNameInTable="ErrorCodeColumn" msprop:Generator_UserColumnName="ErrorCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MFPModel" msprop:Generator_ColumnVarNameInTable="columnMFPModel" msprop:Generator_ColumnPropNameInRow="MFPModel" msprop:Generator_ColumnPropNameInTable="MFPModelColumn" msprop:Generator_UserColumnName="MFPModel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MFPIPAddress" msprop:Generator_ColumnVarNameInTable="columnMFPIPAddress" msprop:Generator_ColumnPropNameInRow="MFPIPAddress" msprop:Generator_ColumnPropNameInTable="MFPIPAddressColumn" msprop:Generator_UserColumnName="MFPIPAddress">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Duplex" msprop:Generator_ColumnVarNameInTable="columnDuplex" msprop:Generator_ColumnPropNameInRow="Duplex" msprop:Generator_ColumnPropNameInTable="DuplexColumn" msprop:Generator_UserColumnName="Duplex" type="xs:int" minOccurs="0" />
+              <xs:element name="DspNumber" msprop:Generator_ColumnVarNameInTable="columnDspNumber" msprop:Generator_ColumnPropNameInRow="DspNumber" msprop:Generator_ColumnPropNameInTable="DspNumberColumn" msprop:Generator_UserColumnName="DspNumber" type="xs:int" minOccurs="0" />
+              <xs:element name="DspPapeCount" msprop:Generator_ColumnVarNameInTable="columnDspPapeCount" msprop:Generator_ColumnPropNameInRow="DspPapeCount" msprop:Generator_ColumnPropNameInTable="DspPapeCountColumn" msprop:Generator_UserColumnName="DspPapeCount" type="xs:int" minOccurs="0" />
+              <xs:element name="PapeCount" msprop:Generator_ColumnVarNameInTable="columnPapeCount" msprop:Generator_ColumnPropNameInRow="PapeCount" msprop:Generator_ColumnPropNameInTable="PapeCountColumn" msprop:Generator_UserColumnName="PapeCount" type="xs:int" minOccurs="0" />
+              <xs:element name="CopyCount" msprop:Generator_ColumnVarNameInTable="columnCopyCount" msprop:Generator_ColumnPropNameInRow="CopyCount" msprop:Generator_ColumnPropNameInTable="CopyCountColumn" msprop:Generator_UserColumnName="CopyCount" type="xs:int" minOccurs="0" />
+              <xs:element name="SpendMoney" msprop:Generator_ColumnVarNameInTable="columnSpendMoney" msprop:Generator_ColumnPropNameInRow="SpendMoney" msprop:Generator_ColumnPropNameInTable="SpendMoneyColumn" msprop:Generator_UserColumnName="SpendMoney" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PriceDetailID" msprop:Generator_ColumnVarNameInTable="columnPriceDetailID" msprop:Generator_ColumnPropNameInRow="PriceDetailID" msprop:Generator_ColumnPropNameInTable="PriceDetailIDColumn" msprop:Generator_UserColumnName="PriceDetailID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LogInformation" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

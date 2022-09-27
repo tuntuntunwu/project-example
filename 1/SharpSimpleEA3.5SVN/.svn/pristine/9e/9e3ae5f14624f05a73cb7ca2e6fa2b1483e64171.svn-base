@@ -1,0 +1,4 @@
+UserName,LoginName,Password,ICCardID,PinCode,Email,GroupName,RestrictionName,ComeFrom
+用户1,登录名1,密码1,ICCardID1,PinCode1,Email1,组名1,配额1,0
+用户2,登录名1,密码1,ICCardID2,PinCode2,Email2,组名2,配额2,0
+

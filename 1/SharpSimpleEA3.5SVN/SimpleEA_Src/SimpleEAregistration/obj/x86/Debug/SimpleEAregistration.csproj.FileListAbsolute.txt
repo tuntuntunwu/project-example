@@ -1,0 +1,16 @@
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\bin\x86\Debug\SimpleEAregistration.exe.config
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\bin\x86\Debug\SimpleEAregistration.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\bin\x86\Debug\SimpleEAregistration.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\bin\x86\Debug\EnDeSecurity.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\bin\x86\Debug\ICSharpCode.SharpZipLib.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\bin\x86\Debug\itextsharp.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\bin\x86\Debug\Utility.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\bin\x86\Debug\EnDeSecurity.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\bin\x86\Debug\Utility.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\obj\x86\Debug\SimpleEAregistration.csprojResolveAssemblyReference.cache
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\obj\x86\Debug\SimpleEAregistration.frmFlash.resources
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\obj\x86\Debug\SimpleEAregistration.frmMain.resources
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\obj\x86\Debug\SimpleEAregistration.Properties.Resources.resources
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\obj\x86\Debug\SimpleEAregistration.csproj.GenerateResource.Cache
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\obj\x86\Debug\SimpleEAregistration.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAregistration\obj\x86\Debug\SimpleEAregistration.pdb

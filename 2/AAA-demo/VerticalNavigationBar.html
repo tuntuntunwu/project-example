@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    li a {
+        display: block;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #f1f1f1;
+        color: black;
+    }
+    li a:hover {
+        background-color: #333333;
+        color: white;
+    }
+    
+    .active {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .active:hover {
+        background-color: #4CAF00;
+    }
+    
+    nav {
+        width: 10%;
+        float: left;
+        position: sticky;
+        top: 10px;
+    }
+</style>
+
+</head>
+
+
+<body>
+    <nav>
+        <ul>
+            <li><a class="active" href="#home">主页</a></li>
+            <li><a href="#news">新闻</a></li>
+            <li><a href="#contact">联系</a></li>
+            <li><a href="#about">关于</a></li>
+        </ul>
+    </nav>
+</body>
+
+
+<script>
+document.querySelectorAll("li a").forEach(elt => {
+    elt.addEventListener('click', function() {
+        document.querySelectorAll(".active").forEach(elt => { elt.classList.remove('active'); });
+        this.classList.add('active');  // this === evt.target
+    });
+});
+</script>
+
+</html>

@@ -1,0 +1,7 @@
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\RawRecvServer\bin\Debug\FollowMEService.exe.config
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\RawRecvServer\bin\Debug\FollowMEService.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\RawRecvServer\bin\Debug\FollowMEService.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\RawRecvServer\obj\x86\Debug\FollowMEService.ProjectInstaller.resources
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\RawRecvServer\obj\x86\Debug\FollowMEService.csproj.GenerateResource.Cache
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\RawRecvServer\obj\x86\Debug\FollowMEService.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\RawRecvServer\obj\x86\Debug\FollowMEService.pdb

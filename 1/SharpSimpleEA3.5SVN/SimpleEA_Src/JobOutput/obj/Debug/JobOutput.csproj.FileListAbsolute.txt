@@ -1,0 +1,11 @@
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\JobOutput\bin\Debug\JobOutput.exe.config
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\JobOutput\bin\Debug\JobOutput.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\JobOutput\bin\Debug\JobOutput.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\JobOutput\bin\Debug\SimpleEACommon.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\JobOutput\bin\Debug\SimpleEACommon.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\JobOutput\obj\Debug\JobOutput.csprojResolveAssemblyReference.cache
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\JobOutput\obj\Debug\JobOutput.Main.resources
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\JobOutput\obj\Debug\JobOutput.Properties.Resources.resources
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\JobOutput\obj\Debug\JobOutput.csproj.GenerateResource.Cache
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\JobOutput\obj\Debug\JobOutput.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\JobOutput\obj\Debug\JobOutput.pdb

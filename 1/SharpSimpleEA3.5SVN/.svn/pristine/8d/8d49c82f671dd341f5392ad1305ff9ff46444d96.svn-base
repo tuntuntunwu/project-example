@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<configuration>
+  <appSettings>
+    <!-- Program Run Cycle  300000 millisecond = 5 second -->
+    <add key="RunCycle" value="60000"/>
+    <add key="CopyPDFFilepath" value="C:\SimpleEACopy\"/>
+    <add key="SimpleEAConnectionString" value="Data Source=(local)\SQLEXPRESS#;Initial Catalog=SimpleEA;Persist Security Info=True;User ID=sa;Password=chenygls@163.com;pooling=false;"/>
+  </appSettings>  
+<startup><supportedRuntime version="v2.0.50727"/></startup></configuration>

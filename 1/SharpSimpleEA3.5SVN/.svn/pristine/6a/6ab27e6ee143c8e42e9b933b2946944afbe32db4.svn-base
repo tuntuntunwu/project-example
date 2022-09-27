@@ -1,0 +1,203 @@
+html, body 
+{
+	 margin:0; padding:0;
+}
+
+
+body
+{
+	width:auto;
+	height:auto;
+}
+
+MFP_table
+{
+    width:100%;
+	height:200%;
+}
+.DetailsBG
+{
+    background-color:#DFDFDF;
+}
+
+.HR_line_New
+{
+	background-image:url('../Images/HR_line_New.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:bottom;
+}
+
+.Bottom_right_bg_Newupdated
+{
+	background-image:url('../Images/Bottom_right_bg_Newupdated.png');
+	background-position:left;
+}
+
+.Bottom_login_bg_new
+{
+	background-image:url('../Images/Bottom_login_bg_new.png');
+	background-position:right;
+}
+
+
+.SelectedTR
+{
+	background-color:#2b74f6;	
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+.UnselectedTR
+{
+	
+}
+
+
+/* END  add by Wei Changye 2012.03.09*/
+
+.bg 
+{
+	background-color:#3a3a3a;
+   
+}
+.HR_Line
+{
+	background-image:url('../Images_mfp/HR_Line.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+
+}
+.Header_bg
+{
+	background-image:url('../Images_mfp/Header_Bg.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+.Title_Font
+{
+	font-family:Verdana;
+	font-size:x-large;
+	color:#FFFFFF;
+	text-decoration:none;
+	font-weight:bold;
+
+}
+.IC_cardbg
+{
+	background-image:url('../Images_mfp/IC_cardbg.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	width:549px;
+	height:223px;
+
+}
+.IC_cardbg_showdow
+{
+	background-image:url('../Images_mfp/IC_cardbg_showdow1.png');
+	background-repeat:no-repeat;
+	background-position:top;
+	padding-top:1px;
+}
+.Login_div
+{
+	z-index:1;
+	position:static;
+	width:544px;
+	height:223px;
+	left:121px;
+}
+.Login_whiteFont
+{
+	font-family:Verdana;
+	font-size:larger;
+	color:#FFFFFF;
+	text-decoration:none;
+	font-weight:bold;
+}
+.Login_MsgFont
+{
+	font-family:Verdana;
+	font-size:larger;
+	color:#979797;
+	text-decoration:none;
+	font-weight:normal;
+}
+.Inputtextbox
+{
+	width:175px;
+	height:32px;
+	font-family:Verdana;
+	color:#c3c3c3;
+	font-size:small;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:center;
+	border:none;	
+	background-color:#FFFFFF;
+}
+.Error_Message
+{
+	background-image:url('../Images_mfp/Error_bg.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	font-size:small;
+	font-weight:normal;
+}
+
+.SharpLogo_Insidepage
+{
+	background-image:url('../Images/SharpLogo_Insidepage.png');
+	background-repeat:no-repeat;
+	width:109px;
+	height:33px;
+}
+
+.MFPVR_line 
+{
+    background-image:url('../Images_mfp/Dot_VR_line.png');
+	background-repeat:repeat-y;
+	background-position:left;
+}
+
+.MFPHR_Line
+{
+	background-image:url('../Images_mfp/Dot_HR_line.png');
+	background-repeat:repeat-x;
+}
+
+
+.Invalid_License
+{
+	background-image:url('../Images_mfp/mfp_frame.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	width:491px;
+	height:207px;
+
+}
+
+.Record_Card
+{
+	background-image:url('../Images_mfp/record_card.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	width:130px;
+	height:70px;
+
+}
+
+.Invalid_Licens
+{
+	background-image:url('../Images_mfp/Invalid_Licens.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	width:111px;
+	height:64px;
+
+}

@@ -1,0 +1,2 @@
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\CustomAction\obj\Debug\CustomAction.csprojResolveAssemblyReference.cache
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\CustomAction\obj\Debug\CustomAction.csproj.GenerateResource.Cache

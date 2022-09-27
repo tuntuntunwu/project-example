@@ -1,0 +1,308 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Model;
+using System.Data;
+using SimpleEACommon;
+using System.Web;
+using System.Configuration;
+using System.Data.SqlClient;
+
+
+namespace DAL
+{
+    public class DalSectionInfo : CommonDal
+    {
+        //SQLHelper sqlHelper = new SQLHelper();
+
+        protected SqlParameter[] CreateParamList(SectionInfoEntry beanitem)
+        {
+                SqlParameter[] ParamList ={
+                sqlHelper.CreateInParam("@SectionID",SqlDbType.NVarChar,32,beanitem.SectionID),
+                sqlHelper.CreateInParam("@SectionName",SqlDbType.NVarChar,100,beanitem.SectionName),
+                sqlHelper.CreateInParam("@ParentSectionID",SqlDbType.NVarChar,32,beanitem.ParentSectionID),
+                sqlHelper.CreateInParam("@Level",SqlDbType.Int,4,beanitem.ParentSectionID)
+               };
+            return ParamList;
+        }
+
+
+
+
+        protected SectionInfoEntry Bind(SqlDataReader rec)
+        {
+            SectionInfoEntry beanitem = new SectionInfoEntry();
+            beanitem.SectionID = ConvertObjToString(rec["SectionID"]);
+            beanitem.SectionName = ConvertObjToString(rec["SectionName"]);
+            beanitem.ParentSectionID = ConvertObjToString(rec["ParentSectionID"]);
+            beanitem.Level = ConvertObjToInt(rec["Lebel"]);
+            
+            rec.Close();
+
+            return beanitem;
+        }
+
+        protected SectionInfoEntry Bind(DataRow rec)
+         {
+             SectionInfoEntry beanitem = new SectionInfoEntry();
+             beanitem.SectionID = ConvertObjToString(rec["SectionID"]);
+             beanitem.SectionName = ConvertObjToString(rec["SectionName"]);
+             beanitem.ParentSectionID = ConvertObjToString(rec["ParentSectionID"]);
+             beanitem.Level = ConvertObjToInt(rec["Lebel"]);
+
+             return beanitem;
+
+         }
+
+
+
+
+        //添加
+         public int Add(SectionInfoEntry bean)
+        {
+  
+            try
+            {
+                StringBuilder sb = new StringBuilder("");
+                sb.Append("INSERT INTO SettingDisp (");
+                sb.Append("SectionID,");
+                sb.Append("SectionName,");
+                sb.Append("ParentSectionID,");
+                sb.Append("Lebel");
+                sb.Append(" )");
+                sb.Append("Values (");
+                sb.Append("@SectionID,");
+                sb.Append("@SectionName,");
+                sb.Append("@ParentSectionID,");
+                sb.Append("@Lebel");
+                sb.Append(")");
+
+                SqlParameter[] sqlParam = CreateParamList(bean);
+                return (sqlHelper.RunSQL(sb.ToString(), sqlParam));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+
+         public int Update(SectionInfoEntry bean)
+         {
+
+             try
+             {
+                 StringBuilder sb = new StringBuilder("");
+                 sb.Append("UPDATE SectionInfo SET ");
+                 sb.Append("SectionName=@SectionName,");
+                 sb.Append("ParentSectionID=@ParentSectionID, ");
+                 sb.Append("Lebel=@Lebel,");
+                 sb.Append("WHERE SectionID=@SectionID");
+
+                 SqlParameter[] sqlParam = CreateParamList(bean);
+                 return (sqlHelper.RunSQL(sb.ToString(), sqlParam));
+             }
+             catch (Exception ex)
+             {
+                 throw new Exception(ex.Message, ex);
+             }
+         }
+
+
+
+         /// <summary>
+         /// 根据主键的值删除某个记录，注意的是目前主键只支持int类型
+         /// </summary>
+         /// <param name="id"></param>
+         /// <returns>返回影响的记录数量 </returns>
+         public int Delete(string SectionID)
+         {
+             int ret;
+             SqlParameter[] ParamList ={ 
+                sqlHelper.CreateInParam("@SectionID",SqlDbType.NVarChar,32,SectionID)
+            };
+             try
+             {
+                 string sql = "delete from SectionInfo where SectionID =@SectionID";
+                 ret = sqlHelper.RunSQL(sql, ParamList);
+                 return ret;
+             }
+             catch (Exception ex)
+             {
+                 //ClassError.CreateErrorLog(ex.Message);
+                 throw new Exception(ex.Message, ex);
+             }
+         }
+
+
+         /// <summary>
+         /// 通过SectionID查一条数据
+         /// </summary>
+         /// <param name="sUserName"></param>
+         /// <returns></returns>
+         public SectionInfoEntry GetInfoByKey(string SectionID)
+         {
+             SectionInfoEntry entry = new SectionInfoEntry();
+             SqlParameter[] ParamList = { sqlHelper.CreateInParam("@SectionID", SqlDbType.NVarChar, 32, SectionID) };
+             try
+             {
+                 SqlDataReader rec;
+                 string sql = "select * from MFPInformation  where SectionID=@SectionID ";
+                 sqlHelper.RunSQL(sql, ParamList, out rec);
+                 if (rec.Read())
+                     entry = Bind(rec);
+                 return entry;
+
+             }
+             catch (Exception ex)
+             {
+                 //ClassError.CreateErrorLog(ex.Message);
+                 throw new Exception(ex.Message, ex);
+             }
+         }
+
+
+         /// <summary>
+         /// 通过SectionName查一条数据
+         /// </summary>
+         /// <param name="sUserName"></param>
+         /// <returns></returns>
+         public SectionInfoEntry GetInfoByName(string SectionName)
+         {
+             SectionInfoEntry entry = new SectionInfoEntry();
+             SqlParameter[] ParamList = { sqlHelper.CreateInParam("@SectionName", SqlDbType.NVarChar, 100, SectionName) };
+             try
+             {
+                 SqlDataReader rec;
+                 string sql = "select * from SectionInfo  where SectionName=@SectionName ";
+                 sqlHelper.RunSQL(sql, ParamList, out rec);
+                 if (rec.Read())
+                     entry = Bind(rec);
+                 return entry;
+
+             }
+             catch (Exception ex)
+             {
+                 //ClassError.CreateErrorLog(ex.Message);
+                 throw new Exception(ex.Message, ex);
+             }
+         }
+         /// <summary>
+         /// 检查集团是否存在
+         /// </summary>
+         /// <param name="sUserName"></param>
+         /// <returns></returns>
+
+         public bool CheckSectionIDExist(string SectionID)
+         {
+             string condition = "SectionID= '" + SectionID + "'";
+             return CheckExist(condition);
+         }
+         public bool CheckSectionNameExist(string SectionName)
+         {
+             string condition = "SectionName= '" + SectionName + "'";
+             return CheckExist(condition);
+         }
+
+         /// <summary>
+         /// MFP是否存在
+         /// </summary>
+         /// <param name="sUserName"></param>
+         /// <returns></returns>
+
+         public bool CheckExist(SectionInfoEntry bean)
+         {
+             string condition = "SectionID= '" + bean.SectionID + "'";
+             return CheckExist(condition);
+         }
+
+
+         /// <summary>
+         /// 根据输入的条件进行检测，注意条件是WHERE后面的部分
+         /// </summary>
+         /// <param name="condition"></param>
+         /// <returns></returns>
+         public bool CheckExist(string condition)
+         {
+             string sql;
+             if (condition.Length > 0)
+                 sql = "select count(*) from SectionInfo  where " + condition;
+             else
+                 sql = "select count(*) from SectionInfo";
+             try
+             {
+                 if (sqlHelper.RunSelectSQLToScalar(sql) > 0)  //RunSelectSQLToScalar为执行参数所带的sql语句
+                     return true;
+                 else
+                     return false;
+             }
+             catch (Exception)
+             {
+                 return true;
+             }
+
+         }
+
+         public List<SectionInfoEntry> getSectionInfo(int lebel)
+         {
+
+             StringBuilder sb = new StringBuilder("");
+             sb.Append("SELECT ");
+             sb.Append("  SectionID  ");
+             sb.Append(" ,SectionName ");
+             sb.Append(" ,ParentSectionID ");
+             sb.Append(" ,Lebel ");
+             sb.Append(" FROM SectionInfo ");
+             sb.Append(" where Lebel = '" + lebel.ToString() + "'");
+
+             SqlParameter[] ParamList = null;
+
+             String sql = sb.ToString();
+             DataSet ds = this.sqlHelper.GetDataSet(sql);
+             DataTable dt = new DataTable();
+             List<SectionInfoEntry> list = new List<SectionInfoEntry>();
+             if (ds != null)
+             {
+                 dt = ds.Tables[0];
+                 for (int i = 0; i < dt.Rows.Count; i++)
+                 {
+                     SectionInfoEntry bean = Bind(dt.Rows[i]);
+                     list.Add(bean);
+                 }
+             }
+             return list;
+         }
+         public List<SectionInfoEntry> getSubSectionInfo(string SectionID)
+         {
+
+             StringBuilder sb = new StringBuilder("");
+             sb.Append("SELECT ");
+             sb.Append("  SectionID  ");
+             sb.Append(" ,SectionName ");
+             sb.Append(" ,ParentSectionID ");
+             sb.Append(" ,Lebel ");
+             sb.Append(" FROM SectionInfo ");
+             sb.Append(" where ParentSectionID = '" + SectionID.ToString() + "'");
+
+             SqlParameter[] ParamList = null;
+
+             String sql = sb.ToString();
+             DataSet ds = this.sqlHelper.GetDataSet(sql);
+             DataTable dt = new DataTable();
+             List<SectionInfoEntry> list = new List<SectionInfoEntry>();
+             if (ds != null)
+             {
+                 dt = ds.Tables[0];
+                 for (int i = 0; i < dt.Rows.Count; i++)
+                 {
+                     SectionInfoEntry bean = Bind(dt.Rows[i]);
+                     list.Add(bean);
+                 }
+             }
+             return list;
+         }
+        
+         
+
+    }
+}

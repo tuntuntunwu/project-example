@@ -1,0 +1,13 @@
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\UserDataBackUp\bin\Debug\UserDataBackUp.exe.config
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\UserDataBackUp\bin\Debug\UserDataBackUp.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\UserDataBackUp\bin\Debug\UserDataBackUp.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\UserDataBackUp\bin\Debug\Middleware.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\UserDataBackUp\bin\Debug\SimpleEACommon.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\UserDataBackUp\bin\Debug\SimpleEACommon.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\UserDataBackUp\bin\Debug\Middleware.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\UserDataBackUp\obj\Debug\UserDataBackUp.csprojResolveAssemblyReference.cache
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\UserDataBackUp\obj\Debug\UserDataBackUp.Main.resources
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\UserDataBackUp\obj\Debug\UserDataBackUp.Properties.Resources.resources
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\UserDataBackUp\obj\Debug\UserDataBackUp.csproj.GenerateResource.Cache
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\UserDataBackUp\obj\Debug\UserDataBackUp.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\UserDataBackUp\obj\Debug\UserDataBackUp.pdb

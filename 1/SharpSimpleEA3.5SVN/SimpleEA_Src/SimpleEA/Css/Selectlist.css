@@ -1,0 +1,215 @@
+/* CSS Document */
+
+@charset "utf-8";
+/* CSS Document */
+
+.selectME ul{ /* remove unwanted focus outlines from links */
+	noFocusLine: expression(this.onFocus=this.blur())
+	outline: none;
+	}
+*.selectME:focus ul, *.selectME:focus .cornerstop{ 
+	outline: none; 
+	}
+
+div.clears, span.clears {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+#arrowImg {
+	background: transparent url('../Images/SelectList/arrow_down_6x3.gif')  no-repeat right center scroll;
+	width: 16px;
+	_width:13px;
+	height:20px;
+	_height: 18px;
+	z-index: 10000;
+
+	display: inline-block;
+	margin:0;
+	padding: 0;
+
+	
+}
+div.selectME a:hover {
+	color: red !important;
+}
+div.selectME div.cornerstop {
+	height: 3px;
+	margin: 0;
+	background: transparent url('../Images/SelectList/selecttopleft_3x3.gif') top left no-repeat;
+	padding: 0px 0px 0px 3px;
+}
+div.selectME div.cornerstop div {
+	height: 3px;
+	margin: 0;
+	background: transparent url('../Images/SelectList/selecttopright_3x3.gif') top right no-repeat;
+	padding: 0px 3px 0px 0px;
+}
+div.selectME div.cornerstop div div {
+	height: 3px;
+	margin: 0;
+	background: transparent url('../Images/SelectList/selecttop_100x3.gif') top right repeat-x;
+ *overflow: hidden;
+}
+div.selectME div.cornersbottom {
+	height: 3px;
+	margin:0;
+	background: transparent url('../Images/SelectList/selectbottomleft_3x3.gif') top left no-repeat;
+	padding: 0px 0px 0px 3px;
+}
+div.selectME div.cornersbottom div {
+	height: 3px;
+	margin: 0;
+	background: transparent url('../Images/SelectList/selectbottomright_3x3.gif') top right no-repeat;
+	padding: 0px 3px 0px 0px;
+}
+div.selectME div.cornersbottom div div {
+	height: 3px;
+	margin: 0;
+	background: transparent url('../Images/SelectList/selectbottom_100x3.gif') top right repeat-x;
+   *overflow: hidden;
+}
+div.selectME div.middle {
+	background: url('../Images/SelectList/selectleft_3x20.gif') top left no-repeat;
+	margin: 0;
+	padding: 0px 0px 0px 3px;
+}
+div.selectME div.middle div {
+	background: transparent url('../Images/SelectList/selectright_3x20.gif') top right no-repeat;
+	margin: 0;
+	padding: 0px 3px 0px 0px;
+}
+div.selectME div.middle div div {
+	padding: 0;
+	margin:0;
+	background: transparent url('../Images/SelectList/selectmiddle_235x20.gif') top right repeat-x;
+	
+
+	
+}
+
+
+div.selectME div.first {
+	display: block;
+	line-height: normal;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	position: static;
+
+	height: 18px;
+	
+
+
+ *margin-bottom: -1px;
+}
+div.selectME div.first span.selectME {
+	float: left;
+	display:block;
+	font: 8pt Arial;
+	line-height: 18px;
+	color: #8a8a8a;
+	border-right: 1px solid #d4d4d4;
+	left: 4px;
+	position: relative;
+	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	
+
+}
+
+
+
+div.selectME div.first a, div.selectME div.first a:visited {
+	display:block;
+	padding:0;
+}
+
+
+
+div.selectME ul {
+	list-style-type:none;
+	line-height: normal;
+	padding:0;
+	margin: 0 0 0 -3px;
+z-index: 103;
+
+	
+	position: absolute;
+	float: left;
+	clear: none;
+}
+
+
+
+div.selectME ul li {
+	display:none;
+	clear:left;
+	margin:0;
+	padding:0;
+	color: #8a8a8a;
+	text-align:left;
+	
+	background: transparent url('../Images/SelectList/selectopenbg_400x40.gif') repeat-x left top;
+	position: static;
+	float: left;
+z-index: 104;
+	
+}
+
+div.selectME ul li a, div.selectME ul li a:visited {
+	qwhite-space: nowrap;
+	font: 8pt Arial;
+	background: transparent url('../Images/SelectList/selectopenbgr_1x40.gif') no-repeat right top;
+	color:#8a8a8a;
+	text-decoration:none;
+	display:block;
+
+padding: 4px 8px 4px 8px;
+	margin: 0;
+	qbackground: Red;
+}
+
+div.selectME ul li a:hover {
+background: #e8e8e8;
+
+}
+
+
+
+div.selectME ul li:hover {
+	background: transparent url('../Images/SelectList/selectopenhoverbg_400x40.gif') repeat-x left top;
+}
+div.selectME ul li:hover a, div.selectME ul li:hover a:visited {
+	background: transparent url('../Images/SelectList/selectopenbgr_1x40.gif') no-repeat right top;
+}
+
+div.selectME ul li.first {
+	background: transparent url('../Images/SelectList/selectopenfirstbg_400x40.gif') repeat-x left top;
+}
+div.selectME ul li.first a:hover {
+	background: transparent url('../Images/SelectList/selectopenfirsthoverbg_400x40.gif') repeat-x left top;
+}
+
+div.selectME ul li.last {
+	margin: 0;
+
+	background: transparent url('../Images/SelectList/selectopenlastbg_400x40.gif') repeat-x left bottom;
+}
+div.selectME ul li.last a {
+	margin: 0;
+	
+	background: transparent url('../Images/SelectList/selectopenlastbgr_3x40.gif') no-repeat right bottom;
+}
+div.selectME ul li.last a span{
+	margin: 0;
+	background: transparent url('../Images/SelectList/selectopensepa_400x1.gif') repeat-x top left;
+}
+div.selectME ul li.last:hover {
+	background: transparent url('../Images/SelectList/selectopenlasthoverbg_400x40.gif') repeat-x left bottom;
+}
+div.selectME ul li.last:hover a {
+	background: transparent url('../Images/SelectList/selectopenlasthoverbgr_3x40.gif') no-repeat right bottom;
+}
+

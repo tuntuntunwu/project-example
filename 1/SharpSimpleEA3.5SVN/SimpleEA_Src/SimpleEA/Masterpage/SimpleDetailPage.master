@@ -1,0 +1,254 @@
+<%--
+// ==============================================================================
+// File Name           : SimpleEAMasterPage.master
+// Description         : MasterPage for SimpleEA
+// Author(s)           : Ji Jianxiong
+// Date created        : 2010.08.25
+// Date updated        : 2010.09.10
+//                       Build No: 1.0.3.2: UI Update.
+//                       2010.11.23
+//                       Ver.1.1 Update
+//                       2010.12.10
+//                       Ver.1.1 Update
+//                       2010.12.14
+//                       Ver.1.1 Update
+//                       2010.12.15
+//                       Ver.1.1 Update
+//                       2010.12.27
+//                       Html Standerd Modify
+//                       2011.03.21
+//                       Html Standerd Modify
+//                       2011.03.22
+//                       Html Standerd Modify
+// Last reviewed by    : 
+// Last date of review : 
+// Copyright           : (c) 2010, SHARP CORPORATION., All rights reserved.
+//                       All rights are reserved. Reproduction or transmission in whole or in part, in
+//                       any form or by an means, electronic, mechanical or otherwise, is prohibited
+//                       without the prior written consent of the copyright owner.
+
+// ==============================================================================
+--%>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SimpleDetailPage.master.cs"
+    Inherits="Masterpage_SimpleDetailPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <title>::Simple EA Application :: Login</title>
+    <link href="../Css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../Css/Selectlist.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/common.css" />
+    <!--[if IE 6]>
+		<link rel="stylesheet" href="../Css/IE.css" type="text/css" />
+	<![endif]-->
+
+    <script type="text/javascript" src="../JavaScript/jquery.min.js"></script>
+
+    <%--    <script type="text/javascript" src="../js/common.js"></script>
+--%>
+
+    <script src="../js/commonreport.js" type="text/javascript"></script>
+
+    <script language="javascript" type="text/javascript">
+// <!CDATA[
+    InitWindow(); 
+// ]]>
+    </script>
+
+</head>
+<body leftmargin="0" topmargin="0">
+    <form id="DetailPage" runat="server">
+        <div id="WhiteBoxbg" class="AttentionMSG" style="display: inline">
+            <!-- light box - show message -->
+            <table cellpadding="0" cellspacing="0" border="0" style="height: 175px; width: 400px;">
+                <tr>
+                    <td class="TableGrid_bg" style="height: 35px" align="left" valign="middle">
+                        &nbsp;::Simple EA Application :: 请稍候...
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 100px;" class="Black_Font_bold" align="center" valign="middle">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="center" valign="middle" style="width: 25%;">
+                                    <img alt="" src="../Images/Attention.png" /></td>
+                                <td align="left" valign="middle">
+                                    请不要关闭本页面，操作正在执行中，请稍候...</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Alert" style="height: 65px;" align="center" valign="middle">
+                    </td>
+                </tr>
+                <!-- End of the light box - show message -->
+            </table>
+        </div>
+        <div id="ErrorMessage" class="ErrorMSG" onkeydown="ErrorMessage_onkeydown();">
+            <!-- light box - show message -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width: 400px; height: 175px;">
+                <tr>
+                    <td class="ErrorMSG_tablebg" style="height: 35px;" align="left" valign="middle">
+                        &nbsp; <span id="ErrorMessagetitle">Message: Error Files</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 100px;" class="Black_Font_bold" align="center" valign="middle">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="center" valign="middle" style="width: 25%;">
+                                    <img alt="" src="../Images/Error_msg.png" /></td>
+                                <td align="left" valign="middle">
+                                    <span id="ErrorMessagebody">ERROR MESSAGE: OOps Error message</span></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="ErrorMessageButton" style="height: 65px;" align="center" valign="middle">
+                        <input type="button" id="ErrorMessageOK" class="Login_Button_bg" value="确定" onclick="close_Error();" />
+                    </td>
+                </tr>
+                <!-- End of the light box - show message -->
+            </table>
+        </div>
+        <div id="Lightbox" class="Lightboxbg  Light" style="display: inline">
+        </div>
+
+        <script type="text/javascript" src="../js/Min_checkbox_report.js"></script>
+
+        <script language="javascript" type="text/javascript">Showbox();</script>
+
+        <script language="javascript" type="text/javascript">bgLoad();</script>
+
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="float: none;">
+            <tr>
+                <td style="height: 40px;" align="left" valign="top" class="TitleFont">
+                    <asp:Label ID="lblTitle" runat="server" Text="标题"></asp:Label></td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" style="height: 2px" class="HR_Line">
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" style="height: 60px;">
+                    <asp:Table ID="tblHeadPeriod" runat="server" CellPadding="0" CellSpacing="0" Height="60px">
+                        <asp:TableRow runat="server" ID="tblHeadTarget" Visible="false" CssClass="Light_GrayFont">
+                            <asp:TableHeaderCell ID="thcTarget" runat="server" CssClass="Normalfont_black" Height="40px"
+                                HorizontalAlign="Right" VerticalAlign="Middle" Width="117px"></asp:TableHeaderCell>
+                            <asp:TableHeaderCell Width="1%">&nbsp;</asp:TableHeaderCell>
+                            <asp:TableCell ID="tbcTargetObj" runat="server" CssClass="WhiteFont Automatic_Wrap"
+                                HorizontalAlign="Left" VerticalAlign="Middle" Width="80%" Wrap="true"></asp:TableCell>
+                            <asp:TableCell runat="server" CssClass="WhiteFont" >&nbsp;</asp:TableCell>                 
+                        </asp:TableRow>
+                        <asp:TableRow runat="server" ID="tblMFPTarget" Visible="false" CssClass="Light_GrayFont">
+                            <asp:TableHeaderCell ID="thcMFP" runat="server" CssClass="Normalfont_black" Height="30px"
+                                HorizontalAlign="Right" VerticalAlign="Middle" Width="117px"></asp:TableHeaderCell>
+                            <asp:TableHeaderCell Width="1%">&nbsp;</asp:TableHeaderCell>
+                            <asp:TableCell ID="tbcMFPObj" runat="server" CssClass="WhiteFont" HorizontalAlign="Left"
+                                VerticalAlign="Middle" Width="351px"></asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow CssClass="Light_GrayFont">
+                            <asp:TableHeaderCell ID="tbcPeriodObj" CssClass="Normalfont_black" Height="40px"
+                                HorizontalAlign="Right" VerticalAlign="Middle" Width="14%">时间段</asp:TableHeaderCell>
+                            <asp:TableHeaderCell Width="1%">&nbsp;</asp:TableHeaderCell>
+                            <asp:TableCell runat="server" ID="tbcTargetPeriod" HorizontalAlign="Left" VerticalAlign="middle"
+                                Width="86%" CssClass="WhiteFont"></asp:TableCell>
+                            <asp:TableCell runat="server" ID="tbcCheakCellItem" HorizontalAlign="Left" VerticalAlign="middle"
+                                Width="500px" Visible="false">
+                                <table style="border-collapse: collapse; height: 40px" id="ctl00_tblHeadPeriod" border="0">
+                                    <tr>
+                                        <td style="width: 100px" class="Normalfont_black" valign="middle" align="right">
+                                            显示项目</td>
+                                        <td style="width: 30px;" class="Checkbox_box" valign="middle" align="center">
+                                            <asp:CheckBox ID="chkCopy" runat="server" CssClass="Min_check" AutoPostBack="true" />
+                                        </td>
+                                        <th class="WhiteFont" valign="middle" align="left">
+                                            复印</th>
+                                        <td style="width: 30px;" class="Checkbox_box" valign="middle" align="center">
+                                            <asp:CheckBox ID="chkPrint" runat="server" CssClass="Min_check" AutoPostBack="true" />
+                                        </td>
+                                        <th class="WhiteFont" valign="middle" align="left">
+                                            打印</th>
+                                        <td style="width: 30px;" class="Checkbox_box" valign="middle" align="center">
+                                            <asp:CheckBox ID="chkScan" runat="server" CssClass="Min_check" AutoPostBack="true" />
+                                        </td>
+                                        <th class="WhiteFont" valign="middle" align="left">
+                                            扫描</th>
+                                        <td style="width: 30px;" class="Checkbox_box" valign="middle" align="center">
+                                            <asp:CheckBox ID="chkFax" runat="server" CssClass="Min_check" AutoPostBack="true" />
+                                        </td>
+                                        <th class="WhiteFont" valign="middle" align="left">
+                                            传真</th>
+                                        <td style="width: 30px;" class="Checkbox_box" valign="middle" align="center">
+                                            <asp:CheckBox ID="chkOther" runat="server" CssClass="Min_check" AutoPostBack="true" />
+                                        </td>
+                                        <th class="WhiteFont" valign="middle" align="left">
+                                            其他操作</th>
+                                    </tr>
+                                </table>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="top" style="height: 2px;" class="HR_Line_copyright">
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="top" style="height: 5px;">
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="middle" style="height: 288px;">
+                    <asp:ContentPlaceHolder ID="cphbody" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="middle" style="height: 57px;">
+                    &nbsp;<asp:ContentPlaceHolder ID="cphfoot" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="middle" style="height: 40px;" class="WhiteFont">
+                    <asp:Label ID="lblAnnotation1" runat="server" Text="(备注)上表统计的数量是指：印刷的数量或者是送信的数量。"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="middle" style="height: 40px;" class="WhiteFont">
+                    <asp:Label ID="lblAnnotation2" runat="server" Visible="false" Text=""></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="middle" style="height: 45px;">
+                    &nbsp;
+                    <input type="button" id="Button1" class="Button_Medium" value="关闭" onclick="btnClose_Click()" />
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" style="height: 10px;">
+                </td>
+            </tr>
+        </table>
+        </div>
+    </form>
+
+    <script src="../js/commonreport.js" type="text/javascript"></script>
+
+    <script language="javascript" type="text/javascript">        
+        $(document).ready(function(){
+            Close_light();
+        });
+    </script>
+
+</body>
+</html>

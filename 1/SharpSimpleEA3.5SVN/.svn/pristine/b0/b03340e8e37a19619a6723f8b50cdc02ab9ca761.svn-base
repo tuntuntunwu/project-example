@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<configuration>
+  <appSettings>
+    <!-- Program Run Cycle  300000 millisecond = 5 second -->
+    <add key="RunCycle" value="60000"/>
+    <add key="SimpleEAConnectionString" value="Data Source=(local)\SQLEXPRESS;Initial Catalog=SimpleEA;Persist Security Info=True;User ID=admin;Password=admin;pooling=false;"/>
+  </appSettings>  
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/></startup></configuration>

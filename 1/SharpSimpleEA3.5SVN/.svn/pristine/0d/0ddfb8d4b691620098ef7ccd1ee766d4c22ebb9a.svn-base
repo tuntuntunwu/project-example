@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SimpleEAregistration">
+</Property><Property Name="解决方案文件" Value="C:\Users\gke100716\Documents\SimpleEAregistration\SimpleEAregistration.sln">
+</Property><Property Name="Date" Value="2014年9月25日">
+</Property><Property Name="Time" Value="11:29">
+</Property></Properties><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\SimpleEAregistration.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="SimpleEAregistration" Source="SimpleEAregistration\SimpleEAregistration.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="EnDeSecurity" Source="EnDeSecurity\EnDeSecurity.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="EnDeSecurity" Source="EnDeSecurity\EnDeSecurity.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Utility" Source="Utility\Utility.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="Utility" Source="Utility\Utility.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="SimpleEAregistration.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="SimpleEAregistration.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\SimpleEAregistration.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event><Event ErrorLevel="0" Project="EnDeSecurity" Source="EnDeSecurity\EnDeSecurity.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event><Event ErrorLevel="0" Project="Utility" Source="Utility\Utility.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>

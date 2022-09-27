@@ -1,0 +1,616 @@
+<%--
+// ==============================================================================
+// File Name           : SimpleEAMasterPage.master
+// Description         : MasterPage for SimpleEA
+// Author(s)           : Ji Jianxiong
+// Date created        : 2010.08.18
+// Date updated        : 2010.09.10
+//                       Build No: 1.0.3.2: UI Update.
+//                       2010.12.3
+//                       Ver.1.1 Update.
+//                       2010.12.17
+//                       Ver.1.1 Update.
+//                       2010.12.27
+//                       Html Standerd Modify
+//                       2011.01.05
+//                       Html Standerd Modify
+//                       2011.01.07
+//                       Html Standerd Modify
+//                       2011.03.21
+//                       Html Standerd Modify
+// Last reviewed by    : 
+// Last date of review : 
+// Copyright           : (c) 2010, SHARP CORPORATION., All rights reserved.
+//                       All rights are reserved. Reproduction or transmission in whole or in part, in
+//                       any form or by an means, electronic, mechanical or otherwise, is prohibited
+//                       without the prior written consent of the copyright owner.
+
+// ==============================================================================
+--%>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SimpleEAMasterPage.master.cs"
+    Inherits="Masterpage_SimpleEAMasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+    <title>::Simple EA Application :: Login</title>
+    <link href="../Css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../Css/Selectlist.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/MutileSelectlist.css" />
+    <!--[if IE 6]>
+		<link rel="stylesheet" href="../Css/IE.css" type="text/css" />
+		
+   <![endif]-->
+    <%--2011.01.06 Add By SES zhoumiao Ver.1.1 Update ST--%>
+
+    <script language="javascript" src="../Js/common.js" type="text/javascript"></script>
+
+    <script type="text/javascript"> 	  
+      window.attachEvent("onresize", Page_Chang);
+    </script>
+
+    <%--// 2011.01.06 Add By SES zhoumiao Ver.1.1 Update ED--%>
+
+    <script type="text/javascript" src="../JavaScript/jquery.min.js"></script>
+
+    <%--    <script type="text/javascript" src="../js/Min_drop.js" charset="GB2312"></script>
+--%>
+
+    <script type="text/javascript" src="../js/Min_dropl.js" charset="GB2312"></script>
+
+    <script type="text/javascript"> 	  
+ /********************************************
+ * FUNCTION : Scroller Bar
+ * SUMMARY  : Scroller Bar Setting
+ * AUTHOR   : SES Ji JianXiong
+ * DATE     : 2010.11.23
+ * VERSION  : 1.10
+ *******************************************/
+window.onload = function()
+ {
+    var doc = document;
+    if ( doc.getElementById("Scroller-1") ) 
+    {
+        loadScriptScroller(function () 
+        {
+            var scroller = null;
+            var scrollbar = null;
+            scroller = new jsScroller(doc.getElementById("Scroller-1"), 400, 390);
+            scrollbar = new jsScrollbar(doc.getElementById("Scrollbar-Container"), scroller, false);
+            scroller = null;
+            scrollbar = null;
+        });
+    }
+
+    
+}
+
+    </script>
+
+</head>
+<body leftmargin="0" topmargin="0">
+    <form id="frmMain" runat="server">
+
+        <script language="javascript" type="text/javascript">bgLoad();</script>
+
+        <div id="WhiteBoxbg" class="AttentionMSG">
+            <!-- light box - show message -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width: 400px; height: 175px;">
+                <tr>
+                    <td class="AttentionMSG_tablebg" style="height: 35px;" align="left" valign="middle">
+                        &nbsp;::Simple EA Application :: 请稍候...
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 100px;" class="Black_Font_bold" align="center" valign="middle">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="center" valign="middle" style="width: 25%;">
+                                    <img alt="" src="../Images/Attention.png" style="border: 0;" /></td>
+                                <td align="left" valign="middle">
+                                    请不要关闭本页面，操作正在执行中，请稍候...</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Alert" style="height: 65px;" align="center" valign="middle">
+                    </td>
+                </tr>
+                <!-- End of the light box - show message -->
+            </table>
+        </div>
+        <div id="ErrorMessage" class="ErrorMSG" onkeydown="ErrorMessage_onkeydown();">
+            <!-- light box - show message -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width: 400px; height: 175px;">
+                <tr>
+                    <td class="ErrorMSG_tablebg" style="height: 35px;" align="left" valign="middle">
+                        &nbsp; <span id="ErrorMessagetitle">Message: Error Files</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 100px;" class="Black_Font_bold" align="center" valign="middle">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="center" valign="middle" style="width: 25%;">
+                                    <img alt="" src="../Images/Error_msg.png" style="border: 0;" /></td>
+                                <td align="left" valign="middle">
+                                    <span id="ErrorMessagebody">ERROR MESSAGE: OOps Error message</span></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="ErrorMessageButton" style="height: 65px" align="center" valign="middle">
+                        <input type="button" id="ErrorMessageOK" class="Login_Button_bg" value="确定" onclick="close_Error();" />
+                    </td>
+                </tr>
+                <!-- End of the light box - show message -->
+            </table>
+        </div>
+        <div id="AlertMessage" class="OKMSG" onkeydown="AlertMessage_onkeydown();">
+            <!-- light box - show message -->
+            <table cellpadding="0" cellspacing="0" border="0" style="width: 400px; height: 175px;">
+                <tr>
+                    <td class="OKMSG_tablebg" style="height: 35px;" align="left" valign="middle">
+                        &nbsp; <span id="AlertMessagetitle">Message: Successfully Add</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 100px;" class="Black_Font_bold" align="center" valign="middle">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="center" valign="middle" style="width: 25%;">
+                                    <img alt="" src="../Images/OK.png" style="border: 0;" /></td>
+                                <td align="left" valign="middle">
+                                    <span id="AlertMessagebody">OK MESSAGE: Successfully Add</span></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="Td2" style="height: 65px;" align="center" valign="middle">
+                        <input type="button" id="AlertMessageOK" class="Login_Button_bg" value="确定" onclick="close_Alert();" />
+                    </td>
+                </tr>
+                <!-- End of the light box - show message -->
+            </table>
+        </div>
+        <div id="ConfirmMessage" class="WarningnMSG" onkeydown="ConfirmMessage_onkeydown();">
+            <!-- light box - show message -->
+            <table cellpadding="0" cellspacing="0" style="border: 0; width: 400px; height: 175px;">
+                <tr>
+                    <td class="WarningnMSG_tablebg" style="height: 35px;" align="left" valign="middle">
+                        &nbsp;<span id="ConfirmMessagetitle"> Message: Attention Requied Filed</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 100px;" class="Black_Font_bold" align="center" valign="middle">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="center" valign="middle" style="width: 25%;">
+                                    <img alt="" src="../Images/warning.png" style="border: 0;" /></td>
+                                <td align="left" valign="middle">
+                                    <span id="ConfirmMessagebody">ATTENTION MESSAGE: ATTENTION Required Filed</span></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="tdConfirm" style="height: 65px;" align="center" valign="middle">
+                        <input type="button" id="ConfirmMessageOK" class="Login_Button_bg" value="确定" onclick="close_Confirm(true);" />
+                        <input type="button" id="ConfirmMessageCancel" class="Login_Button_bg" value="取消"
+                            onclick="close_Confirm(false);" />
+                    </td>
+                </tr>
+                <!-- End of the light box - show message -->
+            </table>
+        </div>
+        <div id="Lightbox" class="Lightboxbg">
+        </div>
+        <div id="LightWhiteboxbg" class="LightWhiteboxbg">
+        </div>
+
+        <script language="javascript" type="text/javascript">Showbox();</script>
+     
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="float: none;">
+            <tr>
+                <td style="height: 47px;" align="left" valign="top">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="height: 25px;">
+                        <tr>
+                            <td style="width: 80%;" align="left" valign="bottom" class="TitleFont">
+                                <!-- Application Logo -->
+                                <div class="IMG_1" style="width: 375px; height: 41px;">
+                                </div>
+                            </td>
+                            <% if (IsAdmin != 0 && IsAdmin != -1)
+                               { %>
+                            <td style="width: 10%;" align="left" valign="top">
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="Table_dataFont">
+                                    <tr>
+                                        <td style="width: 50%; height: 44px;" align="center" valign="middle">
+                                            <!-- Logout Image -->
+                                            <asp:LoginStatus ID="LoginStatusMFP" runat="server" Font-Bold="True" LoginText="登陆"
+                                                LogoutImageUrl="../Images/Logout.gif" OnLoggedOut="LoginStatusEA_OnLoggedOut"
+                                                EnableViewState="false" EnableTheming="false" Height="31px" Width="32px" BorderStyle="None"
+                                                ToolTip="注销" />
+                                        </td>
+                                        <td style="width: 6%;" align="center" valign="middle">
+                                            <img alt="|" src="../Images/Split_Fixed.png" style="width: 2px; height: 22px;" />
+                                        </td>
+                                        <td style="width: 44%;" align="center" valign="middle">
+                                            <!-- Help Image -->
+                                            <asp:ImageButton ID="ImageButton2" runat="server" AlternateText="帮助" Height="30px" ImageUrl="../Images/Help.png"
+                                                OnClick="openPDF_Click" ToolTip="帮助" Width="26px" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <%} else { %>
+                            <td style="width: 15%;" align="left" valign="top">
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="Table_dataFont">
+                                    <tr>
+                                        <td class="changepass"><a onclick="popShowPassword()" style="color:White">密码修改</a></td>
+                                        <td style="width: 50%; height: 44px;" align="center" valign="middle">
+                                            <!-- Logout Image -->
+                                            <asp:LoginStatus ID="LoginStatusEA" runat="server" Font-Bold="True" LoginText="登陆"
+                                                LogoutImageUrl="../Images/Logout.gif" OnLoggedOut="LoginStatusEA_OnLoggedOut"
+                                                EnableViewState="false" EnableTheming="false" Height="31px" Width="32px" BorderStyle="None"
+                                                ToolTip="注销" />
+                                        </td>
+                                        <td style="width: 6%;" align="center" valign="middle">
+                                            <img alt="|" src="../Images/Split_Fixed.png" style="width: 2px; height: 22px;" />
+                                        </td>
+                                        <td style="width: 44%;" align="center" valign="middle">
+                                            <!-- Help Image -->
+                                            <asp:ImageButton ID="ImageButton1" runat="server" AlternateText="帮助" Height="30px" ImageUrl="../Images/Help.png"
+                                                OnClick="openPDF_Click" ToolTip="帮助" Width="26px" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <%} %>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" style="height: 2px;" class="HR_Line">
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" style="height: 20px;">
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="top" style="height: 48px;">
+                <% if (IsAdmin != -1)  { %>
+                    <table width="97%" border="0" cellpadding="0" cellspacing="0" style="height: 42px;">
+                        <tr>
+                            <td style="width: 1%;" align="right" valign="middle">
+                            </td>
+                            <td style="width: 98%;" align="left" valign="middle" >
+
+                              <table style="width: 98%;"  border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td class="MenuCenter_bg">
+                                            <!-- Menu bar 1# -->
+                                        <table border="0" cellpadding="0" cellspacing="0"  style="height: 40px;" class="tablefixed"  width="100%" >
+                                        <tr>
+                                        <td class="MenuFont" style="width: 1px; background-position: right;">
+                                        </td>
+
+                                        <td id="titleUser" runat="server" style="width: 100px;" align="center" valign="middle"  class="Select_menu_bg">
+                                            <a href="../UserInfo/UserList.aspx" class="MenuFont_a" id="alinkUserList" runat="server">
+                                                用户管理</a>
+                                        </td>
+                                        <td class="MenuFont" style="width: 2px; background-position: right;">   </td>
+                                        <td id="titleGroup" runat="server" style="width: 100px;" align="center" valign="middle"  class="MenuFont">
+                                            <a href="~/GroupInfo/GroupList.aspx" class="MenuFont_a" id="alinkGrpList" runat="server">    用户组管理</a>
+                                        </td>
+                                        <td id="titleMfp" runat="server" style="width: 100px" align="center" valign="middle"  class="MenuFont">
+                                            <a href="~/MfpInfo/MFPRestrictionList.aspx" class="MenuFont_a" id="alinkMFPRes" runat="server">  MFP管理</a>
+                                        </td>
+                                        <td id="titlePrintTask" runat="server" style="width: 100px" align="center" valign="middle"  class="MenuFont">
+                                            <a href="~/PrintTask/PrintTaskList.aspx" class="MenuFont_a" id="a1" runat="server">  打印任务管理</a>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                        <!--End of the Menu bar 1# -->
+                                        </td>
+                                        <td style="width: 3%;">
+                                        </td>
+                                         <td class="MenuCenter_bg">
+                                  <!-- Menu bar 2# -->
+                                <table border="0" cellpadding="0" cellspacing="0"  style="height: 40px;" class="tablefixed"       width="100%" >
+                                    <tr>
+                                      <td id="Td3" runat="server" style="width: 1px;" align="center" valign="middle"
+                                            class="Select_menu_bg">
+                                            
+                                       <td id="titleReport" runat="server" style="width: 150px;" align="center" valign="middle"  class="MenuFont">
+                                            <a href="~/Report/UserJobReport.aspx" class="MenuFont_a" id="alinkJobReport" runat="server">
+                                                报表统计</a>
+                                        </td>
+                                        <td id="titleAvail" runat="server" style="width: 150px;" align="center" valign="middle"   class="MenuFont">
+                                            <a href="~/Report/AvailableReport.aspx" class="MenuFont_a" id="a1inkAvailable" runat="server">
+                                                用户余额管理</a>
+                                        </td>
+                                        <td id="titleLog" runat="server" style="width: 150px;" align="center" valign="middle"                  class="MenuFont">
+                                            <a href="~/Report/LogView.aspx" class="MenuFont_a" id="a1inkLog" runat="server">使用明细</a>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <!--End of the Menu bar 2# -->
+                                        </td>
+                                          <td style="width: 3%;">
+                                        </td>
+                                         <td class="MenuCenter_bg">
+                                         
+                                         <!-- Menu bar 3# -->
+                                         <table border="0" cellpadding="0" cellspacing="0"  style="height: 40px;"    width="100%" >
+                                    <tr>
+                                       
+                                         <td id="Td4" runat="server" style="width: 1px;" align="center" valign="middle"                                  class="Select_menu_bg">
+                                            
+                                       <td id="titleRes" runat="server" style="width: 150px;" align="center" valign="middle"                                       class="MenuFont">
+                                            <a href="~/RestrictionInfo/RestrictList.aspx" class="MenuFont_a" id="alinkResList"
+                                                runat="server">配额管理</a>
+                                        </td>
+                                           <td id="titlePrice" runat="server" style="width: 150px;" align="center" valign="middle"                                           class="MenuFont">
+                                            <a          href="~/PriceInfo/PriceList.aspx" class="MenuFont_a" id="alinkPrice"    runat="server">价格管理
+
+</a>
+                                        </td>
+
+                                        <td id="titleSet" runat="server" style="width: 150px;" align="center" valign="middle"                                           class="MenuFont">
+                                            <a href="~/Settings/Settings.aspx" class="MenuFont_a" id="alinkSet" runat="server">设定</a>
+                                        </td>
+                                     
+                                    </tr>
+                                </table>
+                                         <!--End of the Menu bar 3# -->
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </td>
+                          
+                        </tr>
+                    </table>
+                 <%} else { %>
+                       <table width="97%" border="0" cellpadding="0" cellspacing="0" style="height: 42px;">
+                        <tr>
+                            <td style="width: 1%;" align="right" valign="middle">
+                            <table style="width: 98%;"  border="0" cellpadding="0" cellspacing="0">
+                               <tr>
+                                 <td class="MenuCenter_bg">
+                                    <table border="0" cellpadding="0" cellspacing="0"  style="height: 40px;" class="tablefixed"       width="100%" >
+                                      <tr>
+                                        <td id="Td17" runat="server" style="width: 150px;" align="center" valign="middle" >
+                                        <a href="~/LogView/LogView.aspx" class="MenuFont_a" id="a13" runat="server">使用明细</a>
+                                        </td>
+                                       </tr>
+                                   </table>
+                                    </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>          
+                <%} %>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="top">
+                    <table width="97%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td align="left" valign="top">
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td style="height: 10px;" align="left" valign="top">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 1%;" align="left" valign="top">
+                                        </td>
+                                        <td style="width: 98%;" align="left" valign="top">
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td style="width: 1%;" align="right" valign="top">
+                                                        <div class="Login_left_IMG" style="width: 100%; height: 39px">
+                                                        </div>
+                                                    </td>
+                                                    <td style="width: 98%;" align="left" valign="top" class="Login_Topcenter">
+                                                        <!-- User Mangement Text -->
+                                                        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="height: 38px;">
+                                                            <tr>
+                                                                <td style="width: 3%;">
+                                                                    <div id="div_icon_type" runat="server" class="Icon_User_IMG" style="width: 32px;
+                                                                        height: 32px;">
+                                                                    </div>
+                                                                </td>
+                                                                <td style="width: 7%;">
+                                                                    &nbsp;<span id="lblTitle" runat="server"></span>
+                                                                </td>
+                                                                <td style="width: 1%;">
+                                                                    <asp:Image ImageUrl="../Images/Arrow_Next.gif" Width="7px" Height="13px" runat="server"
+                                                                        ID="imgSubTitle" Visible="false" />
+                                                                </td>
+                                                                <td style="width: 87%;" align="left" id="tdSubTitle" runat="server">
+                                                                    &nbsp;<asp:Label ID="lblSubTitle" runat="server" Visible="false" Text="子标题"></asp:Label>
+                                                                    <asp:ContentPlaceHolder
+                                                                        ID="cphreporttitle" runat="server" Visible="false">
+                                                                    </asp:ContentPlaceHolder>
+                                                                    <asp:Image ImageUrl="../Images/Arrow_Next.gif" Width="7px" Height="13px" runat="server"
+                                                                        ID="imgViceSubTitle" Visible="false" />
+                                                                        <asp:Label ID="lblViceSubTitle" runat="server" Visible="false" Text="子标题"></asp:Label>
+                                                                </td>
+                                                                <td align="right" class="thsearch" style="white-space: nowrap; width:50px" valign="middle">
+                                                                    <asp:Label ID="Search" runat="server" Text="搜索：" Visible="false" Width="90px"></asp:Label></td>
+                                                                <td style="white-space: nowrap; width: 100px;">
+                                                                    <asp:DropDownList ID="ddlSearchList" runat="server" CssClass="changeMe" ValidationGroup="None"
+                                                                        Visible="false" Width="100px">
+                                                                    </asp:DropDownList>
+                                                                </td>
+                                                                <td style="white-space: nowrap; width: 100px;">
+                                                                    <asp:TextBox ID="txtUserName" runat="server" CssClass="Inputtextbox SearchName" MaxLength="32"
+                                                                        Visible="false" Width="100px" ></asp:TextBox></td>
+                                                                <td style="white-space: nowrap;">
+                                                                    <asp:Button ID="btnSearch" runat="server" CssClass="Search_button" OnClientClick="if(!SearchOnClientClick()) return false;"
+                                                                        Text="查 询" Visible="false" /></td>
+                                                                <td>
+                                                                    <table runat="server" id="tblmust" cellpadding="0" cellspacing="0" style="height: 38px;
+                                                                        width: 100%; border: 0;" visible="false">
+                                                                        <tr>
+                                                                            <td align="right" valign="middle" class="Small_Font">
+                                                                                以 ''<img alt="" src="../Images/Req_star.png" width="5px" height="5px" />'' 标记的项目为必须输入项目。
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td style="width: 1%;" align="left" valign="top">
+                                                        <div class="Login_Right_IMG" style="width: 100%; height: 39px">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" valign="top" class="Login_left_bg">
+                                                    </td>
+                                                    <td align="left" valign="top" class="Login_centerbg">
+                                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                                <td align="left" valign="top">
+                                                                    <asp:ContentPlaceHolder ID="cphSmallbody" runat="server">
+                                                                    </asp:ContentPlaceHolder>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" style="height: 2px;">
+                                                                    <asp:ContentPlaceHolder ID="cphlisthead" runat="server">
+                                                                    </asp:ContentPlaceHolder>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top">
+                                                                    <asp:ContentPlaceHolder ID="cphbody" runat="server">
+                                                                    </asp:ContentPlaceHolder>
+                                                                    <!-- end of the Main table-->
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="height: 50px;" align="center" valign="middle">
+                                                                    <asp:ContentPlaceHolder ID="cphfoot" runat="server">
+                                                                    </asp:ContentPlaceHolder>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td align="left" valign="top" class="Login_right_bg">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right" valign="top">
+                                                        <div class="Login_bottom_left_IMG" style="width: 17px; height: 22px;">
+                                                        </div>
+                                                    </td>
+                                                    <td align="right" valign="top" class="Login_bottom_bg">
+                                                    </td>
+                                                    <td align="left" valign="top">
+                                                        <div class="Login_bottom_right_IMG" style="width: 17px; height: 22px">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="width: 1%;" align="left" valign="top">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" valign="top">
+                                        </td>
+                                        <td align="left" valign="top">
+                                            <!-- Login Box shadows effect -->
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td style="width: 3%; height: 55px;" align="left" valign="top" class="Login_left_shadow">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td style="width: 94%;" align="center" valign="middle" class="Login_bottom_shoadow">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td style="width: 3%;" align="left" valign="top" class="Login_right_shadows">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="height: 55px" align="left" valign="top">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!--End of the Login Box shadows effect -->
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" style="height: 2px;" class="HR_Line_copyright">
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" style="height: 40px;">
+                    <!-- Copy right Location -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="height: 40px;">
+                        <tr>
+                            <td style="width: 61%;" align="left" valign="middle" class="Copyright">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&copy; 夏普商贸（中国）有限公司
+                            </td>
+                            <td style="width: 39%;" align="right" valign="bottom" class="WhiteFont">
+                                <div class="SharpLogo_Insidepage" style="width: 109px; height: 33px;">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>  
+        </div>    
+     
+    </form>
+
+    <script language="javascript" src="../Js/commonfoot.js" type="text/javascript"></script>
+
+    <script language="javascript" type="text/javascript">
+       if ( window.attachEvent ) 
+       {            
+         document.forms[0].attachEvent("onsubmit" , onsubmitscreen);
+       }
+       else
+       {
+         document.forms[0].addEventListener("onsubmit",onsubmitscreen ,true);
+       }
+        if ( window.attachEvent)  { 
+            window.attachEvent("onload",function() {checkErrorInfo();});
+        }
+        else {
+            window.addEventListener("load",function() {checkErrorInfo();},true);
+        }
+
+        if ( window.attachEvent)  { 
+            window.attachEvent("onload",function() {Close_light();});
+        }
+        else {
+            window.addEventListener("load",function() {Close_light();},true);
+        }
+    </script>
+
+</body>
+</html>

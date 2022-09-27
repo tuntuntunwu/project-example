@@ -1,0 +1,13 @@
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAactivation\bin\Debug\SimpleEAactivation.exe.config
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAactivation\bin\Debug\SimpleEAactivation.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAactivation\bin\Debug\SimpleEAactivation.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAactivation\bin\Debug\EnDeSecurity.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAactivation\bin\Debug\Utility.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAactivation\bin\Debug\EnDeSecurity.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAactivation\bin\Debug\Utility.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAactivation\obj\Debug\SimpleEAactivation.csprojResolveAssemblyReference.cache
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAactivation\obj\Debug\SimpleEAactivation.frmActivation.resources
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAactivation\obj\Debug\SimpleEAactivation.Properties.Resources.resources
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAactivation\obj\Debug\SimpleEAactivation.csproj.GenerateResource.Cache
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAactivation\obj\Debug\SimpleEAactivation.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SimpleEAactivation\obj\Debug\SimpleEAactivation.pdb

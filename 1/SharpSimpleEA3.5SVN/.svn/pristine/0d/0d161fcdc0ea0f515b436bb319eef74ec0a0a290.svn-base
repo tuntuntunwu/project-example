@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SimpleEA">
+</Property><Property Name="解决方案文件" Value="G:\SimpleEA20140925\SimpleEA.sln">
+</Property><Property Name="Date" Value="2014年9月29日">
+</Property><Property Name="Time" Value="11:08:37">
+</Property><Property Name="日志号" Value="3">
+</Property></Properties><Event ErrorLevel="0" Project="EnDeSecurity" Source="EnDeSecurity\EnDeSecurity.csproj" Description="项目文件已成功备份为 G:\SimpleEA20140925\Backup1\EnDeSecurity.csproj">
+</Event><Event ErrorLevel="0" Project="EnDeSecurity" Source="EnDeSecurity\DecEncFile.cs" Description="文件已成功备份为 G:\SimpleEA20140925\Backup1\DecEncFile.cs">
+</Event><Event ErrorLevel="0" Project="EnDeSecurity" Source="EnDeSecurity\EnDeSecurity.cs" Description="文件已成功备份为 G:\SimpleEA20140925\Backup1\EnDeSecurity.cs">
+</Event><Event ErrorLevel="0" Project="EnDeSecurity" Source="EnDeSecurity\Properties\AssemblyInfo.cs" Description="文件已成功备份为 G:\SimpleEA20140925\Backup1\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="EnDeSecurity" Source="EnDeSecurity\EnDeSecurity.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="EnDeSecurity" Source="EnDeSecurity\EnDeSecurity.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="EnDeSecurity" Source="EnDeSecurity\EnDeSecurity.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>

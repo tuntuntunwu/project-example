@@ -1,0 +1,18 @@
+﻿<!--
+    You can find existing browser definitions at
+    <windir>\Microsoft.NET\Framework\<ver>\CONFIG\Browsers
+-->
+<browsers>
+  <browser id="NetFront34" parentID="IE">
+    <identification>
+      <userAgent match="\(MFP;.*\).*NetFront/(?'version'((?'major'\d+).(?'minor'\d+)))" />
+    </identification>
+    <capabilities>
+      <capability name="browser"            value="NetFront34" />
+      <capability name="version"            value="${version}" />
+      <capability name="javascript"         value="true" />
+      <capability name="ecmascriptversion"  value="1.3" />
+      <capability name="tagwriter" value="System.Web.UI.HtmlTextWriter" />
+    </capabilities>
+  </browser>
+</browsers>

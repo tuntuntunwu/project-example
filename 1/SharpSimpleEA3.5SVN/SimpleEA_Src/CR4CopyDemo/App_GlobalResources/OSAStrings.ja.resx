@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AUTO_STRING" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="BTN_DOWN" xml:space="preserve">
+    <value>▼</value>
+  </data>
+  <data name="BTN_UP" xml:space="preserve">
+    <value>▲</value>
+  </data>
+  <data name="COLOR_MODE_AUTO" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="COLOR_MODE_DUALCOLOR" xml:space="preserve">
+    <value>2色カラー</value>
+  </data>
+  <data name="COLOR_MODE_FULLCOLOR" xml:space="preserve">
+    <value>フルカラー</value>
+  </data>
+  <data name="COLOR_MODE_MONOCHROME" xml:space="preserve">
+    <value>白黒2値</value>
+  </data>
+  <data name="COLOR_MODE_SINGLECOLOR" xml:space="preserve">
+    <value>シングルカラー</value>
+  </data>
+  <data name="COLOR_MODE_STRING" xml:space="preserve">
+    <value>色種別</value>
+  </data>
+  <data name="COLOR_REPLACE_EXCEPT_BLACK" xml:space="preserve">
+    <value>黒以外</value>
+  </data>
+  <data name="COLOR_REPLACE_RED" xml:space="preserve">
+    <value>レッド</value>
+  </data>
+  <data name="COLOR_REPLACE_STRING" xml:space="preserve">
+    <value>色置換</value>
+  </data>
+  <data name="COLOR_SELECT_AQUAMARINE" xml:space="preserve">
+    <value>アクアマリン</value>
+  </data>
+  <data name="COLOR_SELECT_BEIGE" xml:space="preserve">
+    <value>ベージュ</value>
+  </data>
+  <data name="COLOR_SELECT_BLUE" xml:space="preserve">
+    <value>ブルー</value>
+  </data>
+  <data name="COLOR_SELECT_CYAN" xml:space="preserve">
+    <value>シアン</value>
+  </data>
+  <data name="COLOR_SELECT_GREEN" xml:space="preserve">
+    <value>グリーン</value>
+  </data>
+  <data name="COLOR_SELECT_LIGHTBLUE" xml:space="preserve">
+    <value>ライトブルー</value>
+  </data>
+  <data name="COLOR_SELECT_LIGHTGREEN" xml:space="preserve">
+    <value>ライトグリーン</value>
+  </data>
+  <data name="COLOR_SELECT_MAGENTA" xml:space="preserve">
+    <value>マゼンタ</value>
+  </data>
+  <data name="COLOR_SELECT_NAVY" xml:space="preserve">
+    <value>ネイビー</value>
+  </data>
+  <data name="COLOR_SELECT_ORANGE" xml:space="preserve">
+    <value>オレンジ</value>
+  </data>
+  <data name="COLOR_SELECT_PINK" xml:space="preserve">
+    <value>ピンク</value>
+  </data>
+  <data name="COLOR_SELECT_PURPLE" xml:space="preserve">
+    <value>パープル</value>
+  </data>
+  <data name="COLOR_SELECT_RED" xml:space="preserve">
+    <value>レッド</value>
+  </data>
+  <data name="COLOR_SELECT_STRING" xml:space="preserve">
+    <value>色選択</value>
+  </data>
+  <data name="COLOR_SELECT_YELLOW" xml:space="preserve">
+    <value>イエロー</value>
+  </data>
+  <data name="COLOR_SELECT_YELLOWGREEN" xml:space="preserve">
+    <value>イエローグリーン</value>
+  </data>
+  <data name="COPIES" xml:space="preserve">
+    <value>部数</value>
+  </data>
+  <data name="COPIES_ERROR_MESSAGE" xml:space="preserve">
+    <value>部数には {0}～{1} の数値を指定してください。</value>
+  </data>
+  <data name="COPY_ERROR_MESSAGE" xml:space="preserve">
+    <value>倍率には {0}～{1} の数値を指定してください。</value>
+  </data>
+  <data name="MANUAL_ERROR_MESSAGE" xml:space="preserve">
+    <value>{0}には {1}～{2} の数値を指定してください。</value>
+  </data>
+  <data name="COPY_RATIO" xml:space="preserve">
+    <value>倍率 : </value>
+  </data>
+  <data name="DUPLEX_BINDING_CHANGE_STRING" xml:space="preserve">
+    <value>両面コピー方向切替</value>
+  </data>
+  <data name="DUPLEX_MODE_DUPLEX_TO_DUPLEX" xml:space="preserve">
+    <value>両面→両面</value>
+  </data>
+  <data name="DUPLEX_MODE_DUPLEX_TO_SIMPLEX" xml:space="preserve">
+    <value>両面→片面</value>
+  </data>
+  <data name="DUPLEX_MODE_SIMPLEX_TO_DUPLEX" xml:space="preserve">
+    <value>片面→両面</value>
+  </data>
+  <data name="DUPLEX_MODE_SIMPLEX_TO_SIMPLEX" xml:space="preserve">
+    <value>片面→片面</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A3_A0" xml:space="preserve">
+    <value>A3 -&gt; A0</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A3_A0x2" xml:space="preserve">
+    <value>A3 -&gt; A0x2</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A3_A1" xml:space="preserve">
+    <value>A3 -&gt; A1</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A3_A2" xml:space="preserve">
+    <value>A3 -&gt; A2</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A4_A0" xml:space="preserve">
+    <value>A4 -&gt; A0</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A4_A1" xml:space="preserve">
+    <value>A4 -&gt; A1</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A4_A2" xml:space="preserve">
+    <value>A4 -&gt; A2</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A5_A1" xml:space="preserve">
+    <value>A5 -&gt; A1</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_A5_A2" xml:space="preserve">
+    <value>A5 -&gt; A2</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_B4_B1" xml:space="preserve">
+    <value>B4 -&gt; B1</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_B4_B2" xml:space="preserve">
+    <value>B4 -&gt; B2</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_B4_B3" xml:space="preserve">
+    <value>B4 -&gt; B3</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_B5_B1" xml:space="preserve">
+    <value>B5 -&gt; B1</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_B5_B2" xml:space="preserve">
+    <value>B5 -&gt; B2</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_B5_B3" xml:space="preserve">
+    <value>B5 -&gt; B3</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEDGER_22x17" xml:space="preserve">
+    <value>Ledger -&gt; 22x17</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEDGER_22x34" xml:space="preserve">
+    <value>Ledger -&gt; 22x34</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEDGER_34x44" xml:space="preserve">
+    <value>Ledger -&gt; 34x44</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEDGER_44x68" xml:space="preserve">
+    <value>Ledger -&gt; 44x68</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEGAL_22x17" xml:space="preserve">
+    <value>Legal -&gt; 22x17</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEGAL_22x34" xml:space="preserve">
+    <value>Legal -&gt; 22x34</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LEGAL_34x44" xml:space="preserve">
+    <value>Legal -&gt; 34x44</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LETTER_22x17" xml:space="preserve">
+    <value>Letter -&gt; 22x17</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LETTER_22x34" xml:space="preserve">
+    <value>Letter -&gt; 22x34</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_LETTER_34x44" xml:space="preserve">
+    <value>Letter -&gt; 34x44</value>
+  </data>
+  <data name="ENLARGEMENT_MODE_STRING" xml:space="preserve">
+    <value>原稿サイズ -&gt; 拡大サイズ</value>
+  </data>
+  <data name="ERASE_DUPLEX_MODE_OPPOSITE" xml:space="preserve">
+    <value>表面と反対側</value>
+  </data>
+  <data name="ERASE_DUPLEX_MODE_SAME" xml:space="preserve">
+    <value>表面と同じ側</value>
+  </data>
+  <data name="ERASE_MODE_CENTER" xml:space="preserve">
+    <value>センター消去</value>
+  </data>
+  <data name="ERASE_MODE_EDGE" xml:space="preserve">
+    <value>枠消去</value>
+  </data>
+  <data name="ERASE_MODE_EDGE_CENTER" xml:space="preserve">
+    <value>枠＋センター消去</value>
+  </data>
+  <data name="ERASE_MODE_SIDE" xml:space="preserve">
+    <value>指定辺消去</value>
+  </data>
+  <data name="ERASE_MODE_SIDE_CENTER" xml:space="preserve">
+    <value>指定辺＋センター消去</value>
+  </data>
+  <data name="ERR_ACCESS_FILE" xml:space="preserve">
+    <value>'{0}'ファイルへの書き込み権限がありません。</value>
+  </data>
+  <data name="ERR_ACCESS_FOLDER" xml:space="preserve">
+    <value>'{0}'フォルダーへの書き込み権限がありません。</value>
+  </data>
+  <data name="ERR_ACCESSDENIED" xml:space="preserve">
+    <value>ジョブの実行権限がありません。</value>
+  </data>
+  <data name="ERR_ACTIONNOTSUPPORTED" xml:space="preserve">
+    <value>この操作は、現在の設定ではサポートされていません。</value>
+  </data>
+  <data name="ERR_INITIALIZATION" xml:space="preserve">
+    <value>このMFPではアプリケーションを実行できません。</value>
+  </data>
+  <data name="ERR_ADMIN_CONTACT" xml:space="preserve">
+    <value>管理者に連絡してください。</value>
+  </data>
+  <data name="ERR_COPY" xml:space="preserve">
+    <value>コピーの開始に失敗しました。</value>
+  </data>
+  <data name="ERR_INVALIDARGS" xml:space="preserve">
+    <value>アプリケーションエラーが発生しました。</value>
+  </data>
+  <data name="ERR_LICENSE" xml:space="preserve">
+    <value>アプリケーションを実行するためには、ライセンスファイルが必要となります。</value>
+  </data>
+  <data name="ERR_LIMITREACHED" xml:space="preserve">
+    <value>使用枚数上限に到達しています。</value>
+  </data>
+  <data name="ERR_OCCURRED" xml:space="preserve">
+    <value>エラーが発生しました。</value>
+  </data>
+  <data name="ERR_ORIGINALNOTDETECTED" xml:space="preserve">
+    <value>原稿がセットされていません。原稿をセットしてください。</value>
+  </data>
+  <data name="ERR_PARAMS" xml:space="preserve">
+    <value>無効なパラメーターが設定されました。</value>
+  </data>
+  <data name="ERR_REBOOT" xml:space="preserve">
+    <value>再起動してください。</value>
+  </data>
+  <data name="ERR_RESOURCENOTFOUND" xml:space="preserve">
+    <value>アプリケーションエラーが発生しました。</value>
+  </data>
+  <data name="ERR_RESOURCENOTFOUND_CANCEL" xml:space="preserve">
+    <value>ジョブをキャンセルすることができませんでした。</value>
+  </data>
+  <data name="ERR_RETRY" xml:space="preserve">
+    <value>再度実行してください。</value>
+  </data>
+  <data name="ERR_VKEYISNOTVALID" xml:space="preserve">
+    <value>有効なライセンスキーを設定して、アプリケーションを再実行してください。</value>
+  </data>
+  <data name="ERR_AJAX" xml:space="preserve">
+    <value>エラーが発生しました。</value>
+  </data>
+  <data name="EXPOSURE_MODE_LIGHT_ORIGINAL" xml:space="preserve">
+    <value>淡い原稿</value>
+  </data>
+  <data name="EXPOSURE_MODE_MAP" xml:space="preserve">
+    <value>地図</value>
+  </data>
+  <data name="EXPOSURE_MODE_PHOTO" xml:space="preserve">
+    <value>印画紙写真</value>
+  </data>
+  <data name="EXPOSURE_MODE_PRINT_PHOTO" xml:space="preserve">
+    <value>印刷写真</value>
+  </data>
+  <data name="EXPOSURE_MODE_STRING" xml:space="preserve">
+    <value>原稿種類</value>
+  </data>
+  <data name="EXPOSURE_MODE_TEXT" xml:space="preserve">
+    <value>文字</value>
+  </data>
+  <data name="EXPOSURE_MODE_TEXT_PHOTO" xml:space="preserve">
+    <value>文字 / 印画紙写真</value>
+  </data>
+  <data name="EXPOSURE_MODE_TEXT_PRINT_PHOTO" xml:space="preserve">
+    <value>文字 / 印刷写真</value>
+  </data>
+  <data name="FEEDER_RESOLUTION_600x300" xml:space="preserve">
+    <value>600x300dpi</value>
+  </data>
+  <data name="FEEDER_RESOLUTION_600x400" xml:space="preserve">
+    <value>600x400dpi</value>
+  </data>
+  <data name="FEEDER_RESOLUTION_600x600" xml:space="preserve">
+    <value>600x600dpi</value>
+  </data>
+  <data name="FEEDER_RESOLUTION_STRING" xml:space="preserve">
+    <value>原稿送り装置</value>
+  </data>
+  <data name="FEEDER_RESOLUTION_STRING_MAIN" xml:space="preserve">
+    <value>原稿送り装置 :</value>
+  </data>
+  <data name="INPUT_TRAY_AUTO" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="INPUT_TRAY_BYPASS" xml:space="preserve">
+    <value>手差しトレイ</value>
+  </data>
+  <data name="INPUT_TRAY_LCC" xml:space="preserve">
+    <value>トレイ5</value>
+  </data>
+  <data name="INPUT_TRAY_LCC2" xml:space="preserve">
+    <value>トレイ6</value>
+  </data>
+  <data name="INPUT_TRAY_LCC3" xml:space="preserve">
+    <value>トレイ7</value>
+  </data>
+  <data name="INPUT_TRAY_LCC4" xml:space="preserve">
+    <value>トレイ8</value>
+  </data>
+  <data name="INPUT_TRAY_STRING" xml:space="preserve">
+    <value>給紙 :</value>
+  </data>
+  <data name="INPUT_TRAY_TRAY1" xml:space="preserve">
+    <value>トレイ1</value>
+  </data>
+  <data name="INPUT_TRAY_TRAY2" xml:space="preserve">
+    <value>トレイ2</value>
+  </data>
+  <data name="INPUT_TRAY_TRAY3" xml:space="preserve">
+    <value>トレイ3</value>
+  </data>
+  <data name="INPUT_TRAY_TRAY3_R" xml:space="preserve">
+    <value>トレイ4</value>
+  </data>
+  <data name="INPUT_TRAY_TRAY4" xml:space="preserve">
+    <value>トレイ4</value>
+  </data>
+  <data name="INPUT_TRAY_TRAY5" xml:space="preserve">
+    <value>トレイ5</value>
+  </data>
+  <data name="OUTPUT_TRAY_STRING" xml:space="preserve">
+    <value>排紙 :</value>
+  </data>
+  <data name="OUTPUT_TRAY_AUTO" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY1" xml:space="preserve">
+    <value>センタートレイ</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY2" xml:space="preserve">
+    <value>右トレイ</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY3" xml:space="preserve">
+    <value>オフセットトレイ</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY4" xml:space="preserve">
+    <value>オフセットトレイ</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY5" xml:space="preserve">
+    <value>サドルステッチトレイ</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY6" xml:space="preserve">
+    <value>トレイ6</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY7" xml:space="preserve">
+    <value>トレイ7</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY8" xml:space="preserve">
+    <value>トレイ8</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY9" xml:space="preserve">
+    <value>トレイ9</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY10" xml:space="preserve">
+    <value>トレイ10</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY11" xml:space="preserve">
+    <value>トレイ11</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY12" xml:space="preserve">
+    <value>トレイ12</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY13" xml:space="preserve">
+    <value>トレイ13</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY14" xml:space="preserve">
+    <value>トレイ14</value>
+  </data>
+  <data name="OUTPUT_TRAY_OUTTRAY15" xml:space="preserve">
+    <value>トレイ15</value>
+  </data>
+  <data name="MAIN_BTN_CANCEL" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="MAIN_BTN_COLOR_MODE" xml:space="preserve">
+    <value>カラーモード</value>
+  </data>
+  <data name="MAIN_BTN_EXPOSURE_MODE" xml:space="preserve">
+    <value>濃度</value>
+  </data>
+  <data name="MAIN_BTN_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MAIN_BTN_ORIGINAL" xml:space="preserve">
+    <value>原稿</value>
+  </data>
+  <data name="MAIN_BTN_RESOLUTION" xml:space="preserve">
+    <value>解像度</value>
+  </data>
+  <data name="MAIN_BTN_PROCESSING" xml:space="preserve">
+    <value>仕上げ</value>
+  </data>
+  <data name="MAIN_BTN_FILING" xml:space="preserve">
+    <value>ファイリング</value>
+  </data>
+  <data name="MAIN_BTN_SPECIAL" xml:space="preserve">
+    <value>特別機能</value>
+  </data>
+  <data name="MAIN_CHK_PREVIEW" xml:space="preserve">
+    <value>プレビュー確認</value>
+  </data>
+  <data name="MAIN_LST_TONER_SAVE" xml:space="preserve">
+    <value>トナーセーブ機能</value>
+  </data>
+  <data name="MAIN_LST_FOLD" xml:space="preserve">
+    <value>サドル折り</value>
+  </data>
+  <data name="MANUAL_STRING" xml:space="preserve">
+    <value>手動</value>
+  </data>
+  <data name="MULTI_SHOT_BORDER_DOTTED" xml:space="preserve">
+    <value>破線</value>
+  </data>
+  <data name="MULTI_SHOT_BORDER_NONE" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="MULTI_SHOT_BORDER_SOLID" xml:space="preserve">
+    <value>実線</value>
+  </data>
+  <data name="MULTI_SHOT_BORDER_STRING" xml:space="preserve">
+    <value>境界線</value>
+  </data>
+  <data name="MULTI_SHOT_MODE_2UP" xml:space="preserve">
+    <value>2ページ</value>
+  </data>
+  <data name="MULTI_SHOT_MODE_4UP" xml:space="preserve">
+    <value>4ページ</value>
+  </data>
+  <data name="MULTI_SHOT_MODE_8UP" xml:space="preserve">
+    <value>8ページ</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_2UP_REVERSE_Z" xml:space="preserve">
+    <value>右から左へ</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_2UP_Z" xml:space="preserve">
+    <value>左から右へ</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_N" xml:space="preserve">
+    <value>右上から下方向へ</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_REVERSE_N" xml:space="preserve">
+    <value>左上から下方向へ</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_REVERSE_Z" xml:space="preserve">
+    <value>右上から左方向へ</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_STRING" xml:space="preserve">
+    <value>レイアウト</value>
+  </data>
+  <data name="MULTI_SHOT_ORDER_Z" xml:space="preserve">
+    <value>左上から右方向へ</value>
+  </data>
+  <data name="ORIGINAL_SIZE_16K" xml:space="preserve">
+    <value>16K</value>
+  </data>
+  <data name="ORIGINAL_SIZE_16K_R" xml:space="preserve">
+    <value>16KR</value>
+  </data>
+  <data name="ORIGINAL_SIZE_8_1_2X13_1_2" xml:space="preserve">
+    <value>8x13</value>
+  </data>
+  <data name="ORIGINAL_SIZE_8_1_2X13_2_5" xml:space="preserve">
+    <value>8x13</value>
+  </data>
+  <data name="ORIGINAL_SIZE_8K" xml:space="preserve">
+    <value>8K</value>
+  </data>
+  <data name="ORIGINAL_SIZE_A3" xml:space="preserve">
+    <value>A3</value>
+  </data>
+  <data name="ORIGINAL_SIZE_A4" xml:space="preserve">
+    <value>A4</value>
+  </data>
+  <data name="ORIGINAL_SIZE_A4_R" xml:space="preserve">
+    <value>A4R</value>
+  </data>
+  <data name="ORIGINAL_SIZE_A5" xml:space="preserve">
+    <value>A5</value>
+  </data>
+  <data name="ORIGINAL_SIZE_A5_R" xml:space="preserve">
+    <value>A5R</value>
+  </data>
+  <data name="ORIGINAL_SIZE_AUTO" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="ORIGINAL_SIZE_B4" xml:space="preserve">
+    <value>B4</value>
+  </data>
+  <data name="ORIGINAL_SIZE_B5" xml:space="preserve">
+    <value>B5</value>
+  </data>
+  <data name="ORIGINAL_SIZE_B5_R" xml:space="preserve">
+    <value>B5R</value>
+  </data>
+  <data name="ORIGINAL_SIZE_FOOLSCAP" xml:space="preserve">
+    <value>8x13</value>
+  </data>
+  <data name="ORIGINAL_SIZE_INVOICE" xml:space="preserve">
+    <value>5x8</value>
+  </data>
+  <data name="ORIGINAL_SIZE_INVOICE_R" xml:space="preserve">
+    <value>5x8R</value>
+  </data>
+  <data name="ORIGINAL_SIZE_LEDGER" xml:space="preserve">
+    <value>11x17</value>
+  </data>
+  <data name="ORIGINAL_SIZE_LEGAL" xml:space="preserve">
+    <value>8x14</value>
+  </data>
+  <data name="ORIGINAL_SIZE_LETTER" xml:space="preserve">
+    <value>8x11</value>
+  </data>
+  <data name="ORIGINAL_SIZE_LETTER_R" xml:space="preserve">
+    <value>8x11R</value>
+  </data>
+  <data name="ORIGINAL_SIZE_MANUAL" xml:space="preserve">
+    <value>直接入力</value>
+  </data>
+  <data name="ORIGINAL_SOURCE_AUTO" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="ORIGINAL_SOURCE_FEEDER" xml:space="preserve">
+    <value>原稿送り装置</value>
+  </data>
+  <data name="ORIGINAL_SOURCE_PLATEN" xml:space="preserve">
+    <value>原稿台</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_CARD_10" xml:space="preserve">
+    <value>A4/Letter</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_CARD_16" xml:space="preserve">
+    <value>A3/Ledger</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_CARD_8" xml:space="preserve">
+    <value>A4/Letter</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_EL_4" xml:space="preserve">
+    <value>A4/Letter</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_EL_8" xml:space="preserve">
+    <value>A3/Ledger</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_PANORAMA_2" xml:space="preserve">
+    <value>A4/Letter</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_PANORAMA_4" xml:space="preserve">
+    <value>A3/Ledger</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_PHOTO_12" xml:space="preserve">
+    <value>A4/Letter</value>
+  </data>
+  <data name="PHOTO_REPEAT_TYPE_PHOTO_16" xml:space="preserve">
+    <value>A3/Ledger</value>
+  </data>
+  <data name="PLATEN_RESOLUTION_600x300" xml:space="preserve">
+    <value>600x300dpi</value>
+  </data>
+  <data name="PLATEN_RESOLUTION_600x400" xml:space="preserve">
+    <value>600x400dpi</value>
+  </data>
+  <data name="PLATEN_RESOLUTION_600x600" xml:space="preserve">
+    <value>600x600dpi</value>
+  </data>
+  <data name="PLATEN_RESOLUTION_STRING" xml:space="preserve">
+    <value>原稿台</value>
+  </data>
+  <data name="PLATEN_RESOLUTION_STRING_MAIN" xml:space="preserve">
+    <value>原稿台 :</value>
+  </data>
+  <data name="STAPLE_SORT_STRING" xml:space="preserve">
+    <value>ステープルソート</value>
+  </data>
+  <data name="COLLATE_AUTO" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="COLLATE_SORT" xml:space="preserve">
+    <value>ソート</value>
+  </data>
+  <data name="COLLATE_GROUP" xml:space="preserve">
+    <value>グループ</value>
+  </data>
+  <data name="STAPLE_NONE" xml:space="preserve">
+    <value>設定なし</value>
+  </data>
+  <data name="STAPLE_1STAPLE_BACK" xml:space="preserve">
+    <value>奥1箇所とじ</value>
+  </data>
+  <data name="STAPLE_1STAPLE_FRONT" xml:space="preserve">
+    <value>手前1箇所とじ</value>
+  </data>
+  <data name="STAPLE_2STAPLES" xml:space="preserve">
+    <value>2箇所とじ</value>
+  </data>
+  <data name="STAPLE_SADDLE_STITCH" xml:space="preserve">
+    <value>中綴じ</value>
+  </data>
+  <data name="OFFSET_STRING" xml:space="preserve">
+    <value>オフセット</value>
+  </data>
+  <data name="PUNCH_STRING" xml:space="preserve">
+    <value>パンチ</value>
+  </data>
+  <data name="FILING_STRING" xml:space="preserve">
+    <value>ファイリング</value>
+  </data>
+  <data name="FILING_NONE" xml:space="preserve">
+    <value>未設定</value>
+  </data>
+  <data name="FILING_MAIN" xml:space="preserve">
+    <value>標準フォルダー</value>
+  </data>
+  <data name="FILING_QUICK" xml:space="preserve">
+    <value>一時保存フォルダー</value>
+  </data>
+  <data name="FILING_USER" xml:space="preserve">
+    <value>ユーザーフォルダー</value>
+  </data>
+  <data name="FILE_PROPERTY_STRING" xml:space="preserve">
+    <value>ファイル属性</value>
+  </data>
+  <data name="FILE_PROPERTY_0" xml:space="preserve">
+    <value>0:共有</value>
+  </data>
+  <data name="FILE_PROPERTY_1" xml:space="preserve">
+    <value>1:保護</value>
+  </data>
+  <data name="FILE_PROPERTY_2" xml:space="preserve">
+    <value>2:親展</value>
+  </data>
+  <data name="FILE_PASSWORD_STRING" xml:space="preserve">
+    <value>パスワード</value>
+  </data>
+  <data name="FILE_NAME_STRING" xml:space="preserve">
+    <value>ファイル名</value>
+  </data>
+  <data name="PUBLIC_PDF_STRING" xml:space="preserve">
+    <value>PC閲覧用のPDFを作成する</value>
+  </data>
+  <data name="ERR_PASSWD_EMPTY" xml:space="preserve">
+    <value>パスワードを入力してください。</value>
+  </data>
+  <data name="ERR_PASSWORD" xml:space="preserve">
+    <value>パスワードは、{0}-{1}桁の英数字を設定してください。</value>
+  </data>
+  <data name="SADDLE_STITCH_BINDING_STRING" xml:space="preserve">
+    <value>中綴じ方向</value>
+  </data>
+  <data name="SADDLE_STITCH_BINDING_NONE" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="SADDLE_STITCH_BINDING_LEFT" xml:space="preserve">
+    <value>左開き</value>
+  </data>
+  <data name="SADDLE_STITCH_BINDING_RIGHT" xml:space="preserve">
+    <value>右開き</value>
+  </data>
+  <data name="SADDLE_STITCH_ORIGINAL_STRING" xml:space="preserve">
+    <value>原稿選択</value>
+  </data>
+  <data name="SADDLE_STITCH_ORIGINAL_1SIDED" xml:space="preserve">
+    <value>片面</value>
+  </data>
+  <data name="SADDLE_STITCH_ORIGINAL_2SIDED" xml:space="preserve">
+    <value>両面</value>
+  </data>
+  <data name="COVER_STRING" xml:space="preserve">
+    <value>表紙設定</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_STRING" xml:space="preserve">
+    <value>給紙トレイ</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_TRAY1" xml:space="preserve">
+    <value>トレイ1</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_TRAY2" xml:space="preserve">
+    <value>トレイ2</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_TRAY3" xml:space="preserve">
+    <value>トレイ3</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_TRAY4" xml:space="preserve">
+    <value>トレイ4</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_TRAY5" xml:space="preserve">
+    <value>トレイ5</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_BYPASS" xml:space="preserve">
+    <value>手差しトレイ</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_LCC" xml:space="preserve">
+    <value>大容量トレイ</value>
+  </data>
+  <data name="COVER_INPUT_TRAY_LCC2" xml:space="preserve">
+    <value>大容量2段ﾄﾚｲ</value>
+  </data>
+  <data name="COVER_TO_COPY_STRING" xml:space="preserve">
+    <value>表紙へのコピー（両面）をする</value>
+  </data>
+  <data name="PREVIEW_STRING" xml:space="preserve">
+    <value>プレビュー確認</value>
+  </data>
+  <data name="SCAN_STRING" xml:space="preserve">
+    <value>読込 :</value>
+  </data>
+  <data name="SPECIAL_MODE_CARD_SHOT" xml:space="preserve">
+    <value>カードコピー</value>
+  </data>
+  <data name="SPECIAL_MODE_ERASE" xml:space="preserve">
+    <value>枠消し</value>
+  </data>
+  <data name="SPECIAL_MODE_JOB_BUILD" xml:space="preserve">
+    <value>大量原稿</value>
+  </data>
+  <data name="SPECIAL_MODE_JOB_BUILD_MIXED_SOURCE" xml:space="preserve">
+    <value>大量原稿(混在)</value>
+  </data>
+  <data name="SPECIAL_MODE_MULTI_PAGE_ENLARGEMENT" xml:space="preserve">
+    <value>拡大連写</value>
+  </data>
+  <data name="SPECIAL_MODE_MULTI_SHOT" xml:space="preserve">
+    <value>集約コピー</value>
+  </data>
+  <data name="SPECIAL_MODE_NONE" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="SPECIAL_MODE_PHOTO_REPEAT" xml:space="preserve">
+    <value>写真リピート</value>
+  </data>
+  <data name="SPECIAL_MODE_PAMPHLET_COPY" xml:space="preserve">
+    <value>中綴じ</value>
+  </data>
+  <data name="STATUS_CANCELED" xml:space="preserve">
+    <value>コピー処理はキャンセルされました。</value>
+  </data>
+  <data name="STATUS_FINISHED" xml:space="preserve">
+    <value>コピー処理は正常に終了しました。</value>
+  </data>
+  <data name="STATUS_QUEUED" xml:space="preserve">
+    <value>予約しました。</value>
+  </data>
+  <data name="STATUS_STARTED" xml:space="preserve">
+    <value>コピー処理を開始しています。</value>
+  </data>
+  <data name="STATUS_SUSPENDED" xml:space="preserve">
+    <value>制限枚数に到達しています。</value>
+  </data>
+  <data name="TITLE_LABEL_COLOR_MODE" xml:space="preserve">
+    <value>カラーモード</value>
+  </data>
+  <data name="TITLE_LABEL_EXPOSURE" xml:space="preserve">
+    <value>濃度</value>
+  </data>
+  <data name="TITLE_LABEL_MAIN" xml:space="preserve">
+    <value>コピー</value>
+  </data>
+  <data name="TITLE_LABEL_ORIGINAL" xml:space="preserve">
+    <value>原稿</value>
+  </data>
+  <data name="TITLE_LABEL_ORIGINAL_INPUT_TRAY" xml:space="preserve">
+    <value>給紙</value>
+  </data>
+  <data name="TITLE_LABEL_ORIGINAL_OUTPUT_TRAY" xml:space="preserve">
+    <value>排紙</value>
+  </data>
+  <data name="TITLE_LABEL_ORIGINAL_SCAN" xml:space="preserve">
+    <value>読込</value>
+  </data>
+  <data name="TITLE_LABEL_ORIGINAL_SIZE_MANUAL" xml:space="preserve">
+    <value>直接入力</value>
+  </data>
+  <data name="TITLE_LABEL_RESOLUTION" xml:space="preserve">
+    <value>解像度</value>
+  </data>
+  <data name="TITLE_LABEL_PROCESSING" xml:space="preserve">
+    <value>仕上げ</value>
+  </data>
+  <data name="TITLE_LABEL_FILING" xml:space="preserve">
+    <value>ドキュメントファイリング</value>
+  </data>
+  <data name="TITLE_LABEL_SADDLE_STITCH" xml:space="preserve">
+    <value>中綴じ</value>
+  </data>
+  <data name="TITLE_LABEL_SPECIAL_MODE" xml:space="preserve">
+    <value>特別機能</value>
+  </data>
+  <data name="TITLE_LABEL_SPECIAL_MODE_ERASE" xml:space="preserve">
+    <value>枠消し</value>
+  </data>
+  <data name="TITLE_LABEL_SPECIAL_MODE_MULTI_PAGE_ENLARGEMENT" xml:space="preserve">
+    <value>拡大連写</value>
+  </data>
+  <data name="TITLE_LABEL_SPECIAL_MODE_MULTI_SHOT" xml:space="preserve">
+    <value>集約コピー</value>
+  </data>
+  <data name="TITLE_LABEL_SPECIAL_MODE_PHOTO_REPEAT" xml:space="preserve">
+    <value>写真リピート</value>
+  </data>
+  <data name="TITLE_LABEL_STATUS" xml:space="preserve">
+    <value>ステータス</value>
+  </data>
+  <data name="TONER_SAVE_NONE" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="TONER_SAVE_MODE_1" xml:space="preserve">
+    <value>トナーセーブ1</value>
+  </data>
+  <data name="TONER_SAVE_MODE_2" xml:space="preserve">
+    <value>トナーセーブ2</value>
+  </data>
+  <data name="TONER_SAVE_MODE_3" xml:space="preserve">
+    <value>トナーセーブ3</value>
+  </data>
+  <data name="FOLD_NONE" xml:space="preserve">
+    <value>紙折なし</value>
+  </data>
+  <data name="FOLD_SADDLE_INSIDE" xml:space="preserve">
+    <value>うち折り</value>
+  </data>
+  <data name="FOLD_SADDLE_OUTSIDE" xml:space="preserve">
+    <value>そと折り</value>
+  </data>
+  <data name="FOLD_SADDLE_INSIDE_MULTIPLE" xml:space="preserve">
+    <value>束折(うち折り)</value>
+  </data>
+  <data name="FOLD_SADDLE_OUTSIDE_MULTIPLE" xml:space="preserve">
+    <value>束折(そと折り)</value>
+  </data>
+  <data name="MAIN_BTN_BLACK_WHITE" xml:space="preserve">
+    <value>白黒</value>
+  </data>
+  <data name="MAIN_BTN_COLOR" xml:space="preserve">
+    <value>カラー</value>
+  </data>
+  <data name="MAIN_BTN_START" xml:space="preserve">
+    <value>スタート</value>
+  </data>
+  <data name="MAIN_BTN_RATIO" xml:space="preserve">
+    <value>100%</value>
+  </data>
+</root>

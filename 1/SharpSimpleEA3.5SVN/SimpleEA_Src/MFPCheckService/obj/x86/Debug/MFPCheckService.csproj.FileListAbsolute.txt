@@ -1,0 +1,9 @@
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\MFPCheckService\bin\Debug\MFPCheckService.exe.config
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\MFPCheckService\bin\Debug\MFPCheckService.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\MFPCheckService\bin\Debug\MFPCheckService.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\MFPCheckService\bin\Debug\Newtonsoft.Json.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\MFPCheckService\bin\Debug\SnmpSharpNet.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\MFPCheckService\obj\x86\Debug\MFPCheckService.ProjectInstaller.resources
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\MFPCheckService\obj\x86\Debug\MFPCheckService.csproj.GenerateResource.Cache
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\MFPCheckService\obj\x86\Debug\MFPCheckService.exe
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\MFPCheckService\obj\x86\Debug\MFPCheckService.pdb

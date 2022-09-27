@@ -1,0 +1,612 @@
+#region Copyright SHARP Corporation
+//	Copyright (c) 2010 SHARP CORPORATION. All rights reserved.
+//
+//	SHARP Simple EA Application
+//
+//	This software is protected under the Copyright Laws of the United States,
+//	Title 17 USC, by the Berne Convention, and the copyright laws of other
+//	countries.
+//
+//	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER ``AS IS'' AND ANY EXPRESS 
+//	OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+//	OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+//
+//==============================================================================
+#endregion
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using dtRestrictionInfoTableAdapters;
+using dtUserInfoTableAdapters;
+using dtGroupInfoTableAdapters;
+using System.Data.SqlClient;
+using SesMiddleware;
+
+/// <summary>
+/// Edit User Information
+/// </summary>
+/// <Date>2010.06.15</Date>
+/// <Author>SES Ji JianXiong</Author>
+/// <Version>0.01</Version>
+public partial class Settings_SectionEdit : MainPage
+{
+    #region "Page_Load"
+    /// <summary>
+    /// Page_Load
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    /// <Date>2010.06.15</Date>
+    /// <Author>SES Ji JianXiong</Author>
+    /// <Version>0.01</Version>
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+        // Update By SES Jijianxiogn 2010-08-23 ST
+        // Change to the Sub Title
+        // this.Master.Title = UtilConst.CON_PAGE_USEREDIT;
+        this.Master.Title = "集团管理";
+        // Update By SES Jijianxiong 2010-09-07 ST
+        // Master.SubTitle(UtilConst.CON_PAGE_EDIT, "UserList.aspx", true);
+        if (!User.Identity.Name.Equals(UtilConst.CON_USER_LONINNAME)) {
+            Master.SubTitle(UtilConst.CON_PAGE_EDIT, "#", true);
+        } else {
+            Master.SubTitle(UtilConst.CON_PAGE_EDIT, "SectionSetting.aspx", true);
+        }
+        // Update By SES Jijianxiong 2010-09-07 ED
+        // Update By SES Jijianxiogn 2010-08-23 ED
+
+        // Delete By JJX 2010-07-28 ST
+        // Check Access Role
+        // CheckUser();
+        // Delete By JJX 2010-07-28 ED
+
+        // Get GroupId from  Page Parms's.
+        //hidUserId.Value = Page.Request.Params.ToString();
+        //// GroupId
+        //string UserId = hidUserId.Value;
+
+        //// Add By JJX 2010-07-28 ST
+        //CheckUserInUserEdit(UserId);
+        //// Add By JJX 2010-07-28 ED
+
+        //if (!IsPostBack)
+        //{
+        //    loadOnce(UserId);
+        //}
+
+        // Add By JJX 2010-07-28 ST
+        // Normal User
+        if (!User.Identity.Name.Equals(UtilConst.CON_USER_LONINNAME))
+        {
+            // Only Password can be modify.
+            //txtPassword.Enabled = true;
+            //txtPasswordConfirm.Enabled = true;
+            txtUserName.Enabled = false;
+            //txtLoginName.Enabled = false;
+            //txtCardID.Enabled = false;
+            //ddlGroupName.Enabled = false;
+            //ddlRestrictionSet.Enabled = false;
+            btnCancel.Enabled = false;
+            //btnAutoDefine.Visible = false;
+        }
+        // Add By JJX 2010-07-28 ED
+
+        //valCardID.ErrorMessage = UtilConst.MSG_ICCARD_EXIST;
+        //IC CardID Must be Numberic and English.
+        //revCardID.ErrorMessage = UtilConst.MSG_ICCARD_CODE;
+
+        //valPinCode.ErrorMessage = UtilConst.MSG_PINCODE_EXIST;
+        //revPinCode.ErrorMessage = UtilConst.MSG_PINCODE_CODE;
+
+    }
+    #endregion
+
+
+    #region "btnItemCount_Click"
+    /// <summary>
+    /// btnSetRestrictionName_click
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    /// <Date>2014。04.24</Date>
+    /// <Author>MJ tan</Author>
+    /// <Version>0.01</Version>
+    protected void btnSetRestrictionName_click(object sender, EventArgs e)
+    {
+        string strScript = "<script language='javascript' type='text/javascript'>";
+        strScript = strScript + "window.open('../RestrictionInfo/popRestrictInfoAdd.aspx', null, null)";
+        strScript = strScript + "</script>";
+
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "popWindowJob", strScript);
+    }
+    #endregion
+
+
+    #region "Load Once"
+    /// <summary>
+    /// Load Once
+    /// </summary>
+    /// <param name="UserID"></param>
+    /// <Date>2010.07.28</Date>
+    /// <Author>SES Ji JianXiong</Author>
+    /// <Version>0.01</Version>
+    private void loadOnce(string UserId)
+    {
+        // Get Restriction Set Information
+        RestrictionInfoTableAdapter RestrictionAdapter = new RestrictionInfoTableAdapter();
+        // Restriction Set DropList
+        //ddlRestrictionSet.DataSource = RestrictionAdapter.GetRestrictionInfoData();
+        //ddlRestrictionSet.DataBind();
+        // 2010.06.14 Add By Ji User can select ""(blank) in Restriction Set.
+        //ddlRestrictionSet.Items.Insert(0, "");
+
+        // Get UserInfo
+        UserInfoTableAdapter UserInfoAdapter = new UserInfoTableAdapter();
+        dtUserInfo.UserInfoDataTable UserInfotable = UserInfoAdapter.GetDataByUserId(int.Parse(UserId));
+
+        // UserName
+        txtUserName.Text = UserInfotable[0].UserName;
+        // LoginName
+        //txtLoginName.Text = UserInfotable[0].LoginName;
+        // LoginName = "admin" -> Modify UnEnabled.
+        //if (txtLoginName.Text.Equals(UtilConst.CON_USER_LONINNAME))
+        //{
+        //    txtLoginName.Enabled = false;
+        //    // Add By JiJianxiong 2010-07-09 ST
+        //    //ddlGroupName.Enabled = false;
+        //    // Add By JiJianxiong 2010-07-09 ED
+        //    // Add By JiJianxiong 2010-07-16 ST
+        //    //ddlRestrictionSet.Enabled = false;
+        //    // Add By JiJianxiong 2010-07-16 ED
+        //}
+        // Get Group Information
+        // Update By JiJianxiong 2010-07-09 ST
+        //if (txtLoginName.Text.Equals(UtilConst.CON_USER_LONINNAME))
+        //{
+        //    GroupInfoTableAdapter GroupInfoAdapter = new GroupInfoTableAdapter();
+        //    ddlGroupName.DataSource = GroupInfoAdapter.GetGroupInfoData();
+        //}
+        //else
+        //{
+        //    GroupInfoTableAdapter GroupInfoAdapter = new GroupInfoTableAdapter();
+        //    ddlGroupName.DataSource = GroupInfoAdapter.GetGroupInfoDataWithOutID(int.Parse(UtilConst.CON_DATE_ADMIN_ID));
+        //}
+        ddlGroupName.DataBind();
+
+        // Update By JiJianxiong 2010-07-09 ED
+
+        // Password
+        //txtPassword.Text = UserInfotable[0].Password;
+        //txtPassword.Attributes.Add("value", UserInfotable[0].Password);
+        // Confirm Password
+        //txtPasswordConfirm.Text = UserInfotable[0].Password;
+        //txtPasswordConfirm.Attributes.Add("value", UserInfotable[0].Password);
+        //// IC Card
+        //txtCardID.Text = UserInfotable[0].ICCardID;
+
+        ////PinCode
+        //txtPinCode.Text = UserInfotable[0].PinCode;
+
+        ////add by chen for email
+        //txtEmail.Text = UserInfotable[0].Email;
+
+        //// Add By JJX 2010-09-17 ST
+        //if (txtLoginName.Text.Equals(UtilConst.CON_USER_LONINNAME))
+        //{
+        //    txtCardID.Enabled = false;
+        //}
+        // Add By JJX 2010-09-17 ED
+        // Add By SES JiJianXiong 2010.09.08 ST
+        // Modify by Suggested from SESC.
+        hidICId.Value = UserInfotable[0].ICCardID;
+        // Add By SES JiJianXiong 2010.09.08 ED
+        // GroupID
+        ddlGroupName.SelectedValue = UserInfotable[0].GroupID.ToString();
+        // RestrictionID
+        ddlRestrictionSet.SelectedValue = UserInfotable[0].RestrictionID.ToString();
+
+        // Set User Check
+        // Add By SES JiJianXiong 2010.09.08 ST
+        // Modify by Suggested from SESC.
+
+        // 2011.01.10 Delete By SES Jijianxinog ST
+        // IC Card Must Input Delete
+        //// Must Input IC CardId.
+        //rfvCardID.ErrorMessage = UtilConst.MSG_ICCARD_MUST;
+        // 2011.01.10 Delete By SES Jijianxinog ED
+
+        //// Exist IC CardId.
+        //valCardID.ErrorMessage = UtilConst.MSG_ICCARD_EXIST;
+        ////IC CardID Must be Numberic and English.
+        //revCardID.ErrorMessage = UtilConst.MSG_ICCARD_CODE;
+        // Add By SES JiJianXiong 2010.09.08 ED
+
+        // Delete By SES JiJianXiong 2010.09.08 ST
+        // Modify by Suggested from SESC.
+        //// Exist LoginName.
+        //valLoginName.ErrorMessage = UtilConst.MSG_LOGIN_NAMEEXIST;
+        //// Must Input User Name.
+        //rfvUserName.ErrorMessage = UtilConst.MSG_USER_NAMEMUST;
+        // Modify by Suggested from SESC.
+        //// Must Input Login Name.
+        //rfvLoginName.ErrorMessage = UtilConst.MSG_LOGIN_NAMEMUST;
+        // Delete By SES JiJianXiong 2010.09.08 ED
+
+        //// Must Input Password.
+        //rfvPassword.ErrorMessage = UtilConst.MSG_PASSWORD_NAMEMUST;
+        //// Must Input Password Confirm.
+        //rfvPasswordConfirm.ErrorMessage = UtilConst.MSG_PASSWORDCONFIRM_NAMEMUST;
+
+        // ILLEGAL
+        // Delete By SES JiJianXiong 2010.09.08 ST
+        //// UserName
+        //revUserName.ErrorMessage = UtilConst.MSG_ILLEGAL_STRING;
+        //revUserName.ValidationExpression = UtilConst.CON_VAL_ILLEGAL;
+        // Modify by Suggested from SESC.
+        //// LoginName
+        //revLoginName.ErrorMessage = UtilConst.MSG_ILLEGAL_STRING;
+        //revLoginName.ValidationExpression = UtilConst.CON_VAL_ILLEGAL;
+        // Delete By SES JiJianXiong 2010.09.08 ED
+
+        // Compare Equal With Confirm Password and Password
+        //cpvPasswordConfirm.ErrorMessage = UtilConst.MSG_PASSWORD_NOEQUAL;
+
+        //// Must Be Input English or Numberic In password and length > 4
+        //revPassword.ErrorMessage = UtilConst.MSG_PASSWORD_CHECK;
+
+    }
+    #endregion
+
+    #region "Update User Information"
+    /// <summary>
+    /// Update User Information
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    /// <Date>2010.06.15</Date>
+    /// <Author>SES Ji JianXiong</Author>
+    /// <Version>0.01</Version>
+    protected void btnUpdate_Click(object sender, EventArgs e)
+    {
+        //try
+        //{
+        //    //if (!Page.IsValid)
+            //{
+            //    return;
+            //}
+            //// UserId
+            //int UserId = int.Parse(hidUserId.Value);
+            //using (SqlConnection con = new SqlConnection(this.DBConnectionStrings))
+            //{
+            //    con.Open();
+            //    SqlTransaction tran = con.BeginTransaction();
+            //    try
+            //    {
+            //        string strSql;
+            //        //1. Set User Group Information
+            //        strSql = "   UPDATE [UserInfo]          " + Environment.NewLine;
+            //        strSql += "  SET                        " + Environment.NewLine;
+            //        strSql += "       [UserName] = {0}      " + Environment.NewLine;
+            //        strSql += "      ,[LoginName] = {1}     " + Environment.NewLine;
+            //        strSql += "      ,[Password] = {2}      " + Environment.NewLine;
+            //        strSql += "      ,[ICCardID] = {3}      " + Environment.NewLine;
+            //        strSql += "      ,[PinCode] = {4}      " + Environment.NewLine;
+            //        strSql += "      ,[Email] = {5}      " + Environment.NewLine;
+            //        strSql += "      ,[GroupID] = {6}       " + Environment.NewLine;
+            //        strSql += "      ,[RestrictionID] = {7} " + Environment.NewLine;
+            //        //strSql += "      ,[ComeFrom] = {9} " + Environment.NewLine;
+            //        //strSql += "      ,[RemainMoney] = {8} " + Environment.NewLine;
+            //        //strSql += "      ,[RemainColorMoney] = {9} " + Environment.NewLine;
+            //        // Add BY JiJianxiong 2010-07-09 ST
+            //        if (!txtLoginName.Text.Equals(UtilConst.CON_USER_LONINNAME))
+            //        {
+            //            strSql += "      ,[UpdateTime] = getdate() " + Environment.NewLine;
+            //        }
+            //        // Add BY JiJianxiong 2010-07-09 ED
+            //        strSql += "WHERE ID = {8}   " + Environment.NewLine;
+
+            //        string[] paramslist = new string[9];
+            //        // UserName
+            //        paramslist[0] = ConvertStringToSQL(txtUserName.Text);
+            //        // LoginName
+            //        paramslist[1] = ConvertStringToSQL(txtLoginName.Text);
+            //        // Password
+            //        paramslist[2] = ConvertStringToSQL(txtPassword.Text);
+            //        // ICCardID
+            //        paramslist[3] = ConvertStringToSQL(txtCardID.Text);
+            //        // PinCode
+            //        paramslist[4] = ConvertStringToSQL(txtPinCode.Text);
+            //        // Email
+            //        paramslist[5] = ConvertStringToSQL(txtEmail.Text);
+            //        // GroupID
+            //        paramslist[6] = ConvertIntToSQL(ddlGroupName.SelectedValue);
+            //        // RestrictionID
+            //        paramslist[7] = ConvertIntToSQL(ddlRestrictionSet.SelectedValue);
+            //        // User Id
+            //        paramslist[8] = ConvertIntToSQL(UserId.ToString());
+
+            //        //paramslist[9] = ConvertIntToSQL(UtilConst.USER_SYS.ToString());
+
+            //        //chen 20140429 add start
+            //        //int restrictID = int.Parse(ddlRestrictionSet.SelectedValue);
+
+            //        //decimal remainMoney = 0;
+            //        //decimal remainColorMoney = 0;
+            //        //dtRestrictionInfoTableAdapters.RestrictionInfoTableAdapter resAdapter = new dtRestrictionInfoTableAdapters.RestrictionInfoTableAdapter();
+            //        //dtRestrictionInfo.RestrictionInfoDataTable dt = resAdapter.GetRestrictionInfoDataByID(restrictID);
+            //        //if (dt.Count != 0)
+            //        //{
+            //        //    dtRestrictionInfo.RestrictionInfoRow resRow = dt[0];
+            //        //    remainMoney = resRow.AllQuota;
+            //        //    remainColorMoney = resRow.ColorQuota;
+            //        //}
+            //        //paramslist[8] = UtilCommon.ConvertDecimalToSQL(remainMoney.ToString());
+            //        //paramslist[9] = UtilCommon.ConvertDecimalToSQL(remainColorMoney.ToString());
+            //        //chen 20140429 add end
+
+            //        strSql = string.Format(strSql, paramslist);
+
+            //        using (SqlCommand cmd = new SqlCommand(strSql, con, tran))
+            //        {
+            //            cmd.ExecuteNonQuery();
+            //        }
+
+            //        // Update User's XML
+            //        //2015 04 23 del start
+            //        /*
+            //        if (!txtLoginName.Text.Equals(UtilConst.CON_USER_LONINNAME))
+            //        {
+            //            // Update By SES JiJianXiong 2010.09.08 ST
+            //            // Modify by Suggested from SESC.
+            //            //int returnVal = ICCardData.UpdateICCardInfo(txtCardID.Text.Trim(), txtLoginName.Text.Trim(), txtPassword.Text.Trim(), this.ServerPath);
+            //            //if (returnVal != 0)
+            //            //{
+            //            //    throw new Exception(UtilConst.MSG_MIDDLEWARE_ERROR);
+            //            //}
+            //            // Get UserInfo
+            //            string strCardID;
+
+            //            // 2011.01.10 Update By SES Jijianxiong ST
+            //            strCardID = hidICId.Value.Trim();
+            //            if (!string.IsNullOrEmpty(strCardID))
+            //            {
+            //                int returnVal = ICCardData.DeleteICCardInfo(strCardID, this.ServerPath);
+            //                if (returnVal != 0)
+            //                {
+            //                    throw new Exception(UtilConst.MSG_MIDDLEWARE_ERROR);
+            //                }
+            //            }
+
+            //            // IC Card ID Must input delete.
+            //            strCardID = txtCardID.Text.Trim();
+            //            if (!string.IsNullOrEmpty(strCardID))
+            //            {
+            //                int returnVal = ICCardData.AddICCardInfo(strCardID, txtLoginName.Text.Trim(), txtPassword.Text.Trim(), this.ServerPath);
+            //                if (returnVal != 0)
+            //                {
+            //                    throw new Exception(UtilConst.MSG_MIDDLEWARE_ERROR);
+            //                }
+            //            }
+            //            // 2011.01.10 Update By SES Jijianxiong ED
+
+            //            // Update By SES JiJianXiong 2010.09.08 ED
+            //        }
+            //        */ 
+            //        tran.Commit();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        if (tran.Connection != null)
+            //        {
+            //            tran.Rollback();
+            //        }
+            //        throw ex;
+            //    }
+            //    finally
+            //    {
+            //        tran.Dispose();
+            //        tran = null;
+            //    }
+            //}
+
+            // UPDATE By JJX 2010-07-28 ST
+            //// Changes are applied and then back to User Managemnet Screen.
+            //this.Response.Redirect("UserList.aspx", false);
+
+            //if (!User.Identity.Name.Equals(UtilConst.CON_DATE_ADMIN_NAME))
+            //{
+            //    this.Response.Redirect("UserInfoEdit.aspx?UserId=" + UserId.ToString(), false);
+            //}
+            //else
+            //{
+            //    // Changes are applied and then back to User Managemnet Screen.
+            //    this.Response.Redirect("UserList.aspx", false);
+            //}
+            // UPDATE By JJX 2010-07-28 ED
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        ErrorAlert(ex);
+    //    }
+
+    }
+
+    #endregion
+
+    // Delete By SES JiJianXiong 2010.09.08 ST
+    // Modify by Suggested from SESC.
+    //#region"Check LoginName In UserInfo Table."
+    ///// <summary>
+    ///// Check LoginName In UserInfo Table.
+    ///// </summary>
+    ///// <param name="source"></param>
+    ///// <param name="args"></param>
+    ///// <Date>2010.06.15</Date>
+    ///// <Author>SES Ji JianXiong</Author>
+    ///// <Version>0.01</Version>
+    //protected void valLoginName_ServerValidate(Object source, ServerValidateEventArgs args)
+    //{
+    //    string strLoginName = args.Value.ToString();
+    //    // UserId
+    //    int UserId = int.Parse(hidUserId.Value);
+
+    //    UserInfoTableAdapter UserInfoAdapter = new UserInfoTableAdapter();
+    //    if (UserInfoAdapter.CheckUserInfoExistNameBy(strLoginName, UserId) > 0)
+    //    {
+    //        args.IsValid = false;
+    //    }
+    //    else
+    //    {
+    //        args.IsValid = true;
+    //    }
+    //}
+    //#endregion
+    // Delete By SES JiJianXiong 2010.09.08 ED
+
+    // Add By SES JiJianXiong 2010.09.08 ST
+    // Modify by Suggested from SESC.
+    #region "Check IC CardID In UserInfo Table."
+    /// <summary>
+    /// Check IC CardID In UserInfo Table.
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="args"></param>
+    /// <Date>2010.06.23</Date>
+    /// <Author>SES Ji JianXiong</Author>
+    /// <Version>0.01</Version>
+    protected void valCardID_ServerValidate(Object source, ServerValidateEventArgs args)
+    {
+        string strICCardID = args.Value.ToString();
+
+        // 2011.01.10 Add By SES Jijianxiong ST
+        strICCardID = strICCardID.Trim();
+        if (string.IsNullOrEmpty(strICCardID))
+        {
+            args.IsValid = true;
+            return;
+        }
+        // 2011.01.10 Add By SES Jijianxiong ED
+
+        // UserId
+        int UserId = int.Parse(hidUserId.Value);
+
+        UserInfoTableAdapter UserInfoAdapter = new UserInfoTableAdapter();
+        object obj = UserInfoAdapter.CheckUserInfoExistICCardIDBy(strICCardID, UserId);
+        if (obj != null && (int)obj > 0)
+        {
+            args.IsValid = false;
+        }
+        else
+        {
+            args.IsValid = true;
+        }
+    }
+    #endregion
+    // Add By SES JiJianXiong 2010.09.08 ED
+
+    #region "Check Pincode In UserInfo Table."
+    /// <summary>
+    /// Check Pincode In UserInfo Table.
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="args"></param>
+    /// <Date>2015.06.26</Date>
+    /// <Author>SES chen</Author>
+    /// <Version>0.01</Version>
+    protected void valPincode_ServerValidate(Object source, ServerValidateEventArgs args)
+    {
+        string strPincode = args.Value.ToString();
+
+        strPincode = strPincode.Trim();
+        if (string.IsNullOrEmpty(strPincode))
+        {
+            args.IsValid = true;
+            return;
+        }
+        // 2011.01.10 Add By SES Jijianxiong ED
+
+        // UserId
+        int UserId = int.Parse(hidUserId.Value);
+
+        UserInfoTableAdapter UserInfoAdapter = new UserInfoTableAdapter();
+        object obj = UserInfoAdapter.checkUserInfoExistPincodeBy(strPincode, UserId);
+        if (obj != null && (int)obj > 0)
+        {
+            args.IsValid = false;
+        }
+        else
+        {
+            args.IsValid = true;
+        }
+    }
+    #endregion
+    // Add By SES JiJianXiong 2010.09.08 ED
+
+    /// <summary>
+    /// btnMFPRes_Click
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    /// <Date></Date>
+    /// <Author>SLC Zheng Wei</Author>
+    /// <Version>1.2</Version>
+    protected void btnMFPRes_Click(object sender, EventArgs e)
+    {
+        this.Response.Redirect("~/UserInfo/MFPList.aspx?UserID=" + this.hidUserId.Value);
+    }
+
+    #region onSelectedGroupChanged
+    protected void onSelectedGroupChanged(object sender, EventArgs e)
+    {
+        //DropDownList list = (DropDownList)sender;
+        //dtGroupInfoTableAdapters.GroupInfoTableAdapter groupAdapter = new dtGroupInfoTableAdapters.GroupInfoTableAdapter();
+        //dtGroupInfo.GroupInfoDataTable groupDT = groupAdapter.GetDataByGroupName(list.SelectedItem.Text);
+        //if (groupDT.Count == 0)
+        //{
+        //    return;
+        //}
+        //int idx = ddlRestrictionSet.SelectedIndex;
+        //for (int i = 0; i < ddlRestrictionSet.Items.Count; i++)
+        //{
+        //    if (ddlRestrictionSet.Items[i].Value == groupDT[0].RestrictionID)
+        //    {
+        //        idx = i;
+        //        break;
+        //    }
+        //}
+        //ddlRestrictionSet.SelectedIndex = idx;
+        ddlRestrictionSet.SelectedValue = UtilConst.CON_INHERIT_GROUP;
+    }
+    #endregion
+
+    #region btnRefreshRestrictionSet_click
+    protected void btnRefreshRestrictionSet_click(object sender, EventArgs e)
+    {
+        //RestrictionInfoTableAdapter RestrictionAdapter = new RestrictionInfoTableAdapter();
+        //ddlRestrictionSet.DataSource = RestrictionAdapter.GetRestrictionInfoData();
+        //ddlRestrictionSet.DataBind();
+        //ddlRestrictionSet.Items.Insert(0, "");
+        dtRestrictionInfo.RestrictionInfoDataTable dt = new dtRestrictionInfo.RestrictionInfoDataTable();
+        DataView dv = new DataView();
+
+        RestrictionInfoTableAdapter RestrictionAdapter = new RestrictionInfoTableAdapter();
+        dt = RestrictionAdapter.GetRestrictionInfoData();
+        dv = dt.DefaultView;
+        dv.Sort = "ID ";
+        ddlRestrictionSet.DataSource = dv;
+        ddlRestrictionSet.DataBind();
+
+        ddlRestrictionSet.SelectedValue = dv.Table.Rows[dv.Table.Rows.Count - 1]["ID"].ToString();
+
+    }
+    #endregion
+
+}

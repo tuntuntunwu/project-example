@@ -1,0 +1,1145 @@
+/* Copyright SHARP Corporation
+//	Copyright (c) 2010 SHARP CORPORATION. All rights reserved.
+//
+//	SHARP Simple EA Application
+//
+//	This software is protected under the Copyright Laws of the United States,
+//	Title 17 USC, by the Berne Convention, and the copyright laws of other
+//	countries.
+//
+//	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER ``AS IS'' AND ANY EXPRESS 
+//	OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+//	OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+//
+//==============================================================================
+*/
+/********************************************
+ * FILE NAME : IE.CSS
+ * HISTROY  : 
+ *  (1).2010.08.23
+ *  SES Ji JianXiong Change:
+ *           "src='Images/" - >"src='../Images/"
+ *******************************************/
+html, body 
+{
+	height:100%; margin:0; padding:0;
+}
+
+body 
+{
+	width:100%;
+	height:100%;
+	background: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/BG.jpg');
+}
+
+
+
+a 
+{
+	position:relative;
+}
+
+INPUT 
+{
+	position:relative;
+    top: 0px;
+    left: 0px;
+}
+
+
+.Login_centerbg {
+	background: none;
+	width: 98%; 
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Login_centerbg.png');
+}
+
+
+.IMG_1
+{
+	background: none;
+	width: 375px; /* Must Specify Width */
+	height:41px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Application_logo.png');
+}
+.Sharp_Logo
+{
+	background: none;
+	width: 106px; /* Must Specify Width */
+	height:16px;
+	/*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/SharpLogo.png');*/
+	background-image:url('../Images/SharpLogo.gif');
+	background-repeat:no-repeat;
+}
+.Inputtextbox
+{
+	width:200px;
+	height:25px;
+	font-family:Verdana;
+	color:#000000;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:left;
+	BORDER-RIGHT: #095fec 3px solid; 
+    BORDER-TOP: #095fec 3px solid;
+    BORDER-LEFT: #095fec 3px solid;
+    BORDER-BOTTOM: #095fec 3px solid;
+	
+}
+
+.Search_button,
+.Select_button
+{
+	background-color: transparent;
+	background: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Select_button.png');
+	background-repeat:no-repeat;
+	width:128px;
+	height:28px;
+
+	border:none;	
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+.Login_left_IMG
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Login_left.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+.Login_Right_IMG
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Login_Right.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+.Login_bottom_right_IMG
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Login_bottom_right.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+.Bottom_login_bg_new
+{
+	background-image:url('../Images/Bottom_login_bg_new.gif');
+	background-position:right;
+}
+.Bottom_right_bg_Newupdated
+{
+	background-image:url('../Images/Bottom_right_bg_Newupdated.gif');
+	background-position:left;
+}
+.SelectedTR
+{
+	
+	background: none;
+	width: 100%; /* Must Specify Width */
+	/*filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Selected_TR.png');*/
+	background-image:url('../Images/Selected_TR.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-color:#0960ff;
+
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	
+	
+}
+.SelectedTR TD 
+{
+	font-size: 9pt; 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+.Login_bottom_left_IMG
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Login_bottom_left.png');
+	background-repeat:no-repeat;
+	
+}
+.LogUser_IMG
+{
+	background: none;
+	width: 106px; 
+	height:16px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/LogUser_IMG.png');
+	background-repeat:no-repeat;
+}
+/*.Bottom_left_IMG
+{
+	background: none;
+	width: 100%; 
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Bottom_left.png');
+	background-position:bottom;
+
+}
+*/
+
+
+.Bottom_login_bg
+{
+	background-image:url('../Images/Title_topbg_left2.gif');
+	background-position:bottom;
+}
+.Bottom_left_IMG
+{
+	background: none;	
+	background-image:url('../Images/Bottom_left2.gif');
+	background-position:bottom;
+
+}
+.Bottom_right_bg
+{
+	background-image:url('../Images/Bottom_right_bg.gif');
+	background-position:bottom;
+}
+.Bottom_Right_IMG
+{
+	background: none;	
+	background-image:url('../Images/Bottom_Right.gif');
+	background-position:bottom;
+	background-repeat:no-repeat;
+}
+
+.Login_Topcenter
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Login_Topcenter.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:none;
+}
+.Login_left_bg
+{
+	background: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Login_left_bg.png');
+	background-repeat:repeat-y;
+	background-repeat-x:0%;
+	background-position:right;
+}
+.Login_right_bg
+{
+	background: none;
+	width:100%;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Login_right_bg.png');	
+	background-repeat:repeat-y;
+	background-repeat-x:0%;
+	background-position:right;
+}
+.Table_header_left
+{
+	background-image:url('../Images/Table_header_left1.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:right;
+}
+.Title_topbg
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Title_topbg1.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+
+/*.Title_topbg_right
+{
+	background: none;
+	width:50px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Title_topbg1_New.png');
+	background-position:left;
+}
+.Title_topbg_left
+{
+	background: none;
+	width: 100%;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Title_topbg1_right.png');
+	background-position:right;
+}
+*/
+
+.Title_topbg_right
+{
+	background-image:url('../Images/Title_topbg_right1.gif');
+	background-position:left;
+}
+.Title_topbg_left
+{
+	background-image:url('../Images/Title_topbg_left1.gif');
+	background-position:right;
+}
+
+.Table_header_Right
+{
+	background-image:url('../Images/Table_header_Right1.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:left;
+}
+.Login_bottom_bg
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Login_bottom_bg.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+.Login_bottom_shoadow
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Login_bottom_shoadow.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+
+}
+
+.Login_left_shadow
+{
+	background: none;
+	width: 15%; 
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Login_left_shadow.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:left;
+}
+
+.Login_right_shadows
+{
+	background: none;
+	width: 25%; 
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Login_right_shadow_1.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:right;
+
+}
+.User_loginIMG
+{
+	background: none;
+	width: 112px; 
+	height:135px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/User_loginIMG.png');
+	background-repeat:no-repeat;
+}
+
+.Login_Button_bg
+{
+	background-color: transparent;
+	width: 100%; /* Must Specify Width */
+	border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    background: no-repeat;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/LoginButton.png');
+	width:103px;
+	height:22px;
+
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-transform:uppercase;
+    top: 2px;
+    left: 0px;
+}
+.MenuCenter_bg
+{
+	background-image:url('../Images/MenuCenter_bg.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+.MenuFont
+{
+	background-image:url('../Images/MenuFont.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:right;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.MenuFont_1
+{
+	background-image:url('../Images/MenuFont_1.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:left;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.MenuFont :hover 
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:underline;
+	text-transform:uppercase;
+	
+}
+.MenuFont_1 :hover 
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:underline;
+	text-transform:uppercase;
+	
+}
+
+.MenuFont_right
+{
+	background-image:url('../Images/MenuFont.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:right;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+
+.MenuFont_right :hover 
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:underline;
+	text-transform:uppercase;
+	
+}
+
+.MenuFont_notuse
+{
+	background-image:url('../Images/MenuFont.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:left;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.Select_menu_bg
+{ 
+	/*background: transparent url('../Images/Select_menu_bg.png') no-repeat top left ;*/
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Select_menu_bg.png');
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.Req_Filed_red
+{
+    background-color:#FF0000;	
+ 	font-family:Verdana;
+	color:#FFFFFF;
+	font-size:11px;
+	font-weight:bold;
+	text-decoration:none;
+
+}
+
+.User_MNG_img
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/User_MNG_img.png');
+	background-repeat:no-repeat;
+}
+
+.SharpLogo_Insidepage
+{
+	background: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/SharpLogo_Insidepage.png');
+	background-repeat:no-repeat;
+	background-repeat:no-repeat;
+	width:109px;
+	height:33px;
+
+}
+.Lightboxbg
+{
+	display:none;
+	position: absolute;	
+	background-color:#000000; 	 
+	top: 0%;
+	left: 0%;	 
+	z-index:98;	 
+	filter: alpha(opacity=90);
+	width:103%;
+	height:895px;
+	
+	
+}	
+
+.LightWhiteboxbg
+{
+	display:none;
+	position: absolute;	
+	background-color:#000000; 	 
+	top: 0%;
+	left: 0%;	 
+	z-index:98;	 
+	filter: alpha(opacity=90);
+	width:103%;
+	height:895px;
+}	
+
+.WhiteBoxbg
+{
+	display:none;
+	position:absolute;
+	top: 35%;
+	left: 35%;
+	width: 350;
+	height: 150; 
+	background-color:White;     
+	border: 2px solid #4e7a95;	
+	z-index:99;
+	overflow: hidden;
+	vertical-align:bottom;
+}
+
+.ErrorMSG
+{
+	display:none;
+	position:absolute;
+	top: 35%;
+	left: 35%;
+	width: 350;
+	height: 150; 
+	background-color:#f6b7ba;     
+	border: 5px solid #cb1a1a;	
+	z-index:99;
+	overflow: hidden;
+	vertical-align:bottom;
+}
+.OKMSG
+{
+	display:none;
+	position:absolute;
+	top: 35%;
+	left: 35%;
+	width: 350;
+	height: 150; 
+	background-color:#bdf6b7;     
+	border: 5px solid #21930e;	
+	z-index:99;
+	overflow: hidden;
+	vertical-align:bottom;
+}
+.AttentionMSG
+{
+	display:none;
+	position:absolute;
+	top: 35%;
+	left: 35%;
+	width: 350;
+	height: 150; 
+	background-color:#a8c4ee;     
+	border: 5px solid #006da6;	
+	z-index:99;
+	overflow: hidden;
+	vertical-align:bottom;
+}
+
+.WarningnMSG
+{
+	display:none;
+	position:absolute;
+	top: 35%;
+	left: 35%;
+	width: 350;
+	height: 150; 
+	background-color:#f3f4a0;     
+	border: 5px solid #e1e324;	
+	z-index:99;
+	overflow: hidden;
+	vertical-align:bottom;
+}
+
+
+
+
+.Container
+{
+	  position: absolute;	
+	  width: 100%;
+	  height: 2px;
+	  
+}
+#Scroller-1
+{ 
+	  position: absolute; 
+	  overflow: hidden;
+	  width: 100%;
+	  height: 390px;
+}
+
+
+#Scroller-1 p 
+{
+	  font-family: Verdana, Arial, Helvetica, sans-serif;
+	  font-size: 11px;
+	  text-indent: 20px;
+	  color: #6F6048;
+}
+
+#Scroller-Res
+{ 
+	  position: absolute; 
+	  overflow: hidden;
+	  width: 100%;
+	  height: 390px;
+}
+
+
+#Scroller-Res p 
+{
+	  font-family: Verdana, Arial, Helvetica, sans-serif;
+	  font-size: 11px;
+	  text-indent: 20px;
+	  color: #6F6048;
+}
+
+.Scroller-Container 
+{
+	  position:relative;
+}
+
+#Scrollbar-Container 
+{
+	  position: absolute;	
+}
+
+.Scrollbar-Track 
+{
+	  width: 20px;
+	  height: 300px;
+	  position: absolute;
+	  top: 40px;
+	  left: 12px;
+	
+}
+.Scrollbar-Handle
+{
+	  position: absolute;
+	  width: 13px;
+	  height: 89px;	 
+}
+
+
+.Scrollbar-Up 
+{
+	  cursor:default;
+	  position: absolute;	  
+	  left:4px;
+	  top:5px;
+}
+
+.Scrollbar-Down 
+{
+	  cursor:default;
+	  position: absolute;
+	  top: 350px;
+	  left:4px;
+}
+.Scrollbar-Down1
+{
+	  cursor:default;
+	  position: absolute;
+	  top: 420px;
+	  left:4px;
+}
+
+#Scroller-Set
+{ 
+	  position: absolute; 
+	  overflow: hidden;
+	  width: 93%;
+	  height: 448px;
+}
+
+.Scrollbar-Down-Set
+{
+	  cursor:default;
+	  position: absolute;
+	  top: 410px;
+	  left:4px;
+}
+
+
+.Scrollbar-Track-Set
+{
+	  width: 20px;
+	  height: 365px;
+	  position: absolute;
+	  top: 40px;
+	  left: 12px;
+	
+}
+
+#Scroller-list-left
+{ 
+	  position: absolute; 
+	  overflow: hidden;
+	  width: 100%;
+	  height: 270px;
+}
+
+#Scroller-list-left p 
+{
+	  font-family: Verdana, Arial, Helvetica, sans-serif;
+	  font-size: 11px;
+	  text-indent: 20px;
+	  color: #6F6048;
+}
+
+#Scroller-list-left-Container 
+{
+	  position: absolute;	
+}
+
+#Scroller-list-right
+{ 
+	  position: absolute; 
+	  overflow: hidden;
+	  width: 100%;
+	  height: 270px;
+}
+
+#Scroller-list-right p 
+{
+	  font-family: Verdana, Arial, Helvetica, sans-serif;
+	  font-size: 11px;
+	  text-indent: 20px;
+	  color: #6F6048;
+}
+
+#Scroller-list-right-Container 
+{
+	  position: absolute;	
+}
+
+.Scroller-Container-right 
+{
+	  position:relative;
+}
+
+.Scroller-Container-left 
+{
+	  position:relative;
+}
+
+/* for report */
+
+.VR_line_title
+{
+	background-position:left !important;
+	border-collapse:separate !important;
+	color:inherit !important;
+	font-size:9.7pt !important;
+	padding-right:0px !important;
+}
+
+.Icon_User_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/User Management/User.png');
+	background-repeat:no-repeat;
+}
+.Icon_User_Add_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/User Management/Add User.png');
+	background-repeat:no-repeat;
+}
+.Icon_User_Edit_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/User Management/Edit User.png');
+	background-repeat:no-repeat;
+}
+
+.Icon_Group_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Group Management/Group Management.png');
+	background-repeat:no-repeat;
+}
+
+.Icon_Group_Add_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Group Management/Add Group Management.png');
+	background-repeat:no-repeat;
+}
+
+.Icon_Group_Edit_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Group Management/Edit Group Management.png');
+	background-repeat:no-repeat;
+}
+
+.Icon_Res_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Restriction Management/Restriction Management.png');
+	background-repeat:no-repeat;
+}
+.Icon_Res_Add_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Restriction Management/Restriction.png');
+	background-repeat:no-repeat;
+}
+.Icon_Res_Edit_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Restriction Management/Restriction.png');
+	background-repeat:no-repeat;
+}
+
+.Icon_Set_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Setting Management/Settings.png');
+	background-repeat:no-repeat;
+}
+
+.Icon_Report_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Job Report/Report.png');
+	background-repeat:no-repeat;
+}
+.Icon_Report_Total_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Job Report/Report.png');
+	background-repeat:no-repeat;
+}
+.Icon_Report_User_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Job Report/Report-1.png');
+	background-repeat:no-repeat;
+}
+.Icon_Report_Group_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Job Report/Report-2.png');
+	background-repeat:no-repeat;
+}
+.Icon_Report_MFP_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Job Report/Report-3.png');
+	background-repeat:no-repeat;
+}
+
+.Icon_Avail_IMG
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Job Report/Available Report.png');
+	background-repeat:no-repeat;
+}
+
+.Button_Medium
+{
+	background-color: transparent;
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Button_Medium.png');
+	background-repeat:no-repeat;
+	width:150px;
+	height:42px;
+
+	border:none;	
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.Button_Larger
+{
+	background-color: transparent;
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/Button_Larger.png');
+	background-repeat:no-repeat;
+	width:180px;
+	height:42px;
+
+	border:none;	
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+
+.column
+{
+	width:98%;
+	margin-right:.5%;
+	margin-left:.5%;
+	min-height:300px;
+	background-color: transparent;	
+	float:left;
+}
+.column .dragbox{
+	margin:5px 2px  20px;	
+	position:relative;
+	background-image:url('../Images/Drakanddropbg.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	
+	BORDER-RIGHT: #596269 1px solid;     
+    BORDER-LEFT: #596269 1px solid;
+    BORDER-BOTTOM: #596269 1px solid;	
+	
+}
+.column .dragbox h2
+{
+	margin:0;
+	font-size:12px;
+	padding:5px;
+	height:25px;
+	padding-left:25px;
+	padding-top:8px;
+	
+	color:#000;	
+	font-family:Verdana;
+	cursor:move;
+}
+dragbox-content{
+	background:#82bcdd;
+	min-height:100px; 
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight:normal;
+
+}
+.column  .placeholder{	
+	border:1px dashed #ddd;
+}
+.dragbox h2.collapse
+{	
+	
+}
+.dragbox h2 .configure{
+	font-size:11px;
+	font-weight:normal;
+	margin-right:30px;
+	float:right;
+}
+.Button_JobReport
+{
+	background-color: transparent;
+	background-image:url('../Images/Button_JobReport.png');
+	background-repeat:no-repeat;
+	width:100px;
+	height:26px;
+
+	border:none;	
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.Button_div
+{
+	z-index:1;
+	position:absolute;
+	left:80%;
+	top:1%;
+}
+
+
+.group_list 
+{
+	background-color:Transparent;
+	filter:alpha(opacity=50);
+	width:100%;
+	border:none;
+	border-top-color:#7f9db9;
+	border-left-color:#7f9db9;
+	border-color:#7f9db9;
+	height:100%;
+	display:none;
+}
+
+.year_width
+{	
+	width :58px;	
+}
+.day_width
+{	
+	width :50px;	
+}
+
+.tdLogTitleWidth
+{
+	width:900px;
+}
+
+.tdLogMFP {
+	width :190px;	
+}
+
+.tdLogStatus {
+	width :105px;	
+}
+
+.tdLogJobtype {
+	width :80px;	
+}
+
+.thLogMFP 
+{
+	width:136px;
+	white-space:nowrap;
+}
+
+.tdLogSearch 
+{
+	width:900px;
+}
+
+.thsearch 
+{
+	width:40px;
+	white-space:nowrap;
+}
+
+.tblsearch 
+{
+	width:580px;
+}
+select 
+{
+	display:none;
+}
+.tablefixed
+{
+	table-layout:fixed;
+	position:relative;
+}
+.HR_Line_copyright
+{
+	background: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/HR_Line_copyright.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+.HR_Line
+{
+	background: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='../Images/HR_line.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+
+}
+.Light
+{
+	display:none;
+	position: absolute;	
+	background-color:#000000; 	 
+	top: 0%;
+	left: 0%;	 
+	z-index:98;	 
+	filter: alpha(opacity=90);
+	width:1224px;
+	height:850px;	
+	
+}
+.TitleFont
+{
+	width:867px;
+}
+.TitleLogo
+{
+	width:223px;
+}

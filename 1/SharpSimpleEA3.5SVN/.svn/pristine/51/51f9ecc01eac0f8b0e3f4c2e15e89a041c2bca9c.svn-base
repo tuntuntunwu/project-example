@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+// ==============================================================================
+// File Name           : GenericErrorPage.htm
+// Description         : GenericErrorPage.htm for SimpleEA
+// Author(s)           : Ji Jianxiong
+// Date created        : 2010.09.13
+// Date updated        : 2010.12.28
+//                       Html Standerd Modify
+// Last reviewed by    : 
+// Last date of review : 
+// Copyright           : (c) 2010, SHARP CORPORATION., All rights reserved.
+//                       All rights are reserved. Reproduction or transmission in whole or in part, in
+//                       any form or by an means, electronic, mechanical or otherwise, is prohibited
+//                       without the prior written consent of the copyright owner.
+
+// ==============================================================================
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+    <title>::Simple EA Application :: ErrorPage</title>
+    <link href="Css/style_error.css" rel="stylesheet" type="text/css" />
+    <!--[if IE 6]>
+		<link rel="stylesheet" href="Css/IE_error.css" type="text/css" />
+	<![endif]-->
+
+    <script type="text/javascript" language="javascript">
+        
+        function bgLoad()//Background image loading and auto resize
+        {
+
+            var detected_os = navigator.userAgent.toLowerCase();
+            if ((navigator.appVersion.indexOf('MSIE 6.0') != -1) || (navigator.appVersion.indexOf('MSIE 5.5') != -1)) {
+                document.write(" <div id='content' style='position:relative; z-index:1;padding:10px;'>");
+
+            }
+            else {
+                document.write("<div id='page-background' style='position:fixed; top:0; left:0; width:100%; height:100%;'><img src='Images/BG.jpg' width='100%' height='100%'/></div>");
+                document.write(" <div id='content' style='position:relative; z-index:1; padding:10px;'>");
+
+            }
+        }
+        
+    </script>
+
+</head>
+<body leftmargin="0" topmargin="0">
+
+    <script language="javascript" type="text/javascript">bgLoad();</script>
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td style="height: 47px" align="left" valign="top">
+                <table style="width: 100%; height:25px" width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style="width: 90%" align="left" valign="bottom" class="TitleFont">
+                            <!-- Application Logo -->
+                            <div class="IMG_1" style="width: 375px; height: 41px;">
+                            </div>
+                        </td>
+                        <td style="width: 10%" align="left" valign="top">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" style="height: 2px" class="HR_Line">
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" style="height: 20px">
+            </td>
+        </tr>
+        <tr>
+            <td align="center" valign="top" style="height: 48px">
+            </td>
+        </tr>
+        <tr>
+            <td align="center" valign="top">
+                <table width="97%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="left" valign="top">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="height: 10px" align="left" valign="top">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 1%" align="left" valign="top">
+                                    </td>
+                                    <td style="width: 98%" align="left" valign="top">
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td style="width: 1%" align="right" valign="top">
+                                                    <div class="Login_left_IMG" style="width: 100%; height: 39px">
+                                                    </div>
+                                                </td>
+                                                <td style="width: 98%" align="left" valign="middle" class="Login_Topcenter">
+                                                    错误页面
+                                                </td>
+                                                <td style="width: 1%" align="left" valign="top">
+                                                    <div class="Login_Right_IMG" style="width: 100%; height: 39px">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" valign="top" class="Login_left_bg">
+                                                </td>
+                                                <td align="left" valign="top" class="Login_centerbg" style="height: 500px;">
+                                                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td align="left" valign="top">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="left" valign="top" style="height: 10px">
+                                                                <h2>
+                                                                    系统发生错误！</h2>
+                                                                <h2>
+                                                                    请联系系统管理员！</h2>
+                                                                <h2>
+                                                                    An internal system error has been detected.</h2>
+                                                                <h2>
+                                                                    Please contact your system administrator.</h2>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="left" valign="top">
+                                                                <!-- end of the Main table-->
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="height: 50px" align="center" valign="middle">
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td align="left" valign="top" class="Login_right_bg">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right" valign="top">
+                                                    <div class="Login_bottom_left_IMG" style="width: 17px; height: 22px;">
+                                                    </div>
+                                                </td>
+                                                <td align="right" valign="top" class="Login_bottom_bg">
+                                                </td>
+                                                <td align="left" valign="top">
+                                                    <div class="Login_bottom_right_IMG" style="width: 17px; height: 22px">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td style="width: 1%" align="left" valign="top">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top">
+                                    </td>
+                                    <td align="left" valign="top">
+                                        <!-- Login Box shadows effect -->
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td style="width: 3%; height: 55px" align="left" valign="top" class="Login_left_shadow">
+                                                    &nbsp;
+                                                </td>
+                                                <td style="width: 94%" align="center" valign="middle" class="Login_bottom_shoadow">
+                                                    &nbsp;
+                                                </td>
+                                                <td style="width: 3%" align="left" valign="top" class="Login_right_shadows">
+                                                    &nbsp;
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td style="height: 55px" align="left" valign="top">
+                                    </td>
+                                </tr>
+                            </table>
+                            <!--End of the Login Box shadows effect -->
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" style="height: 2px" class="HR_Line_copyright">
+            </td>
+        </tr>
+        <tr>
+            <td align="left" valign="top" style="height: 40px">
+                <!-- Copy right Location -->
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="height: 40px">
+                    <tr>
+                        <td style="width: 61%" align="left" valign="middle" class="Copyright">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&copy; 夏普商贸（中国）有限公司
+                        </td>
+                        <td style="width: 39%" align="right" valign="bottom" class="WhiteFont">
+                            <div class="SharpLogo_Insidepage" style="width: 109px; height: 33px;">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>

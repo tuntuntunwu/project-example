@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+//using System.Linq;
+using System.Text;
+
+namespace Model
+{
+    public class SectionJobCSVModel
+    {
+        public string SectionID = "";
+        public string SectionName = "";
+        public int level = 0;
+        public string PerentSectionID = "";
+        public string type = "";
+        public JobInformationCSVModel csvmodel = new JobInformationCSVModel();
+        public string getUserReportData(int Dsp_Count_mode)
+        {
+            string strOutPut = csvmodel.getUserReportData(Dsp_Count_mode);
+            strOutPut = SectionName + "," + csvmodel.GroupName + "," + strOutPut;
+            return strOutPut;
+        }
+    }
+}

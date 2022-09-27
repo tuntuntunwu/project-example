@@ -1,0 +1,551 @@
+/* Copyright SHARP Corporation
+//	Copyright (c) 2010 SHARP CORPORATION. All rights reserved.
+//
+//	SHARP Simple EA Application
+//
+//	This software is protected under the Copyright Laws of the United States,
+//	Title 17 USC, by the Berne Convention, and the copyright laws of other
+//	countries.
+//
+//	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER ``AS IS'' AND ANY EXPRESS 
+//	OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+//	OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+//
+//==============================================================================
+*/
+html, body 
+{
+	height:100%; margin:0; padding:0;
+}
+
+body 
+{
+	width:100%;
+	height:100%;
+	background: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/BG.jpg');
+}
+
+.Login_centerbg {
+	background: none;
+	width: 98%; 
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Login_centerbg.png');
+}
+
+
+.IMG_1
+{
+	background: none;
+	width: 375px; /* Must Specify Width */
+	height:41px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Application_logo.png');
+}
+.Sharp_Logo
+{
+	background: none;
+	width: 106px; /* Must Specify Width */
+	height:16px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/SharpLogo.png');
+}
+.VR_line_Header
+{
+    background-image:url('../Images/VR_line_Header.gif');
+	background-repeat:repeat-y;
+	background-repeat-x:0%;
+	background-position:left;
+}
+.Inputtextbox
+{
+	width:200px;
+	height:25px;
+	font-family:Verdana;
+	color:#000000;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:left;
+	BORDER-RIGHT: #095fec 3px solid; 
+    BORDER-TOP: #095fec 3px solid;
+    BORDER-LEFT: #095fec 3px solid;
+    BORDER-BOTTOM: #095fec 3px solid;
+	
+}
+
+.Select_button
+{
+	background-color: transparent;
+	background: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Select_button.png');
+	background-repeat:no-repeat;
+	width:128px;
+	height:28px;
+
+	border:none;	
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+.Login_left_IMG
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Login_left.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+.Login_Right_IMG
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Login_Right.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+.Login_bottom_right_IMG
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Login_bottom_right.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+.Bottom_login_bg_new
+{
+	background-image:url('../Images/Bottom_login_bg_new.gif');
+	background-position:right;
+}
+.Bottom_right_bg_Newupdated
+{
+	background-image:url('../Images/Bottom_right_bg_Newupdated.gif');
+	background-position:left;
+}
+.SelectedTR
+{
+	
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Selected_TR.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-color:#0960ff;
+
+	
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+.Login_bottom_left_IMG
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Login_bottom_left.png');
+	background-repeat:no-repeat;
+	
+}
+.LogUser_IMG
+{
+	background: none;
+	width: 106px; 
+	height:16px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/LogUser_IMG.png');
+	background-repeat:no-repeat;
+}
+/*.Bottom_left_IMG
+{
+	background: none;
+	width: 100%; 
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Bottom_left.png');
+	background-position:bottom;
+
+}
+*/
+
+
+.Bottom_login_bg
+{
+	background-image:url('../Images/Title_topbg_left2.gif');
+	background-position:bottom;
+}
+.Bottom_left_IMG
+{
+	background: none;	
+	background-image:url('../Images/Bottom_left2.gif');
+	background-position:bottom;
+
+}
+.Bottom_right_bg
+{
+	background-image:url('../Images/Bottom_right_bg.gif');
+	background-position:bottom;
+}
+.Bottom_Right_IMG
+{
+	background: none;	
+	background-image:url('../Images/Bottom_Right.gif');
+	background-position:bottom;
+	background-repeat:no-repeat;
+}
+
+.Login_Topcenter
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Login_Topcenter.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:none;
+}
+.Login_left_bg
+{
+	background: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Login_left_bg.png');
+	background-repeat:repeat-y;
+	background-repeat-x:0%;
+	background-position:right;
+}
+.Login_right_bg
+{
+	background: none;
+	width:100%;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Login_right_bg.png');	
+	background-repeat:repeat-y;
+	background-repeat-x:0%;
+	background-position:right;
+}
+.Table_header_left
+{
+	background-image:url('../Images/Table_header_left1.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:right;
+}
+.Title_topbg
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Title_topbg1.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+
+/*.Title_topbg_right
+{
+	background: none;
+	width:50px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Title_topbg1_New.png');
+	background-position:left;
+}
+.Title_topbg_left
+{
+	background: none;
+	width: 100%;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Title_topbg1_right.png');
+	background-position:right;
+}
+*/
+
+.Title_topbg_right
+{
+	background-image:url('../Images/Title_topbg_right1.gif');
+	background-position:left;
+}
+.Title_topbg_left
+{
+	background-image:url('../Images/Title_topbg_left1.gif');
+	background-position:right;
+}
+
+.Table_header_Right
+{
+	background-image:url('../Images/Table_header_Right1.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:left;
+}
+.Login_bottom_bg
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Login_bottom_bg.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+.Login_bottom_shoadow
+{
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Login_bottom_shoadow.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+
+}
+
+.Login_left_shadow
+{
+	background: none;
+	width: 15%; 
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Login_left_shadow.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:left;
+}
+
+.Login_right_shadows
+{
+	background: none;
+	width: 25%; 
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/Login_right_shadow_1.png');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:right;
+
+}
+.User_loginIMG
+{
+	background: none;
+	width: 112px; 
+	height:135px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/User_loginIMG.png');
+	background-repeat:no-repeat;
+}
+
+.Login_Button_bg
+{
+	background-color: transparent;
+	background: none;
+	width: 100%; /* Must Specify Width */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/LoginButton.png');
+	background-repeat:no-repeat;
+	width:103px;
+	height:42px;
+
+	border:none;	
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.MenuCenter_bg
+{
+	background-image:url('../Images/MenuCenter_bg.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+}
+.MenuFont
+{
+	background-image:url('../Images/MenuFont.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:right;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.MenuFont_1
+{
+	background-image:url('../Images/MenuFont_1.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:left;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.MenuFont :hover 
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:underline;
+	text-transform:uppercase;
+	
+}
+.MenuFont_1 :hover 
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:underline;
+	text-transform:uppercase;
+	
+}
+.MenuFont_notuse
+{
+	background-image:url('../Images/MenuFont.gif');
+	background-repeat:repeat-x;
+	background-repeat-y:0%;
+	background-position:left;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.Select_menu_bg
+{ 
+	background: transparent url('../Images/Select_menu_bg.png') no-repeat top left ;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.Req_Filed_red
+{
+    background-color:#FF0000;	
+ 	font-family:Verdana;
+	color:#FFFFFF;
+	font-size:10px;
+	font-weight:bold;
+	text-decoration:none;
+
+}
+
+.User_MNG_img
+{
+	background: none;
+	width: 32px;
+	height:32px;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/User_MNG_img.png');
+	background-repeat:no-repeat;
+}
+
+.SharpLogo_Insidepage
+{
+	background: none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='Images/SharpLogo_Insidepage.png');
+	background-repeat:no-repeat;
+	background-repeat:no-repeat;
+	width:109px;
+	height:33px;
+
+}
+.Lightboxbg
+{
+	display:none;
+	position: absolute;	
+	background-color:#000000; 	 
+	top: 0%;
+	left: 0%;	 
+	z-index:6;	 
+	filter: alpha(opacity=90);
+	width:101%;
+	height:850px;
+	
+	
+}	
+.WhiteBoxbg
+{
+	display:none;
+	position:absolute;
+	top: 35%;
+	left: 35%;
+	width: 350;
+	height: 150; 
+	background-color:White;     
+	border: 2px solid #4e7a95;	
+	z-index:7;
+	overflow: hidden;
+	vertical-align:bottom;
+}
+
+
+.Container
+{
+	  position: absolute;	
+	  width: 100%;
+	  height: 2px;
+	  
+}
+#Scroller-1
+{ 
+	  position: absolute; 
+	  overflow: hidden;
+	  width: 100%;
+	  height: 390px;
+}
+
+#Scroller-2
+{ 
+	  position: absolute; 
+	  overflow: hidden;
+	  width: 100%;
+	  height: 448px;
+}
+#Scroller-1 p 
+{
+	  font-family: Verdana, Arial, Helvetica, sans-serif;
+	  font-size: 11px;
+	  text-indent: 20px;
+	  color: #6F6048;
+}
+.Scroller-Container 
+{
+	  position:relative;
+}
+
+#Scrollbar-Container 
+{
+	  position: absolute;	
+}
+
+.Scrollbar-Track 
+{
+	  width: 20px;
+	  height: 300px;
+	  position: absolute;
+	  top: 40px;
+	  left: 12px;
+	
+}
+.Scrollbar-Handle
+{
+	  position: absolute;
+	  width: 13px;
+	  height: 89px;	 
+}
+
+
+.Scrollbar-Up 
+{
+	  cursor:default;
+	  position: absolute;	  
+	  left:4px;
+	  top:5px;
+}
+
+.Scrollbar-Down 
+{
+	  cursor:default;
+	  position: absolute;
+	  top: 350px;
+	  left:4px;
+}
+.Scrollbar-Down1
+{
+	  cursor:default;
+	  position: absolute;
+	  top: 420px;
+	  left:4px;
+}

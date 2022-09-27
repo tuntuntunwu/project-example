@@ -1,0 +1,267 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Text;
+using System.Collections.Generic;
+using DAL;
+using Model;
+using System.Security.Cryptography;
+using System.Runtime.Remoting.Contexts;
+using System.Data.SqlClient;
+
+/// <summary>
+/// UserSystem 的摘要说明
+/// </summary>
+namespace BLL
+{
+    public class BllSection
+    {
+        DalSectionInfo dal = new DalSectionInfo();
+        DalUser daluser = new DalUser();
+        DalJobInformation daljob = new DalJobInformation();
+
+        //CreateSectionReport()创建树结构，getSectionReportCSVList()获取统计值
+
+        #region 创建树结构
+
+        //创建集团报表管理类
+        public SectionReport CreateSectionReport()
+        {
+            SectionReport report = new SectionReport();
+            string rootID = "0";
+            SectionInfoEntry root = dal.GetInfoByKey(rootID);
+            report.sectioninfo = root;
+            GetGroup(report);
+            GetSubSection(report);
+            return report;
+        }
+
+        //获得集团下的所有用户组
+        public void GetGroup(SectionReport report)
+        {
+            string sectionid = report.sectioninfo.SectionID;
+            DalSectionGroup dalsectiongroup = new DalSectionGroup();
+            List<GroupEntry> grouplist = dalsectiongroup.getAllGroupList(sectionid);
+
+            if (grouplist.Count > 0)
+            {
+                foreach (GroupEntry group in grouplist)
+                {
+                    SectionGroupReport groupReport = new SectionGroupReport();
+                    groupReport.groupinfo = group;
+                    report.AddGroupReport(groupReport);
+                }
+                //查询group下的所有用户
+                foreach (SectionGroupReport groupreport in report.grouplist)
+                {
+                    //仅有用户携带JobInformationCSVModel信息，统计时使用
+                    List<JobInformationCSVModel> userreportlist = daluser.getGroupUserVList(groupreport.groupinfo.ID);
+                    groupreport.userreportlist = userreportlist;
+                }
+            }
+            
+        }
+
+        //获得集团下的所有子集团 并 递归创建整个树结构
+        public void GetSubSection(SectionReport report)
+        {
+            List<SectionInfoEntry> subSectionlist = dal.getSubSectionInfo(report.sectioninfo.SectionID);
+
+            if (subSectionlist.Count > 0)
+            {
+                foreach (SectionInfoEntry section in subSectionlist)
+                {
+                    SectionReport sectionreport = new SectionReport();
+                    sectionreport.sectioninfo = section;
+                    report.AddSectionReport(sectionreport);
+                }
+                foreach (SectionReport subreport in report.sectionlist)
+                {
+                    GetGroup(subreport);
+                    GetSubSection(subreport);
+                }
+            }
+
+        }
+
+        #endregion
+
+
+        #region 获取统计值
+
+        public List<SectionJobCSVModel> getSectionReportCSVList(SectionReport report, DateTime START_TIME, DateTime END_TIME, string SerialNumber, int Dsp_Count_mode, int Dsp_A3_A4)
+        {
+            //SectionJobCSVModel意义参见定义文件
+            List<SectionJobCSVModel> jobList = new List<SectionJobCSVModel>();
+
+            SectionJobCSVModel csv_root = new SectionJobCSVModel();
+            csv_root.type = "集团";
+            csv_root.SectionID = report.sectioninfo.SectionID;
+            csv_root.SectionName = report.sectioninfo.SectionName;
+            csv_root.level = report.sectioninfo.Level;
+            csv_root.ParentSectionID = report.sectioninfo.ParentSectionID;
+            jobList.Add(csv_root);
+
+            JobInformationCSVModel csv_groups = GetGroupCSV(report, jobList, START_TIME, END_TIME, SerialNumber, Dsp_Count_mode, Dsp_A3_A4);
+            JobInformationCSVModel csv_subsections = GetSubSectionCSV(report, jobList, START_TIME, END_TIME, SerialNumber, Dsp_Count_mode, Dsp_A3_A4);
+
+            //总数值 = 所有用户组数值csv_groups + 所有子集团数值csv_subsections
+            csv_root.csvmodel.CopyBWMoney = csv_groups.CopyBWMoney + csv_subsections.CopyBWMoney;
+            csv_root.csvmodel.CopyColorMoney = csv_groups.CopyColorMoney + csv_subsections.CopyColorMoney;
+            csv_root.csvmodel.CopyAllMoney = csv_groups.CopyAllMoney + csv_subsections.CopyAllMoney;
+            csv_root.csvmodel.PrintBWMoney = csv_groups.PrintBWMoney + csv_subsections.PrintBWMoney;
+            csv_root.csvmodel.PrintColorMoney = csv_groups.PrintColorMoney + csv_subsections.PrintColorMoney;
+            csv_root.csvmodel.PrintAllMoney = csv_groups.PrintAllMoney + csv_subsections.PrintAllMoney;
+            csv_root.csvmodel.ScanBWMoney = csv_groups.ScanBWMoney + csv_subsections.ScanBWMoney;
+            csv_root.csvmodel.ScanColorMoney = csv_groups.ScanColorMoney + csv_subsections.ScanColorMoney;
+            csv_root.csvmodel.ScanAllMoney = csv_groups.ScanAllMoney + csv_subsections.ScanAllMoney;
+            csv_root.csvmodel.FaxBWMoney = csv_groups.FaxBWMoney + csv_subsections.FaxBWMoney;
+            csv_root.csvmodel.FaxAllMoney = csv_groups.FaxAllMoney + csv_subsections.FaxAllMoney;
+            csv_root.csvmodel.DFPrintBWMoney = csv_groups.DFPrintBWMoney + csv_subsections.DFPrintBWMoney;
+            csv_root.csvmodel.DFPrintColorMoney = csv_groups.DFPrintColorMoney + csv_subsections.DFPrintColorMoney;
+            csv_root.csvmodel.DFPrintAllMoney = csv_groups.DFPrintAllMoney + csv_subsections.DFPrintAllMoney;
+            csv_root.csvmodel.ScanSaveBWMoney = csv_groups.ScanSaveBWMoney + csv_subsections.ScanSaveBWMoney;
+            csv_root.csvmodel.ScanSaveColorMoney = csv_groups.ScanSaveColorMoney + csv_subsections.ScanSaveColorMoney;
+            csv_root.csvmodel.ScanSaveAllMoney = csv_groups.ScanSaveAllMoney + csv_subsections.ScanSaveAllMoney;
+            csv_root.csvmodel.ListPrintBWMoney = csv_groups.ListPrintBWMoney + csv_subsections.ListPrintBWMoney;
+            csv_root.csvmodel.ListPrintColorMoney = csv_groups.ListPrintColorMoney + csv_subsections.ListPrintColorMoney;
+            csv_root.csvmodel.ListPrintAllMoney = csv_groups.ListPrintAllMoney + csv_subsections.ListPrintAllMoney;
+            csv_root.csvmodel.FaxChannelBWMoney = csv_groups.FaxChannelBWMoney + csv_subsections.FaxChannelBWMoney;
+            csv_root.csvmodel.FaxChannelAllMoney = csv_groups.FaxChannelAllMoney + csv_subsections.FaxChannelAllMoney;
+            csv_root.csvmodel.FaxNetBWMoney = csv_groups.FaxNetBWMoney + csv_subsections.FaxNetBWMoney;
+            csv_root.csvmodel.FaxNetAllMoney = csv_groups.FaxNetAllMoney + csv_subsections.FaxNetAllMoney;
+            csv_root.csvmodel.OtherBWMoney = csv_groups.OtherBWMoney + csv_subsections.OtherBWMoney;
+            csv_root.csvmodel.OtherColorMoney = csv_groups.OtherColorMoney + csv_subsections.OtherColorMoney;
+            csv_root.csvmodel.OtherAllMoney = csv_groups.OtherAllMoney + csv_subsections.OtherAllMoney;
+
+            return jobList;
+        }
+
+        //获得集团下所有用户组的统计结果
+        public JobInformationCSVModel GetGroupCSV(SectionReport report, List<SectionJobCSVModel> jobList, DateTime START_TIME, DateTime END_TIME, string SerialNumber, int Dsp_Count_mode, int Dsp_A3_A4)
+        {
+            JobInformationCSVModel csv_groups = new JobInformationCSVModel();
+
+            if (report.grouplist.Count > 0)
+            {
+                //查询group下的所有用户
+                foreach (SectionGroupReport groupreport in report.grouplist)
+                {
+                    SectionJobCSVModel csvgroup = new SectionJobCSVModel();
+                    csvgroup.type = "用户组";
+                    csvgroup.SectionID = report.sectioninfo.SectionID;
+                    csvgroup.SectionName = report.sectioninfo.SectionName;
+                    csvgroup.level = report.sectioninfo.Level;
+                    csvgroup.ParentSectionID = report.sectioninfo.ParentSectionID;
+                    jobList.Add(csvgroup);
+
+                    List<JobInformationCSVModel> userreportlist = groupreport.userreportlist;
+                    List<SectionJobCSVModel> list = GetUserJobDict(userreportlist, START_TIME, END_TIME, SerialNumber, Dsp_Count_mode, Dsp_A3_A4);
+                    foreach (SectionJobCSVModel csvuser in list)
+                    {
+                        csvuser.type = "用户";
+                        csvuser.SectionID = report.sectioninfo.SectionID;
+                        csvuser.SectionName = report.sectioninfo.SectionName;
+                        csvuser.level = report.sectioninfo.Level;
+                        csvuser.ParentSectionID = report.sectioninfo.ParentSectionID;
+                        jobList.Add(csvuser);
+                    
+                        //把用户数值csvuser加到用户组数值csvgroup
+                        csvgroup.csvmodel.CopyBWMoney = csvuser.csvmodel.CopyBWMoney + csvgroup.csvmodel.CopyBWMoney;
+                        csvgroup.csvmodel.CopyColorMoney = csvuser.csvmodel.CopyColorMoney + csvgroup.csvmodel.CopyColorMoney;
+                        csvgroup.csvmodel.CopyAllMoney = csvuser.csvmodel.CopyAllMoney + csvgroup.csvmodel.CopyAllMoney;
+                        csvgroup.csvmodel.PrintBWMoney = csvuser.csvmodel.PrintBWMoney + csvgroup.csvmodel.PrintBWMoney;
+                        csvgroup.csvmodel.PrintColorMoney = csvuser.csvmodel.PrintColorMoney + csvgroup.csvmodel.PrintColorMoney;
+                        csvgroup.csvmodel.PrintAllMoney = csvuser.csvmodel.PrintAllMoney + csvgroup.csvmodel.PrintAllMoney;
+                        csvgroup.csvmodel.ScanBWMoney = csvuser.csvmodel.ScanBWMoney + csvgroup.csvmodel.ScanBWMoney;
+                        csvgroup.csvmodel.ScanColorMoney = csvuser.csvmodel.ScanColorMoney + csvgroup.csvmodel.ScanColorMoney;
+                        csvgroup.csvmodel.ScanAllMoney = csvuser.csvmodel.ScanAllMoney + csvgroup.csvmodel.ScanAllMoney;
+                        csvgroup.csvmodel.FaxBWMoney = csvuser.csvmodel.FaxBWMoney + csvgroup.csvmodel.FaxBWMoney;
+                        csvgroup.csvmodel.FaxAllMoney = csvuser.csvmodel.FaxAllMoney + csvgroup.csvmodel.FaxAllMoney;
+                        csvgroup.csvmodel.DFPrintBWMoney = csvuser.csvmodel.DFPrintBWMoney + csvgroup.csvmodel.DFPrintBWMoney;
+                        csvgroup.csvmodel.DFPrintColorMoney = csvuser.csvmodel.DFPrintColorMoney + csvgroup.csvmodel.DFPrintColorMoney;
+                        csvgroup.csvmodel.DFPrintAllMoney = csvuser.csvmodel.DFPrintAllMoney + csvgroup.csvmodel.DFPrintAllMoney;
+                        csvgroup.csvmodel.ScanSaveBWMoney = csvuser.csvmodel.ScanSaveBWMoney + csvgroup.csvmodel.ScanSaveBWMoney;
+                        csvgroup.csvmodel.ScanSaveColorMoney = csvuser.csvmodel.ScanSaveColorMoney + csvgroup.csvmodel.ScanSaveColorMoney;
+                        csvgroup.csvmodel.ScanSaveAllMoney = csvuser.csvmodel.ScanSaveAllMoney + csvgroup.csvmodel.ScanSaveAllMoney;
+                        csvgroup.csvmodel.ListPrintBWMoney = csvuser.csvmodel.ListPrintBWMoney + csvgroup.csvmodel.ListPrintBWMoney;
+                        csvgroup.csvmodel.ListPrintColorMoney = csvuser.csvmodel.ListPrintColorMoney + csvgroup.csvmodel.ListPrintColorMoney;
+                        csvgroup.csvmodel.ListPrintAllMoney = csvuser.csvmodel.ListPrintAllMoney + csvgroup.csvmodel.ListPrintAllMoney;
+                        csvgroup.csvmodel.FaxChannelBWMoney = csvuser.csvmodel.FaxChannelBWMoney + csvgroup.csvmodel.FaxChannelBWMoney;
+                        csvgroup.csvmodel.FaxChannelAllMoney = csvuser.csvmodel.FaxChannelAllMoney + csvgroup.csvmodel.FaxChannelAllMoney;
+                        csvgroup.csvmodel.FaxNetBWMoney = csvuser.csvmodel.FaxNetBWMoney + csvgroup.csvmodel.FaxNetBWMoney;
+                        csvgroup.csvmodel.FaxNetAllMoney = csvuser.csvmodel.FaxNetAllMoney + csvgroup.csvmodel.FaxNetAllMoney;
+                        csvgroup.csvmodel.OtherBWMoney = csvuser.csvmodel.OtherBWMoney + csvgroup.csvmodel.OtherBWMoney;
+                        csvgroup.csvmodel.OtherColorMoney = csvuser.csvmodel.OtherColorMoney + csvgroup.csvmodel.OtherColorMoney;
+                        csvgroup.csvmodel.OtherAllMoney = csvuser.csvmodel.OtherAllMoney + csvgroup.csvmodel.OtherAllMoney;
+
+                    }
+
+                    //把每个用户组数值csvgroup加到返回的数值csv_groups
+                    csv_groups.CopyBWMoney = csvgroup.csvmodel.CopyBWMoney + csv_groups.CopyBWMoney;
+
+                }
+            }
+
+            return csv_groups;
+        }
+
+        //获得集团下所有子集团的统计结果
+        public JobInformationCSVModel GetSubSectionCSV(SectionReport report, List<SectionJobCSVModel> jobList, DateTime START_TIME, DateTime END_TIME, string SerialNumber, int Dsp_Count_mode, int Dsp_A3_A4)
+        {
+            JobInformationCSVModel csv_subsections = new JobInformationCSVModel();
+
+            if (report.sectionlist.Count > 0)
+            {
+                //查询sub集团
+                foreach (SectionReport subreport in report.sectionlist)
+                {
+                    SectionJobCSVModel csvsubsection = new SectionJobCSVModel();
+                    csvsubsection.type = "集团";
+                    csvsubsection.SectionID = subreport.sectioninfo.SectionID;
+                    csvsubsection.SectionName = subreport.sectioninfo.SectionName;
+                    csvsubsection.level = subreport.sectioninfo.Level;
+                    csvsubsection.ParentSectionID = subreport.sectioninfo.ParentSectionID;
+                    jobList.Add(csvsubsection);
+
+                    JobInformationCSVModel tmp_csv_groups = GetGroupCSV(subreport, jobList, START_TIME, END_TIME, SerialNumber, Dsp_Count_mode, Dsp_A3_A4);
+                    JobInformationCSVModel tmp_csv_subsections = GetSubSectionCSV(subreport, jobList, START_TIME, END_TIME, SerialNumber, Dsp_Count_mode, Dsp_A3_A4);
+
+                    //子集团总数值 = 所有用户组数值tmp_csv_groups + 所有子集团数值tmp_csv_subsections
+                    csvsubsection.csvmodel.CopyBWMoney = tmp_csv_groups.CopyBWMoney + tmp_csv_subsections.CopyBWMoney;
+
+                    //把每个子集团数值csvsubsection加到返回的csv_subsections
+                    csv_subsections.CopyBWMoney = csvsubsection.csvmodel.CopyBWMoney + csv_subsections.CopyBWMoney;
+                }
+            }
+
+            return csv_subsections;
+        }
+
+        //用户统计
+        public List<SectionJobCSVModel> GetUserJobDict(List<JobInformationCSVModel> idlist, DateTime START_TIME, DateTime END_TIME, string SerialNumber, int Dsp_Count_mode, int Dsp_A3_A4)
+        {
+            List<SectionJobCSVModel> list = new List<SectionJobCSVModel>();
+            foreach (JobInformationCSVModel bean in idlist)
+            {
+                JobInformationCSVModel row = daljob.getUserJobInfomation(bean.UserID, START_TIME, END_TIME, SerialNumber, Dsp_Count_mode, Dsp_A3_A4);
+                if (row != null)
+                {
+                    row.UserID = bean.UserID;
+                    row.UserName = bean.UserName;
+                    row.LoginName = bean.LoginName;
+                    row.GroupID = bean.GroupID;
+                    row.GroupName = bean.GroupName;
+                    SectionJobCSVModel csvmodel = new SectionJobCSVModel();
+                    csvmodel.csvmodel = row;
+                    list.Add(csvmodel);
+                }
+            }
+            return list;
+        }
+
+        #endregion
+
+    }
+}

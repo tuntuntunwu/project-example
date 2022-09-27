@@ -1,0 +1,4 @@
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\Common\bin\Debug\SimpleEACommon.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\Common\bin\Debug\SimpleEACommon.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\Common\obj\Debug\SimpleEACommon.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\Common\obj\Debug\SimpleEACommon.pdb

@@ -1,0 +1,4 @@
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\Middleware\bin\Debug\Middleware.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\Middleware\bin\Debug\Middleware.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\Middleware\obj\Debug\Middleware.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\Middleware\obj\Debug\Middleware.pdb

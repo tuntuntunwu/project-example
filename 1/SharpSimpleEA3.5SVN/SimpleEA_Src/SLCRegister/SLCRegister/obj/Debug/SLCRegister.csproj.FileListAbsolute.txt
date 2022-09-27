@@ -1,0 +1,8 @@
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SLCRegister\SLCRegister\bin\Debug\SLCRegister.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SLCRegister\SLCRegister\bin\Debug\SLCRegister.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SLCRegister\SLCRegister\bin\Debug\EAED.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SLCRegister\SLCRegister\bin\Debug\EnDeSecurity.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SLCRegister\SLCRegister\bin\Debug\EnDeSecurity.pdb
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SLCRegister\SLCRegister\obj\Debug\SLCRegister.csprojResolveAssemblyReference.cache
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SLCRegister\SLCRegister\obj\Debug\SLCRegister.dll
+E:\Code\SharpSimpleEA3.5SVN\SimpleEA_Src\SLCRegister\SLCRegister\obj\Debug\SLCRegister.pdb

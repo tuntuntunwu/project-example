@@ -1,0 +1,80 @@
+<%--
+// ==============================================================================
+// File Name           : MFPPrintDetailsMasterPage.master
+// Description         : MasterPage for MFP Print Details
+// Author(s)           : Wei Changye
+// Date created        : 2012.01.07
+// Copyright           : (c) 2012, SHARP CORPORATION., All rights reserved.
+//                       All rights are reserved. Reproduction or transmission in whole or in part, in
+//                       any form or by an means, electronic, mechanical or otherwise, is prohibited
+//                       without the prior written consent of the copyright owner.
+
+// ==============================================================================
+--%>
+
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MFPPrintDetailsMasterPage.master.cs" 
+Inherits="Masterpage_MFPPrintDetailsMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <meta name="Browser" content="NetFront" />
+    <title>::Simple EA Application :: Print Details</title>
+    <link href="../Css_mfp/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="DetailsBG" leftmargin="0" topmargin="0" scroll="NO" >
+    <form id="frmMain" runat="server">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" 
+            class="MFP_table"  style="float: none; height:100%;">
+            <tr>
+                <td align="left" valign="top" style="height:15%" class="Header_bg">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="width: 83%; height: 48px" align="left" valign="middle" class="Title_Font">
+                                <!-- Title -->
+                                &nbsp; Simple EA Application
+                                <!--End of the Title -->
+                            </td>
+                            <td style="width: 17%" align="center" valign="middle">
+                                <!-- Sharp Logo -->
+                                <img src="../Images_mfp/Sharp.png" width="112" height="21" alt="Sharp" />
+                                <!--End of the Sharp Logo -->
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" style="height:85%">
+                    <table width="100%" border="1" cellpadding="0" cellspacing="0" runat="server" id="mainTable">
+                        <tr>
+                            <td align="left" runat="server" id="leftTd" valign="top" style="width: 15%; border-right:MFPVR_line; height:100%;">
+                                <asp:ContentPlaceHolder ID="cphlisthead" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                            <%--<td align="center" valign="top" class="VR_line" style="width: 2px; border:2px;">
+                            </td>--%>
+                            <td align="left" valign="top" style="width: 70%; height:100%;">
+                                <asp:ContentPlaceHolder ID="cphbody" runat="server">
+                                </asp:ContentPlaceHolder>
+                                <!-- end of the Main table-->
+                            </td>
+                            <%--<td align="center" valign="top" class="VR_line" style="width: 2px; border:2px;">
+                            </td>--%>
+                            <td id="rigthTd" runat="server" style="width: 15%; height:100%; border-left:MFPVR_line;" align="left" valign="top">
+                                <asp:ContentPlaceHolder ID="cphfoot" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

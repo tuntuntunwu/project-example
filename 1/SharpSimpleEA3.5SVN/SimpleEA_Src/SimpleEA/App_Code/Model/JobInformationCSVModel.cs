@@ -1,0 +1,667 @@
+﻿using System;
+using System.Collections.Generic;
+//using System.Linq;
+using System.Text;
+
+namespace Model
+{
+    public class JobInformationCSVModel
+    {
+        #region Model
+        public int Type = 0;//0:用户报表，1：用户组
+        public int UserID = 0;
+        public string UserName="";
+        public string LoginName = "";
+        public int GroupID = 0;
+        public string GroupName="";
+        public int UserCount = 0;
+        public string SerialNumber = "";
+        public string ModelName = "";
+
+        public double AllMoney=0;
+        public double AllBWMoney=0;
+        public double AllColorMoney=0;
+
+        public double CopyBWMoney =0;
+        public double CopyColorMoney =0;
+        public double CopyAllMoney =0;
+        public double PrintBWMoney =0;
+        public double PrintColorMoney =0;
+        public double PrintAllMoney =0;
+        public double ScanBWMoney =0;
+        public double ScanColorMoney =0;
+        public double ScanAllMoney =0;
+        public double FaxBWMoney =0;
+        public double FaxAllMoney =0;
+
+        public double DFPrintBWMoney =0;
+        public double DFPrintColorMoney =0;
+        public double DFPrintAllMoney =0;
+        public double ScanSaveBWMoney =0;
+        public double ScanSaveColorMoney =0;
+        public double ScanSaveAllMoney =0;
+        public double ListPrintBWMoney =0;
+        public double ListPrintColorMoney =0;
+        public double ListPrintAllMoney =0;
+        public double FaxChannelBWMoney =0;
+        public double FaxChannelAllMoney =0;
+
+        public double FaxNetBWMoney =0;
+        public double FaxNetAllMoney =0;
+        public double OtherBWMoney =0;
+        public double OtherColorMoney =0;
+        public double OtherAllMoney =0;
+
+        public void Add(JobInformationCSVModel bean)
+        {
+            this.AllMoney += bean.AllMoney;
+            this.AllBWMoney += bean. AllBWMoney;
+            this.AllColorMoney += bean. AllColorMoney;
+
+            this.CopyBWMoney += bean. CopyBWMoney;
+            this.CopyColorMoney += bean. CopyColorMoney;
+            this.CopyAllMoney += bean. CopyAllMoney;
+            this.PrintBWMoney += bean. PrintBWMoney;
+            this.PrintColorMoney += bean. PrintColorMoney;
+            this.PrintAllMoney += bean. PrintAllMoney;
+            this.ScanBWMoney += bean. ScanBWMoney;
+            this.ScanColorMoney += bean. ScanColorMoney;
+            this.ScanAllMoney += bean. ScanAllMoney;
+            this.FaxBWMoney += bean. FaxBWMoney;
+            this.FaxAllMoney += bean. FaxAllMoney;
+
+            this.DFPrintBWMoney += bean. DFPrintBWMoney;
+            this.DFPrintColorMoney += bean. DFPrintColorMoney;
+            this.DFPrintAllMoney += bean. DFPrintAllMoney;
+            this.ScanSaveBWMoney += bean. ScanSaveBWMoney;
+            this.ScanSaveColorMoney += bean. ScanSaveColorMoney;
+            this.ScanSaveAllMoney += bean. ScanSaveAllMoney;
+            this.ListPrintBWMoney += bean. ListPrintBWMoney;
+            this.ListPrintColorMoney += bean. ListPrintColorMoney;
+            this.ListPrintAllMoney += bean. ListPrintAllMoney;
+            this.FaxChannelBWMoney += bean. FaxChannelBWMoney;
+            this.FaxChannelAllMoney += bean. FaxChannelAllMoney;
+
+            this.FaxNetBWMoney += bean. FaxNetBWMoney;
+            this.FaxNetAllMoney += bean. FaxNetAllMoney;
+            this.OtherBWMoney += bean. OtherBWMoney;
+            this.OtherColorMoney += bean. OtherColorMoney;
+            this.OtherAllMoney += bean. OtherAllMoney;
+
+        }
+
+        public void SetAllMoney()
+        {
+            PrintAllMoney = PrintBWMoney + PrintColorMoney;
+            CopyAllMoney = CopyBWMoney + CopyColorMoney;
+            ScanAllMoney = ScanBWMoney + ScanColorMoney;
+            FaxAllMoney = FaxBWMoney ;
+            DFPrintAllMoney = DFPrintBWMoney +DFPrintColorMoney;
+            ScanSaveAllMoney =   ScanSaveBWMoney  +    ScanSaveColorMoney  ;
+            ListPrintAllMoney  =   ListPrintBWMoney  +    ListPrintColorMoney  ;
+            FaxChannelAllMoney  =   FaxChannelBWMoney    ;
+            FaxNetAllMoney =  FaxNetBWMoney  ;
+            OtherAllMoney = OtherBWMoney + OtherColorMoney;
+            //AllMoney = PrintAllMoney 
+            //           + CopyAllMoney
+            //           + ScanAllMoney
+            //           + FaxAllMoney
+            //           + DFPrintAllMoney
+            //           + ScanSaveAllMoney
+            //           + ListPrintAllMoney
+            //           + FaxNetAllMoney
+            //           +OtherAllMoney;
+            AllBWMoney =PrintBWMoney
+                        +CopyBWMoney
+                        +ScanBWMoney
+                        +FaxBWMoney
+                        +DFPrintBWMoney
+                        +ScanSaveBWMoney
+                        +ListPrintBWMoney
+                        +FaxChannelBWMoney
+                        +FaxNetBWMoney
+                        +OtherBWMoney;
+            AllColorMoney = PrintColorMoney
+                        + CopyColorMoney 
+                        + ScanColorMoney 
+                        + DFPrintColorMoney 
+                        + ScanSaveColorMoney 
+                        + ListPrintColorMoney 
+                        + OtherColorMoney;
+            AllMoney = AllBWMoney + AllColorMoney;
+
+        }
+      
+        public string getUserReportData(int Dsp_Count_mode)
+        {
+            StringBuilder sb = new StringBuilder("");
+            sb.Append( UserName );
+            sb.Append( "," );
+            sb.Append(LoginName);
+            sb.Append(",");
+            sb.Append(GroupName);
+            sb.Append( "," );
+            sb.Append(UtilCommon.doubleToMoney(AllMoney, Dsp_Count_mode));
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(AllBWMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(AllColorMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+
+            sb.Append( UtilCommon.doubleToMoney(CopyBWMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(CopyColorMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(CopyAllMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(PrintBWMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(PrintColorMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(PrintAllMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(ScanBWMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(ScanColorMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(ScanAllMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(FaxBWMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(FaxAllMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+
+            sb.Append( UtilCommon.doubleToMoney(DFPrintBWMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(DFPrintColorMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(DFPrintAllMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(ScanSaveBWMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(ScanSaveColorMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(ScanSaveAllMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(ListPrintBWMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(ListPrintColorMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(ListPrintAllMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(FaxChannelBWMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(FaxChannelAllMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+
+            sb.Append( UtilCommon.doubleToMoney(FaxNetBWMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(FaxNetAllMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(OtherBWMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(OtherColorMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+            sb.Append( UtilCommon.doubleToMoney(OtherAllMoney, Dsp_Count_mode ) );
+            sb.Append( "," );
+
+            return sb.ToString();
+        }
+
+        public string getUserAllReportData(int Dsp_Count_mode)
+        {
+            StringBuilder sb = new StringBuilder("");
+            sb.Append("合计");
+            sb.Append(",");
+            sb.Append(" ");
+            sb.Append(",");
+            sb.Append(" ");
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(AllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(AllBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(AllColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+
+            sb.Append(UtilCommon.doubleToMoney(CopyBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(CopyColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(CopyAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(PrintBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(PrintColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(PrintAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+
+            sb.Append(UtilCommon.doubleToMoney(DFPrintBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(DFPrintColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(DFPrintAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanSaveBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanSaveColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanSaveAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ListPrintBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ListPrintColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ListPrintAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxChannelBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxChannelAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+
+            sb.Append(UtilCommon.doubleToMoney(FaxNetBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxNetAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(OtherBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(OtherColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(OtherAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+
+            return sb.ToString();
+        }
+
+        public string getGroupReportData(int Dsp_Count_mode)
+        {
+            StringBuilder sb = new StringBuilder("");
+            sb.Append(GroupName);
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(AllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(AllBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(AllColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+
+            sb.Append(UtilCommon.doubleToMoney(CopyBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(CopyColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(CopyAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(PrintBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(PrintColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(PrintAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+
+            sb.Append(UtilCommon.doubleToMoney(DFPrintBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(DFPrintColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(DFPrintAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanSaveBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanSaveColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanSaveAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ListPrintBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ListPrintColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ListPrintAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxChannelBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxChannelAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+
+            sb.Append(UtilCommon.doubleToMoney(FaxNetBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxNetAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(OtherBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(OtherColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(OtherAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+
+            return sb.ToString();
+        }
+
+        public string getMFPReportData(int Dsp_Count_mode)
+        {
+            StringBuilder sb = new StringBuilder("");
+            sb.Append(this.ModelName);
+            sb.Append(",");
+            sb.Append(this.SerialNumber);
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(AllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(AllBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(AllColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+
+            sb.Append(UtilCommon.doubleToMoney(CopyBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(CopyColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(CopyAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(PrintBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(PrintColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(PrintAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+
+            sb.Append(UtilCommon.doubleToMoney(DFPrintBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(DFPrintColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(DFPrintAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanSaveBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanSaveColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ScanSaveAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ListPrintBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ListPrintColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(ListPrintAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxChannelBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxChannelAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+
+            sb.Append(UtilCommon.doubleToMoney(FaxNetBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(FaxNetAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(OtherBWMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(OtherColorMoney, Dsp_Count_mode));
+            sb.Append(",");
+            sb.Append(UtilCommon.doubleToMoney(OtherAllMoney, Dsp_Count_mode));
+            sb.Append(",");
+
+            return sb.ToString();
+        }
+
+        public string getGroupUserJobData(int Dsp_Count_mode)
+        {
+            if (this.Type == 0)
+            {
+                StringBuilder sb = new StringBuilder("");
+                sb.Append(GroupName);
+                sb.Append(",");
+                sb.Append("");
+                sb.Append(",");
+                sb.Append("");
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(AllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(AllBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(AllColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+
+                sb.Append(UtilCommon.doubleToMoney(CopyBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(CopyColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(CopyAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(PrintBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(PrintColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(PrintAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+
+                sb.Append(UtilCommon.doubleToMoney(DFPrintBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(DFPrintColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(DFPrintAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanSaveBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanSaveColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanSaveAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ListPrintBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ListPrintColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ListPrintAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxChannelBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxChannelAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+
+                sb.Append(UtilCommon.doubleToMoney(FaxNetBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxNetAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(OtherBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(OtherColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(OtherAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+
+                return sb.ToString();
+            }
+            else
+            {
+                StringBuilder sb = new StringBuilder("");
+                sb.Append("");
+                sb.Append(",");
+                sb.Append(UserName);
+                sb.Append(",");
+                sb.Append(LoginName);
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(AllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(AllBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(AllColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+
+                sb.Append(UtilCommon.doubleToMoney(CopyBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(CopyColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(CopyAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(PrintBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(PrintColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(PrintAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+
+                sb.Append(UtilCommon.doubleToMoney(DFPrintBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(DFPrintColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(DFPrintAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanSaveBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanSaveColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanSaveAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ListPrintBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ListPrintColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ListPrintAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxChannelBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxChannelAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+
+                sb.Append(UtilCommon.doubleToMoney(FaxNetBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxNetAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(OtherBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(OtherColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(OtherAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+
+                return sb.ToString();
+            }
+        }
+
+
+        public string getGroupUserAllJobData(int Dsp_Count_mode)
+        {
+            
+                StringBuilder sb = new StringBuilder("");
+                sb.Append("合计");
+                sb.Append(",");
+                sb.Append("");
+                sb.Append(",");
+                sb.Append("");
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(AllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(AllBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(AllColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+
+                sb.Append(UtilCommon.doubleToMoney(CopyBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(CopyColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(CopyAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(PrintBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(PrintColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(PrintAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+
+                sb.Append(UtilCommon.doubleToMoney(DFPrintBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(DFPrintColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(DFPrintAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanSaveBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanSaveColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ScanSaveAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ListPrintBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ListPrintColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(ListPrintAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxChannelBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxChannelAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+
+                sb.Append(UtilCommon.doubleToMoney(FaxNetBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(FaxNetAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(OtherBWMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(OtherColorMoney, Dsp_Count_mode));
+                sb.Append(",");
+                sb.Append(UtilCommon.doubleToMoney(OtherAllMoney, Dsp_Count_mode));
+                sb.Append(",");
+
+                return sb.ToString();
+           
+        }
+        #endregion Model
+    }
+}

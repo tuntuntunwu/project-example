@@ -1,0 +1,170 @@
+<%--
+// ==============================================================================
+// File Name           : SimpleEAReportMasterPage.master
+// Description         : MasterPage for SimpleEA
+// Author(s)           : Ji Jianxiong
+// Date created        : 2010.08.18
+// Date updated        : 2010.09.18
+//                       Build No: 1.0.3.2: UI Update.
+//                       2010.11.19
+//                       Ver.1.1 Update.
+//                       2010.12.10
+//                       Ver.1.1 Update.
+//                       2010.12.27
+//                       Html Standerd Modify
+//                       2011.01.05
+//                       Html Standerd Modify
+//                       2011.01.12
+//                       Html Standerd Modify
+//                       2012.01.13
+//                       Ver.1.2 Update
+//                       Add SubTitle View Print Content SLC Wei Changye
+// Last reviewed by    : 
+// Last date of review : 
+// Copyright           : (c) 2010, SHARP CORPORATION., All rights reserved.
+//                       All rights are reserved. Reproduction or transmission in whole or in part, in
+//                       any form or by an means, electronic, mechanical or otherwise, is prohibited
+//                       without the prior written consent of the copyright owner.
+
+// ==============================================================================
+--%>
+<%@ Master MasterPageFile="SimpleEAMasterPage.master" Language="C#" AutoEventWireup="true"
+    CodeFile="SimpleEAReportMasterPage.master.cs" Inherits="Masterpage_SimpleEAReportMasterPage" %>
+<%@ MasterType TypeName="Masterpage_SimpleEAMasterPage" %>
+<asp:Content ID="ContentReportTitle" ContentPlaceHolderID="cphreporttitle" runat="server">
+    <span id="lblUserTitle"><a id="linkUser" runat="server" class="small_link_select" href="../Report/UserJobReport.aspx">用户使用</a></span>/<span id="lblGroupTitle"><a id="linkGroup" runat="server" class="small_link" href="../Report/GroupJobReport.aspx">用户组使用</a></span>/<span id="lblMFPTitle"><a id="linkMFP" runat="server" class="small_link" href="../Report/MFPJobReport.aspx">MFP使用</a></span>/<span id="lblGroupUserTitle"><a id="linkGroupUser" runat="server" class="small_link" href="../Report/GroupUserJobReport.aspx">汇总</a></span>/<span id="lblTotalTitle"><a id="linkTotal" runat="server" class="small_link" href="../Report/TotalJobReport.aspx">作业类型</a></span></asp:Content>
+    <asp:Content ID="ContentUserHead" ContentPlaceHolderID="cphSmallbody" runat="server">
+    <asp:Table ID="tableSearch" runat="server" Width="100%">
+        <asp:TableRow runat="server" CssClass="Light_GrayFont">
+            <asp:TableHeaderCell ID="GroupItem" CssClass="td_head"  HorizontalAlign="Left"
+                Visible="false" Width="100px" Wrap="false">&nbsp; 对象</asp:TableHeaderCell>
+            <asp:TableCell ID="GroupItemList" Visible="false" VerticalAlign="Top" ColumnSpan="4">
+                <div style="z-index: 10; position: absolute; padding-top: 5px">
+                    <asp:DropDownList ID="ddlGroupItem" runat="server" CssClass="changeMe" Width="70px"
+                        AutoPostBack="true" OnSelectedIndexChanged="ddlGroupItem_SelectedIndexChanged">
+                    </asp:DropDownList>
+                </div>
+            </asp:TableCell>
+            <asp:TableHeaderCell ID="MFPItem" CssClass="td_head" HorizontalAlign="Left" Visible="true"
+                Width="133px" Wrap="false">&nbsp;MFP型号（序列号）</asp:TableHeaderCell>
+            <asp:TableCell ID="MFPItemList" Visible="true" VerticalAlign="Top" ColumnSpan="4">
+                <div style="z-index: 10; position: absolute; padding-top: 5px">
+                    <asp:DropDownList ID="ddlMFPItem" runat="server" CssClass="changeMe" Width="260px" 
+                        DataTextField="ModelName" DataValueField="SerialNumber" AutoPostBack="true" OnSelectedIndexChanged="ddlMFPItem_SelectedIndexChanged">
+                    </asp:DropDownList>
+                </div>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow CssClass="Light_GrayFont">
+            <asp:TableHeaderCell CssClass="td_head" HorizontalAlign="Left" Width="100px"
+                Wrap="false">&nbsp; 时间段</asp:TableHeaderCell>
+            <asp:TableCell VerticalAlign="Top" CssClass="year_width">
+                <div style="z-index: 9; position: absolute; padding-top: 5px">
+                    <asp:DropDownList ID="ddlBeginYear" runat="server" CssClass="changeMe" Width="56px"
+                        AutoPostBack="true" OnSelectedIndexChanged="ddl_SelectedIndexChanged" ValidationGroup="None">
+                    </asp:DropDownList>
+                </div>
+            </asp:TableCell>
+            <asp:TableCell Width="10px">年</asp:TableCell>
+            <asp:TableCell VerticalAlign="Top" CssClass="day_width">
+                <div style="z-index: 8; position: absolute; padding-top: 5px">
+                    <asp:DropDownList ID="ddlBeginMonth" runat="server" CssClass="changeMe" Width="42px"
+                        AutoPostBack="true" OnSelectedIndexChanged="ddl_SelectedIndexChanged" ValidationGroup="None">
+                    </asp:DropDownList>
+                </div>
+            </asp:TableCell>
+            <asp:TableCell Width="10px">月</asp:TableCell>
+            <asp:TableCell VerticalAlign="Top" CssClass="day_width">
+                <div style="z-index: 7; position: absolute; padding-top: 5px">
+                    <asp:DropDownList ID="ddlBeginDay" runat="server" CssClass="changeMe" Width="45px"
+                        dateday="dateday" AutoPostBack="true" OnSelectedIndexChanged="ddl_SelectedIndexChanged"
+                        ValidationGroup="None">
+                    </asp:DropDownList>
+                </div>
+            </asp:TableCell>
+            <asp:TableCell Width="10px">日</asp:TableCell>
+            <asp:TableCell VerticalAlign="Top" CssClass="day_width">
+                <div style="z-index: 6; position: absolute; padding-top: 5px">
+                    <asp:DropDownList ID="ddlBeginHour" runat="server" CssClass="changeMe" Width="45px"
+                        AutoPostBack="true" OnSelectedIndexChanged="ddl_SelectedIndexChanged" ValidationGroup="None">
+                    </asp:DropDownList>
+                </div>
+            </asp:TableCell>
+            <asp:TableCell Width="70px">时00分～</asp:TableCell>
+            <asp:TableCell ColumnSpan = "3">
+                <asp:TextBox ID="StartDateTime" runat="server" CssClass="viewDisplay"></asp:TextBox>
+                <asp:CompareValidator ID="valDateTime" ControlToValidate="StartDateTime" runat="server"
+                    Operator="LessThan" Display="Dynamic" ControlToCompare="EndDateTime"></asp:CompareValidator>
+            </asp:TableCell>
+          
+        </asp:TableRow>
+        <asp:TableRow CssClass="Light_GrayFont">
+            <asp:TableHeaderCell Height="33px"></asp:TableHeaderCell>
+            <asp:TableCell VerticalAlign="Top">
+                <div style="z-index: 5; position: absolute; padding-top: 5px">
+                    <asp:DropDownList ID="ddlEndYear" runat="server" CssClass="changeMe" Width="56px"
+                        AutoPostBack="true" OnSelectedIndexChanged="ddl_SelectedIndexChanged" ValidationGroup="None">
+                    </asp:DropDownList>
+                </div>
+            </asp:TableCell>
+            <asp:TableCell>年</asp:TableCell>
+            <asp:TableCell VerticalAlign="Top">
+                <div style="z-index: 4; position: absolute; padding-top: 5px">
+                    <asp:DropDownList ID="ddlEndMonth" runat="server" CssClass="changeMe" Width="42px"
+                        AutoPostBack="true" OnSelectedIndexChanged="ddl_SelectedIndexChanged" ValidationGroup="None">
+                    </asp:DropDownList>
+                </div>
+            </asp:TableCell>
+            <asp:TableCell>月</asp:TableCell>
+            <asp:TableCell VerticalAlign="Top">
+                <div style="z-index: 3; position: absolute; padding-top: 5px">
+                    <asp:DropDownList ID="ddlEndDay" runat="server" CssClass="changeMe" Width="45px"
+                        dateday="dateday" AutoPostBack="true" OnSelectedIndexChanged="ddl_SelectedIndexChanged"
+                        ValidationGroup="None">
+                    </asp:DropDownList>
+                </div>
+            </asp:TableCell>
+            <asp:TableCell>日</asp:TableCell>
+            <asp:TableCell VerticalAlign="Top">
+                <div style="z-index: 2; position: absolute; padding-top: 5px">
+                    <asp:DropDownList ID="ddlEndHour" runat="server" CssClass="changeMe" Width="45px"
+                        AutoPostBack="true" OnSelectedIndexChanged="ddl_SelectedIndexChanged" ValidationGroup="None">
+                    </asp:DropDownList>
+                </div>
+            </asp:TableCell>
+            <asp:TableCell>时59分</asp:TableCell>
+            <asp:TableCell HorizontalAlign="Left" Width="200px">
+                <asp:TextBox ID="EndDateTime" runat="server" CssClass="viewDisplay"></asp:TextBox>
+                <asp:ImageButton ID="btnPeriodPre" runat="server" OnClick="btnPeriodPre_Click" ImageUrl="../Images/Arrow_Pre.gif"
+                    Width="7px" Height="13px" ValidationGroup="None"></asp:ImageButton>&nbsp;&nbsp;&nbsp;<asp:Image
+                        ID="Image1" Width="24px" Height="24px" runat="server" ImageUrl="~/Images/Calendar.gif" />&nbsp;&nbsp;&nbsp;<asp:ImageButton
+                            ID="btnPeriodNext" runat="server" OnClick="btnPeriodNext_Click" ImageUrl="../Images/Arrow_Next.gif"
+                            Width="7px" Height="13px" ValidationGroup="None"></asp:ImageButton>&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Btnupdate" runat="server" CssClass="Button_JobReport" Text="更新" Visible="false" />
+            </asp:TableCell>
+            <asp:TableCell>   
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow CssClass="Normalfont_black">
+            <asp:TableCell Height="0px" HorizontalAlign="Left" VerticalAlign="Middle" ColumnSpan="11">
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow CssClass="Normalfont_black">
+            <asp:TableCell Height="2px" CssClass="HR_Line" HorizontalAlign="Left" VerticalAlign="Middle"
+                ColumnSpan="12">
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
+</asp:Content>
+<asp:Content ID="ContentPage" ContentPlaceHolderID="cphlisthead" runat="Server">
+    <asp:ContentPlaceHolder ID="cphlisthead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="ContentBody" ContentPlaceHolderID="cphbody" runat="Server">
+    <asp:ContentPlaceHolder ID="cphbody" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="ContentFoot" ContentPlaceHolderID="cphfoot" runat="server">
+    <asp:ContentPlaceHolder ID="cphfoot" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

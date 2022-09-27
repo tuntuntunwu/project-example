@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SimpleEA">
+</Property><Property Name="解决方案文件" Value="G:\SimpleEA20140925\SimpleEA.sln">
+</Property><Property Name="Date" Value="2014年9月29日">
+</Property><Property Name="Time" Value="11:08:41">
+</Property><Property Name="日志号" Value="4">
+</Property></Properties><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\SimpleEAregistration.csproj" Description="项目文件已成功备份为 G:\SimpleEA20140925\Backup2\SimpleEAregistration.csproj">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\SimpleEAregistration.csproj.user" Description="项目用户文件成功备份为 G:\SimpleEA20140925\Backup2\SimpleEAregistration.csproj.user">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\frmFlash.cs" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\frmFlash.cs">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\frmFlash.Designer.cs" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\frmFlash.Designer.cs">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\frmMain.cs" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\frmMain.cs">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\frmMain.Designer.cs" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\frmMain.Designer.cs">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\Program.cs" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\Program.cs">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\Properties\AssemblyInfo.cs" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\Properties\Resources.Designer.cs" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\Properties\Settings.Designer.cs" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\Properties\app.manifest" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\Properties\app.manifest">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\Properties\Settings.settings" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\Register01.ico" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\Register01.ico">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\Register05.ico" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\Register05.ico">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\frmFlash.resx" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\frmFlash.resx">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\frmMain.resx" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\frmMain.resx">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\Properties\Resources.resx" Description="文件已成功备份为 G:\SimpleEA20140925\Backup2\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\SimpleEAregistration.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="SimpleEAregistration" Source="SimpleEAregistration\SimpleEAregistration.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SimpleEAregistration" Source="SimpleEAregistration\SimpleEAregistration.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>
